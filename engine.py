@@ -56,10 +56,6 @@ class SearchNode(Fact):
 
 
 def calc_strict_upper_bound(pavilions, start_x, start_y, wx, wy):
-    """
-    Calculates the true ceiling cost:
-    Start Dist + Sum(Round Trips) + Load/Unload Tax - Longest Return Trip
-    """
     unique_p = list({(p[1], p[2]) for p in pavilions if p[5] > 0})
     distances = list(map(lambda pos: abs(wx - pos[0]) + abs(wy - pos[1]), unique_p))
     start_dist = abs(start_x - wx) + abs(start_y - wy)
@@ -75,7 +71,6 @@ def calc_bestcase(pavilions, max_load, wx, wy):
 
     total_need = 0
     distances = []
-
     for p in pavilions:
         _pid, px, py, _ptype, _pcolor, needed, delivered = p
         if needed > delivered:
@@ -92,22 +87,29 @@ def calc_bestcase(pavilions, max_load, wx, wy):
     for i in range(min(n, len(distances))):
         bestcase_cost += (distances[i] * 2 + 2)
 
-    # THE FIX: Apply the 'no-return' discount to the heuristic
-    # so it never overestimates the cost of the final one-way trip!
     if distances:
         bestcase_cost -= max(distances)
 
     return bestcase_cost * TOGGLE_BESTCASE
 
+
 def calc_manhattan(x1, y1, x2, y2):
     return abs(x1 - x2) + abs(y1 - y2)
 
 
-def calc_heuristic_hn(pavilions, cx, cy, ignore_x=None, ignore_y=None):
-    # Filter unfulfilled, optionally ignoring the one we are currently delivering to
+def calc_heuristic_hn(pavilions, cx, cy, ignore_x=None, ignore_y=None, wx=3, wy=2):
+    """
+    Return-Trip Aware Heuristic: 
+    Adds distance to return to warehouse IF there are still unfulfilled pavilions.
+    """
     unfulfilled = list(filter(lambda p: p[5] > p[6] and not (p[1] == ignore_x and p[2] == ignore_y), pavilions))
-    distances = list(map(lambda p: calc_manhattan(cx, cy, p[1], p[2]), unfulfilled))
-    return {True: 0, False: min(distances or [0])}[len(distances) == 0]
+    unique_p = list({(p[1], p[2]) for p in unfulfilled})
+    w_dists = list(map(lambda pos: abs(wx - pos[0]) + abs(wy - pos[1]), unique_p))
+    
+    return {
+        True: 0, # If completely finished, no return needed. Cost is 0.
+        False: abs(cx - wx) + abs(cy - wy) + sum(map(lambda d: d * 2, w_dists)) - max(w_dists or [0])
+    }[len(unfulfilled) == 0]
 
 
 def get_possible_loads(pavilions, inventory, max_load):
@@ -137,26 +139,16 @@ def parse_pretest(pretest_data: dict) -> tuple[dict, tuple, int, int]:
 
 def node_to_dict(node: SearchNode) -> dict[str, Any]:
     return {
-        "node_id": node["node_id"],
-        "parent_id": node["parent_id"],
-        "robot_x": node["robot_x"],
-        "robot_y": node["robot_y"],
-        "robot_state": node["robot_state"],
-        "status": node["status"],
-        "f_n": node["f_n"],
-        "g_n": node["g_n"],
-        "h_n": node["h_n"],
+        "node_id": node["node_id"], "parent_id": node["parent_id"],
+        "robot_x": node["robot_x"], "robot_y": node["robot_y"],
+        "robot_state": node["robot_state"], "status": node["status"],
+        "f_n": node["f_n"], "g_n": node["g_n"], "h_n": node["h_n"],
         "last_action": node["last_action"],
     }
 
 
 class FlowerDeliveryEngine(KnowledgeEngine):
-    def __init__(
-        self,
-        message_queue: Optional[Queue] = None,
-        pretest_data: Optional[dict] = None,
-        live_mode: bool = False,
-    ):
+    def __init__(self, message_queue: Optional[Queue] = None, pretest_data: Optional[dict] = None, live_mode: bool = False):
         super().__init__()
         self.node_counter = 0
         self.message_queue = message_queue
@@ -173,7 +165,7 @@ class FlowerDeliveryEngine(KnowledgeEngine):
 
     @Rule(
         SystemControl(phase="search"),
-        NOT(SearchNode(status="active")), # <-- THE MUTEX LOCK
+        NOT(SearchNode(status="active")), # MUTEX LOCK: Enforces true A* order
         AS.candidate << SearchNode(status="open", f_n=MATCH.f1),
         NOT(SearchNode(status="open", f_n=TEST(lambda f: f < MATCH.f1))),
         salience=1000,
@@ -183,9 +175,9 @@ class FlowerDeliveryEngine(KnowledgeEngine):
 
     @Rule(
         SystemControl(phase="search"),
-        AS.node << SearchNode(status="open", g_n=MATCH.g, bestcase_n=MATCH.bc),
+        AS.node << SearchNode(status="open", f_n=MATCH.f), # PRUNE ON f(n)
         SystemMeta(upper_bound=MATCH.ub),
-        TEST(lambda g, bc, ub: (g + bc) > ub),
+        TEST(lambda f, ub: f > ub),
         salience=2000,
     )
     def prune_bounds(self, node):
@@ -214,24 +206,12 @@ class FlowerDeliveryEngine(KnowledgeEngine):
         cost = calc_manhattan(rx, ry, wx, wy)
         h = calc_heuristic_hn(p, wx, wy)
         bc = calc_bestcase(p, ml, wx, wy)
-        new_node_id = self.next_id()
-        self.declare(
-            SearchNode(
-                node_id=new_node_id,
-                parent_id=node["node_id"],
-                robot_x=wx,
-                robot_y=wy,
-                robot_state="load",
-                status="open",
-                carried_bouquets=cb,
-                pavilions=p,
-                g_n=g + cost,
-                h_n=h,
-                f_n=(g + cost) + h,
-                bestcase_n=bc,
-                last_action=f"Traveled to warehouse (Cost: {cost})",
-            )
-        )
+        self.declare(SearchNode(
+            node_id=self.next_id(), parent_id=node["node_id"], robot_x=wx, robot_y=wy,
+            robot_state="load", status="open", carried_bouquets=cb, pavilions=p,
+            g_n=g + cost, h_n=h, f_n=(g + cost) + h, bestcase_n=bc,
+            last_action=f"Traveled to warehouse (Cost: {cost})",
+        ))
         self.modify(node, status="expanded")
 
     @Rule(
@@ -245,47 +225,20 @@ class FlowerDeliveryEngine(KnowledgeEngine):
         h = calc_heuristic_hn(p, wx, wy)
         bc = calc_bestcase(p, ml, wx, wy)
 
-        list(
-            map(
-                lambda item: self.declare(
-                    SearchNode(
-                        node_id=self.next_id(),
-                        parent_id=node["node_id"],
-                        robot_x=wx,
-                        robot_y=wy,
-                        robot_state="load",
-                        status="open",
-                        carried_bouquets=cb + (item,),
-                        pavilions=p,
-                        g_n=g,
-                        h_n=h,
-                        f_n=g + h,
-                        bestcase_n=bc,
-                        last_action=f"Loaded: Type={item[0]}, Color={item[1]}, Qty={item[2]}",
-                    )
-                ),
-                options,
-            )
-        )
+        list(map(lambda item: self.declare(SearchNode(
+            node_id=self.next_id(), parent_id=node["node_id"], robot_x=wx, robot_y=wy,
+            robot_state="load", status="open", carried_bouquets=cb + (item,), pavilions=p,
+            g_n=g, h_n=h, f_n=g + h, bestcase_n=bc,
+            last_action=f"Loaded: Type={item[0]}, Color={item[1]}, Qty={item[2]}",
+        )), options))
 
         depart_g = g + {True: 1, False: 0}[len(cb) > 0]
-        self.declare(
-            SearchNode(
-                node_id=self.next_id(),
-                parent_id=node["node_id"],
-                robot_x=wx,
-                robot_y=wy,
-                robot_state="deliver",
-                status="open",
-                carried_bouquets=cb,
-                pavilions=p,
-                g_n=depart_g,
-                h_n=h,
-                f_n=depart_g + h,
-                bestcase_n=bc,
-                last_action="Finished loading. Dispatched for delivery.",
-            )
-        )
+        self.declare(SearchNode(
+            node_id=self.next_id(), parent_id=node["node_id"], robot_x=wx, robot_y=wy,
+            robot_state="deliver", status="open", carried_bouquets=cb, pavilions=p,
+            g_n=depart_g, h_n=h, f_n=depart_g + h, bestcase_n=bc,
+            last_action="Finished loading. Dispatched for delivery.",
+        ))
         self.modify(node, status="expanded")
 
     @Rule(
@@ -297,29 +250,17 @@ class FlowerDeliveryEngine(KnowledgeEngine):
     def action_deliver(self, node, cb, p, g, rx, ry, ml, wx, wy):
         matching = filter(lambda pav: any(map(lambda i: i[0] == pav[3], cb)) and pav[5] > pav[6], p)
         targets = dict(map(lambda pav: (pav[0], (pav[1], pav[2])), matching))
+        bc = calc_bestcase(p, ml, wx, wy)
 
-        list(
-            map(
-                lambda t: self.declare(
-                    SearchNode(
-                        node_id=self.next_id(),
-                        parent_id=node["node_id"],
-                        robot_x=t[1][0],
-                        robot_y=t[1][1],
-                        robot_state="unload",
-                        status="open",
-                        carried_bouquets=cb,
-                        pavilions=p,
-                        g_n=g + calc_manhattan(rx, ry, t[1][0], t[1][1]),
-                        # THE FIX: Tell the heuristic to ignore the pavilion at t[1][0], t[1][1]
-                        h_n=calc_heuristic_hn(p, t[1][0], t[1][1], t[1][0], t[1][1]),
-                        f_n=(g + calc_manhattan(rx, ry, t[1][0], t[1][1])) + calc_heuristic_hn(p, t[1][0], t[1][1], t[1][0], t[1][1]),
-                        last_action=f"Routed directly to Pavilion {t[0]}",
-                    )
-                ),
-                targets.items(),
-            )
-        )
+        list(map(lambda t: self.declare(SearchNode(
+            node_id=self.next_id(), parent_id=node["node_id"], robot_x=t[1][0], robot_y=t[1][1],
+            robot_state="unload", status="open", carried_bouquets=cb, pavilions=p,
+            g_n=g + calc_manhattan(rx, ry, t[1][0], t[1][1]),
+            h_n=calc_heuristic_hn(p, t[1][0], t[1][1], t[1][0], t[1][1]),
+            f_n=(g + calc_manhattan(rx, ry, t[1][0], t[1][1])) + calc_heuristic_hn(p, t[1][0], t[1][1], t[1][0], t[1][1]),
+            bestcase_n=bc,
+            last_action=f"Routed directly to Pavilion {t[0]}",
+        )), targets.items()))
         self.modify(node, status="expanded")
 
     @Rule(
@@ -342,80 +283,51 @@ class FlowerDeliveryEngine(KnowledgeEngine):
         final_cargo = tuple(filter(lambda i: i[2] > 0, map(lambda pair: (pair[0], pair[1], get_new_qty(pair[0], pair[1])), unique_cargo)))
         unloaded_any = any(map(lambda pair: is_unloaded(pair[0], pair[1]), unique_cargo))
 
-        updated_p = tuple(
-            map(
-                lambda pav: (
-                    pav[0],
-                    pav[1],
-                    pav[2],
-                    pav[3],
-                    pav[4],
-                    pav[5],
-                    {True: pav[5], False: pav[6]}[pav[1] == rx and pav[2] == ry and is_unloaded(pav[3], pav[4])],
-                ),
-                p,
-            )
-        )
+        updated_p = tuple(map(lambda pav: (
+            pav[0], pav[1], pav[2], pav[3], pav[4], pav[5],
+            {True: pav[5], False: pav[6]}[pav[1] == rx and pav[2] == ry and is_unloaded(pav[3], pav[4])],
+        ), p))
 
         cargo_empty = len(final_cargo) == 0
         all_fulfilled = all(map(lambda pst: pst[5] == pst[6], updated_p))
         bc = calc_bestcase(updated_p, ml, wx, wy)
 
         next_state = {
-            (True, True): "done",
-            (True, False): "collect",
-            (False, True): "deliver",
-            (False, False): "deliver",
+            (True, True): "done", (True, False): "collect",
+            (False, True): "deliver", (False, False): "deliver",
         }[(cargo_empty, all_fulfilled)]
 
-        self.declare(
-            SearchNode(
-                node_id=self.next_id(),
-                parent_id=node["node_id"],
-                robot_x=rx,
-                robot_y=ry,
-                robot_state=next_state,
-                status="open",
-                carried_bouquets=final_cargo,
-                pavilions=updated_p,
-                g_n=g + {True: 1, False: 0}[unloaded_any],
-                h_n=calc_heuristic_hn(updated_p, rx, ry),
-                f_n=(g + {True: 1, False: 0}[unloaded_any]) + calc_heuristic_hn(updated_p, rx, ry),
-                bestcase_n=bc,
-                last_action=f"Unloaded matching cargo. Next state: '{next_state}'",
-            )
-        )
+        self.declare(SearchNode(
+            node_id=self.next_id(), parent_id=node["node_id"], robot_x=rx, robot_y=ry,
+            robot_state=next_state, status="open", carried_bouquets=final_cargo, pavilions=updated_p,
+            g_n=g + {True: 1, False: 0}[unloaded_any],
+            h_n=calc_heuristic_hn(updated_p, rx, ry),
+            f_n=(g + {True: 1, False: 0}[unloaded_any]) + calc_heuristic_hn(updated_p, rx, ry),
+            bestcase_n=bc, last_action=f"Unloaded matching cargo. Next state: '{next_state}'",
+        ))
         self.modify(node, status="expanded")
 
     @Rule(
         AS.ctrl << SystemControl(phase="search"),
-        SearchNode(robot_state="done", status="active", node_id=MATCH.gid),
+        SearchNode(robot_state="done", status="active", node_id=MATCH.gid, g_n=MATCH.g, f_n=MATCH.f),
         salience=5000,
     )
-    def goal_found(self, ctrl, gid):
+    def goal_found(self, ctrl, gid, g, f):
         if self.live_mode:
-            self.emit("GOAL", {"node_id": gid, "message": f"Optimal solution acquired by node #{gid}"})
+            self.emit("GOAL", {"node_id": gid, "g_n": g, "f_n": f, "message": f"Optimal solution acquired by node #{gid}"})
         else:
-            print(f"\n[GOAL] OPTIMAL SOLUTION ACQUIRED BY NODE #{gid}")
+            print(f"\n[GOAL] OPTIMAL SOLUTION ACQUIRED BY NODE #{gid} with f(n)={f}")
         self.modify(ctrl, phase="print_tree")
 
     @Rule(AS.ctrl << SystemControl(phase="print_tree"), salience=100)
     def print_tree(self, ctrl):
         nodes = list(filter(lambda f: isinstance(f, SearchNode), self.facts.values()))
         nodes.sort(key=lambda x: x["node_id"])
-
         if self.live_mode:
             self.emit("SEARCH_TREE", {"nodes": [node_to_dict(n) for n in nodes]})
         else:
             print("\n--- COMPREHENSIVE GENERATED SEARCH SPACE TREE ---")
-            list(
-                map(
-                    lambda n: print(
-                        f"Node #{n['node_id']:3} (Parent #{n['parent_id']:3}) | State: {n['robot_state']:8} | Status: {n['status']:8} | f(n)={n['f_n']:3} | Action: {n['last_action']}"
-                    ),
-                    nodes,
-                )
-            )
+            list(map(lambda n: print(f"Node #{n['node_id']:3} (Parent #{n['parent_id']:3}) | State: {n['robot_state']:8} | Status: {n['status']:8} | f(n)={n['f_n']:3} | Action: {n['last_action']}"), nodes))
         self.modify(ctrl, phase="print_path")
 
     @Rule(SystemControl(phase="print_path"), SearchNode(robot_state="done", node_id=MATCH.gid), salience=50)
@@ -426,37 +338,18 @@ class FlowerDeliveryEngine(KnowledgeEngine):
         if self.live_mode:
             self.emit("TIMELINE_START", {"steps": len(path)})
             for step_idx, step in enumerate(path):
-                self.emit(
-                    "ROBOT_MOVE",
-                    {
-                        "step": step_idx,
-                        "id": step["node_id"],
-                        "to_x": step["robot_x"],
-                        "to_y": step["robot_y"],
-                        "state": step["robot_state"],
-                        "action": step["last_action"],
-                    },
-                )
-                self.emit(
-                    "TIMELINE_STEP",
-                    {
-                        "step": step_idx,
-                        "node_id": step["node_id"],
-                        "action": step["last_action"],
-                        "pos": [step["robot_x"], step["robot_y"]],
-                        "state": step["robot_state"],
-                    },
-                )
+                self.emit("ROBOT_MOVE", {
+                    "step": step_idx, "id": step["node_id"], "to_x": step["robot_x"], "to_y": step["robot_y"],
+                    "state": step["robot_state"], "action": step["last_action"], "g_n": step["g_n"], "f_n": step["f_n"],
+                })
+                self.emit("TIMELINE_STEP", {
+                    "step": step_idx, "node_id": step["node_id"], "action": step["last_action"],
+                    "pos": [step["robot_x"], step["robot_y"]], "state": step["robot_state"],
+                    "g_n": step["g_n"], "f_n": step["f_n"],
+                })
         else:
             print("\n--- TIMELINE MAP OF RUNTIME SUCCESS OPERATIONS ---")
-            list(
-                map(
-                    lambda step: print(
-                        f"Step {step[0]:2}: [Node #{step[1]['node_id']:3}] -> {step[1]['last_action']} | Pos: ({step[1]['robot_x']},{step[1]['robot_y']})"
-                    ),
-                    enumerate(path),
-                )
-            )
+            list(map(lambda step: print(f"Step {step[0]:2}: [Node #{step[1]['node_id']:3}] -> {step[1]['last_action']} | Pos: ({step[1]['robot_x']},{step[1]['robot_y']})"), enumerate(path)))
         self.halt()
 
     def startup(self):
@@ -466,42 +359,20 @@ class FlowerDeliveryEngine(KnowledgeEngine):
         if self.live_mode:
             self.emit("BOARD_SETUP", self.pretest_data)
 
-        strict_ub = calc_strict_upper_bound(
-            pavilions,
-            start_x,
-            start_y,
-            meta["warehouse_x"],
-            meta["warehouse_y"],
-        )
+        strict_ub = calc_strict_upper_bound(pavilions, start_x, start_y, meta["warehouse_x"], meta["warehouse_y"])
         self.declare(SystemControl(phase="search"))
-        self.declare(
-            SystemMeta(
-                upper_bound=strict_ub,
-                max_load=meta["max_load"],
-                warehouse_x=meta["warehouse_x"],
-                warehouse_y=meta["warehouse_y"],
-            )
-        )
+        self.declare(SystemMeta(upper_bound=strict_ub, max_load=meta["max_load"], warehouse_x=meta["warehouse_x"], warehouse_y=meta["warehouse_y"]))
 
         h = calc_heuristic_hn(pavilions, start_x, start_y)
         bc = calc_bestcase(pavilions, meta["max_load"], meta["warehouse_x"], meta["warehouse_y"])
-        self.declare(
-            SearchNode(
-                node_id=self.next_id(),
-                parent_id=0,
-                robot_x=start_x,
-                robot_y=start_y,
-                robot_state="collect",
-                status="open",
-                pavilions=pavilions,
-                g_n=0,
-                h_n=h,
-                f_n=h,
-                bestcase_n=bc,
-                last_action="System Frame Initialization",
-            )
-        )
+        self.declare(SearchNode(
+            node_id=self.next_id(), parent_id=0, robot_x=start_x, robot_y=start_y, robot_state="collect",
+            status="open", pavilions=pavilions, g_n=0, h_n=h, f_n=h, bestcase_n=bc, last_action="System Frame Initialization",
+        ))
         self.run()
-
         if self.live_mode:
             self.emit("DONE", {"message": "Execution finished"})
+
+if __name__ == "__main__":
+    engine = FlowerDeliveryEngine()
+    engine.startup()

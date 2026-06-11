@@ -35,10 +35,11 @@ describe("simulation domain", () => {
     MockWebSocket.latest().open();
     MockWebSocket.latest().emitMessage({
       event: "ROBOT_MOVE",
-      data: { to_x: 3, to_y: 2, action: "move", state: "load" },
+      data: { to_x: 3, to_y: 2, action: "move", state: "load", g_n: 5, f_n: 12 },
     });
 
     expect(moves).toHaveLength(1);
+    expect(moves[0]).toMatchObject({ to_x: 3, g_n: 5, f_n: 12 });
   });
 
   it("reports connection errors", () => {

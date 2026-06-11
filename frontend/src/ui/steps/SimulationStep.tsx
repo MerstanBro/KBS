@@ -91,6 +91,8 @@ export class SimulationStep extends Component<SimulationStepProps, SimulationSte
           y: data.to_y,
           action: data.action,
           state: data.state,
+          g_n: data.g_n,
+          f_n: data.f_n,
         });
       },
       onDone: () => {

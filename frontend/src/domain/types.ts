@@ -72,6 +72,8 @@ export interface RobotMoveEvent {
   to_y: number;
   action: string;
   state: string;
+  g_n: number;
+  f_n: number;
 }
 
 export interface AnimationMove {
@@ -79,6 +81,8 @@ export interface AnimationMove {
   y: number;
   action: string;
   state: string;
+  g_n: number;
+  f_n: number;
 }
 
 export interface SimulationHandlers {
@@ -100,6 +104,8 @@ export interface EngineEvent {
     to_y?: number;
     action?: string;
     state?: string;
+    g_n?: number;
+    f_n?: number;
   };
 }
 

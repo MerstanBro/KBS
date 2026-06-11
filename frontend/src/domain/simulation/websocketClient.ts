@@ -23,7 +23,10 @@ export function connectSimulation(board: Board, handlers: SimulationHandlers): (
       handlers.onBoard?.(message.data as unknown as Board);
     }
     if (message.event === "GOAL") {
-      handlers.onStatus?.(`Optimal solution at node #${message.data.node_id}`);
+      const goal = message.data;
+      const cost =
+        goal.g_n != null && goal.f_n != null ? ` (g=${goal.g_n}, f=${goal.f_n})` : "";
+      handlers.onStatus?.(`Optimal solution at node #${goal.node_id}${cost}`);
     }
     if (message.event === "ROBOT_MOVE") {
       handlers.onMove?.(message.data as RobotMoveEvent);

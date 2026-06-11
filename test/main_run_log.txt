@@ -1,0 +1,2728 @@
+[GENERATE] Node #  1 | f=22 (bc=22) | System Frame Initialization
+>>> [ACTIVE] Node #  1 picked for processing (State: collect)
+[GENERATE] Node #  2 | f=23 (bc=22) | Traveled to warehouse
+>>> [ACTIVE] Node #  2 picked for processing (State: load)
+[GENERATE] Node #  3 | f=23 (bc=22) | Loaded: Tulip red
+>>> [ACTIVE] Node #  3 picked for processing (State: load)
+[GENERATE] Node #  4 | f=23 (bc=22) | Loaded: Tulip red
+>>> [ACTIVE] Node #  4 picked for processing (State: load)
+[GENERATE] Node #  5 | f=17 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node #  5 picked for processing (State: load)
+[GENERATE] Node #  6 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #  6 killed by upper bounds or load constraints
+[GENERATE] Node #  7 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #  7 killed by upper bounds or load constraints
+[GENERATE] Node #  8 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #  8 killed by upper bounds or load constraints
+[GENERATE] Node #  9 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #  9 picked for processing (State: deliver)
+[GENERATE] Node # 10 | f=20 (bc=16) | Routed to P2
+>>> [ACTIVE] Node # 10 picked for processing (State: unload)
+[GENERATE] Node # 11 | f=17 (bc=16) | Loaded: Tulip yellow
+>>> [ACTIVE] Node # 11 picked for processing (State: load)
+[GENERATE] Node # 12 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 12 picked for processing (State: deliver)
+[GENERATE] Node # 13 | f=20 (bc=16) | Routed to P2
+>>> [ACTIVE] Node # 13 picked for processing (State: unload)
+[GENERATE] Node # 14 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node # 14 killed by upper bounds or load constraints
+[GENERATE] Node # 15 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node # 15 killed by upper bounds or load constraints
+[GENERATE] Node # 16 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node # 16 killed by upper bounds or load constraints
+[GENERATE] Node # 17 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node # 17 killed by upper bounds or load constraints
+[GENERATE] Node # 18 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 18 picked for processing (State: deliver)
+[GENERATE] Node # 19 | f=26 (bc=22) | Routed to P2
+>>> [ACTIVE] Node # 19 picked for processing (State: unload)
+[GENERATE] Node # 20 | f=17 (bc=16) | Loaded: Tulip yellow
+>>> [ACTIVE] Node # 20 picked for processing (State: load)
+[GENERATE] Node # 21 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node # 21 killed by upper bounds or load constraints
+[GENERATE] Node # 22 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node # 22 killed by upper bounds or load constraints
+[GENERATE] Node # 23 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node # 23 killed by upper bounds or load constraints
+[GENERATE] Node # 24 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 24 picked for processing (State: deliver)
+[GENERATE] Node # 25 | f=20 (bc=16) | Routed to P2
+>>> [ACTIVE] Node # 25 picked for processing (State: unload)
+[GENERATE] Node # 26 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node # 26 killed by upper bounds or load constraints
+[GENERATE] Node # 27 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node # 27 killed by upper bounds or load constraints
+[GENERATE] Node # 28 | f=23 (bc=22) | Loaded: RG light pink
+XXX [PRUNED] Node # 28 killed by upper bounds or load constraints
+[GENERATE] Node # 29 | f=23 (bc=22) | Loaded: Orchid pink
+XXX [PRUNED] Node # 29 killed by upper bounds or load constraints
+[GENERATE] Node # 30 | f=23 (bc=22) | Loaded: Orchid purple
+XXX [PRUNED] Node # 30 killed by upper bounds or load constraints
+[GENERATE] Node # 31 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 31 picked for processing (State: deliver)
+[GENERATE] Node # 32 | f=26 (bc=22) | Routed to P2
+>>> [ACTIVE] Node # 32 picked for processing (State: unload)
+[GENERATE] Node # 33 | f=23 (bc=22) | Loaded: Tulip yellow
+>>> [ACTIVE] Node # 33 picked for processing (State: load)
+[GENERATE] Node # 34 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node # 34 killed by upper bounds or load constraints
+[GENERATE] Node # 35 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node # 35 killed by upper bounds or load constraints
+[GENERATE] Node # 36 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node # 36 killed by upper bounds or load constraints
+[GENERATE] Node # 37 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 37 picked for processing (State: deliver)
+[GENERATE] Node # 38 | f=26 (bc=22) | Routed to P2
+>>> [ACTIVE] Node # 38 picked for processing (State: unload)
+[GENERATE] Node # 39 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node # 39 killed by upper bounds or load constraints
+[GENERATE] Node # 40 | f=23 (bc=22) | Loaded: RG gold
+XXX [PRUNED] Node # 40 killed by upper bounds or load constraints
+[GENERATE] Node # 41 | f=23 (bc=22) | Loaded: Rose white
+>>> [ACTIVE] Node # 41 picked for processing (State: load)
+[GENERATE] Node # 42 | f=23 (bc=22) | Loaded: Tulip red
+XXX [PRUNED] Node # 42 killed by upper bounds or load constraints
+[GENERATE] Node # 43 | f=23 (bc=22) | Loaded: RG light pink
+XXX [PRUNED] Node # 43 killed by upper bounds or load constraints
+[GENERATE] Node # 44 | f=23 (bc=22) | Loaded: Orchid pink
+XXX [PRUNED] Node # 44 killed by upper bounds or load constraints
+[GENERATE] Node # 45 | f=23 (bc=22) | Loaded: Orchid purple
+XXX [PRUNED] Node # 45 killed by upper bounds or load constraints
+[GENERATE] Node # 46 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 46 picked for processing (State: deliver)
+[GENERATE] Node # 47 | f=27 (bc=22) | Routed to P1
+>>> [ACTIVE] Node # 47 picked for processing (State: unload)
+[GENERATE] Node # 48 | f=23 (bc=22) | Loaded: Tulip yellow
+XXX [PRUNED] Node # 48 killed by upper bounds or load constraints
+[GENERATE] Node # 49 | f=23 (bc=22) | Loaded: RG gold
+XXX [PRUNED] Node # 49 killed by upper bounds or load constraints
+[GENERATE] Node # 50 | f=23 (bc=22) | Loaded: RG light pink
+>>> [ACTIVE] Node # 50 picked for processing (State: load)
+[GENERATE] Node # 51 | f=23 (bc=22) | Loaded: RG light pink
+>>> [ACTIVE] Node # 51 picked for processing (State: load)
+[GENERATE] Node # 52 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 52 picked for processing (State: deliver)
+[GENERATE] Node # 53 | f=26 (bc=22) | Routed to P4
+>>> [ACTIVE] Node # 53 picked for processing (State: unload)
+[GENERATE] Node # 54 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 54 picked for processing (State: deliver)
+[GENERATE] Node # 55 | f=26 (bc=22) | Routed to P4
+>>> [ACTIVE] Node # 55 picked for processing (State: unload)
+[GENERATE] Node # 56 | f=23 (bc=22) | Loaded: Rose red
+>>> [ACTIVE] Node # 56 picked for processing (State: load)
+[GENERATE] Node # 57 | f=23 (bc=22) | Loaded: Tulip red
+>>> [ACTIVE] Node # 57 picked for processing (State: load)
+[GENERATE] Node # 58 | f=17 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node # 58 picked for processing (State: load)
+[GENERATE] Node # 59 | f=17 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node # 59 picked for processing (State: load)
+[GENERATE] Node # 60 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 60 picked for processing (State: deliver)
+[GENERATE] Node # 61 | f=21 (bc=16) | Routed to P1
+>>> [ACTIVE] Node # 61 picked for processing (State: unload)
+[GENERATE] Node # 62 | f=20 (bc=16) | Routed to P2
+>>> [ACTIVE] Node # 62 picked for processing (State: unload)
+[GENERATE] Node # 63 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node # 63 killed by upper bounds or load constraints
+[GENERATE] Node # 64 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node # 64 killed by upper bounds or load constraints
+[GENERATE] Node # 65 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node # 65 killed by upper bounds or load constraints
+[GENERATE] Node # 66 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 66 picked for processing (State: deliver)
+[GENERATE] Node # 67 | f=21 (bc=16) | Routed to P1
+>>> [ACTIVE] Node # 67 picked for processing (State: unload)
+[GENERATE] Node # 68 | f=20 (bc=16) | Routed to P2
+>>> [ACTIVE] Node # 68 picked for processing (State: unload)
+[GENERATE] Node # 69 | f=17 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node # 69 killed by upper bounds or load constraints
+[GENERATE] Node # 70 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node # 70 killed by upper bounds or load constraints
+[GENERATE] Node # 71 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node # 71 killed by upper bounds or load constraints
+[GENERATE] Node # 72 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node # 72 killed by upper bounds or load constraints
+[GENERATE] Node # 73 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node # 73 killed by upper bounds or load constraints
+[GENERATE] Node # 74 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 74 picked for processing (State: deliver)
+[GENERATE] Node # 75 | f=27 (bc=22) | Routed to P1
+>>> [ACTIVE] Node # 75 picked for processing (State: unload)
+[GENERATE] Node # 76 | f=26 (bc=22) | Routed to P2
+>>> [ACTIVE] Node # 76 picked for processing (State: unload)
+[GENERATE] Node # 77 | f=17 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node # 77 killed by upper bounds or load constraints
+[GENERATE] Node # 78 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node # 78 killed by upper bounds or load constraints
+[GENERATE] Node # 79 | f=23 (bc=22) | Loaded: Rose white
+>>> [ACTIVE] Node # 79 picked for processing (State: load)
+[GENERATE] Node # 80 | f=17 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node # 80 killed by upper bounds or load constraints
+[GENERATE] Node # 81 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node # 81 killed by upper bounds or load constraints
+[GENERATE] Node # 82 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node # 82 killed by upper bounds or load constraints
+[GENERATE] Node # 83 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node # 83 killed by upper bounds or load constraints
+[GENERATE] Node # 84 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 84 picked for processing (State: deliver)
+[GENERATE] Node # 85 | f=27 (bc=22) | Routed to P1
+>>> [ACTIVE] Node # 85 picked for processing (State: unload)
+[GENERATE] Node # 86 | f=17 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node # 86 killed by upper bounds or load constraints
+[GENERATE] Node # 87 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node # 87 killed by upper bounds or load constraints
+[GENERATE] Node # 88 | f=23 (bc=22) | Loaded: RG light pink
+XXX [PRUNED] Node # 88 killed by upper bounds or load constraints
+[GENERATE] Node # 89 | f=23 (bc=22) | Loaded: Rose red
+>>> [ACTIVE] Node # 89 picked for processing (State: load)
+[GENERATE] Node # 90 | f=17 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node # 90 picked for processing (State: load)
+[GENERATE] Node # 91 | f=17 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node # 91 picked for processing (State: load)
+[GENERATE] Node # 92 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 92 picked for processing (State: deliver)
+[GENERATE] Node # 93 | f=21 (bc=16) | Routed to P1
+>>> [ACTIVE] Node # 93 picked for processing (State: unload)
+[GENERATE] Node # 94 | f=20 (bc=16) | Routed to P2
+>>> [ACTIVE] Node # 94 picked for processing (State: unload)
+[GENERATE] Node # 95 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node # 95 killed by upper bounds or load constraints
+[GENERATE] Node # 96 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node # 96 killed by upper bounds or load constraints
+[GENERATE] Node # 97 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node # 97 killed by upper bounds or load constraints
+[GENERATE] Node # 98 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node # 98 picked for processing (State: deliver)
+[GENERATE] Node # 99 | f=21 (bc=16) | Routed to P1
+>>> [ACTIVE] Node # 99 picked for processing (State: unload)
+[GENERATE] Node #100 | f=20 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #100 picked for processing (State: unload)
+[GENERATE] Node #101 | f=17 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #101 killed by upper bounds or load constraints
+[GENERATE] Node #102 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node #102 killed by upper bounds or load constraints
+[GENERATE] Node #103 | f=17 (bc=16) | Loaded: Rose white
+>>> [ACTIVE] Node #103 picked for processing (State: load)
+[GENERATE] Node #104 | f=17 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node #104 killed by upper bounds or load constraints
+[GENERATE] Node #105 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #105 killed by upper bounds or load constraints
+[GENERATE] Node #106 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #106 killed by upper bounds or load constraints
+[GENERATE] Node #107 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #107 killed by upper bounds or load constraints
+[GENERATE] Node #108 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #108 picked for processing (State: deliver)
+[GENERATE] Node #109 | f=21 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #109 picked for processing (State: unload)
+[GENERATE] Node #110 | f=17 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #110 killed by upper bounds or load constraints
+[GENERATE] Node #111 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node #111 killed by upper bounds or load constraints
+[GENERATE] Node #112 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #112 killed by upper bounds or load constraints
+[GENERATE] Node #113 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #113 killed by upper bounds or load constraints
+[GENERATE] Node #114 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #114 killed by upper bounds or load constraints
+[GENERATE] Node #115 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #115 picked for processing (State: deliver)
+[GENERATE] Node #116 | f=27 (bc=22) | Routed to P1
+>>> [ACTIVE] Node #116 picked for processing (State: unload)
+[GENERATE] Node #117 | f=17 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #117 killed by upper bounds or load constraints
+[GENERATE] Node #118 | f=17 (bc=16) | Loaded: Rose pink
+>>> [ACTIVE] Node #118 picked for processing (State: load)
+[GENERATE] Node #119 | f=17 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node #119 killed by upper bounds or load constraints
+[GENERATE] Node #120 | f=17 (bc=16) | Loaded: Rose white
+>>> [ACTIVE] Node #120 picked for processing (State: load)
+[GENERATE] Node #121 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #121 picked for processing (State: deliver)
+[GENERATE] Node #122 | f=21 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #122 picked for processing (State: unload)
+[GENERATE] Node #123 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #123 killed by upper bounds or load constraints
+[GENERATE] Node #124 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #124 killed by upper bounds or load constraints
+[GENERATE] Node #125 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #125 killed by upper bounds or load constraints
+[GENERATE] Node #126 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #126 picked for processing (State: deliver)
+[GENERATE] Node #127 | f=21 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #127 picked for processing (State: unload)
+[GENERATE] Node #128 | f=17 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #128 killed by upper bounds or load constraints
+[GENERATE] Node #129 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node #129 killed by upper bounds or load constraints
+[GENERATE] Node #130 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node #130 killed by upper bounds or load constraints
+[GENERATE] Node #131 | f=23 (bc=22) | Loaded: Orchid pink
+XXX [PRUNED] Node #131 killed by upper bounds or load constraints
+[GENERATE] Node #132 | f=23 (bc=22) | Loaded: Orchid purple
+XXX [PRUNED] Node #132 killed by upper bounds or load constraints
+[GENERATE] Node #133 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #133 picked for processing (State: deliver)
+[GENERATE] Node #134 | f=27 (bc=22) | Routed to P1
+>>> [ACTIVE] Node #134 picked for processing (State: unload)
+[GENERATE] Node #135 | f=23 (bc=22) | Loaded: Tulip yellow
+XXX [PRUNED] Node #135 killed by upper bounds or load constraints
+[GENERATE] Node #136 | f=23 (bc=22) | Loaded: Rose pink
+>>> [ACTIVE] Node #136 picked for processing (State: load)
+[GENERATE] Node #137 | f=17 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node #137 killed by upper bounds or load constraints
+[GENERATE] Node #138 | f=17 (bc=16) | Loaded: Rose white
+>>> [ACTIVE] Node #138 picked for processing (State: load)
+[GENERATE] Node #139 | f=17 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node #139 killed by upper bounds or load constraints
+[GENERATE] Node #140 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #140 killed by upper bounds or load constraints
+[GENERATE] Node #141 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #141 killed by upper bounds or load constraints
+[GENERATE] Node #142 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #142 killed by upper bounds or load constraints
+[GENERATE] Node #143 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #143 picked for processing (State: deliver)
+[GENERATE] Node #144 | f=21 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #144 picked for processing (State: unload)
+[GENERATE] Node #145 | f=17 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #145 killed by upper bounds or load constraints
+[GENERATE] Node #146 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node #146 killed by upper bounds or load constraints
+[GENERATE] Node #147 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #147 killed by upper bounds or load constraints
+[GENERATE] Node #148 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #148 killed by upper bounds or load constraints
+[GENERATE] Node #149 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #149 killed by upper bounds or load constraints
+[GENERATE] Node #150 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #150 picked for processing (State: deliver)
+[GENERATE] Node #151 | f=27 (bc=22) | Routed to P1
+>>> [ACTIVE] Node #151 picked for processing (State: unload)
+[GENERATE] Node #152 | f=17 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #152 killed by upper bounds or load constraints
+[GENERATE] Node #153 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node #153 killed by upper bounds or load constraints
+[GENERATE] Node #154 | f=23 (bc=22) | Loaded: RG gold
+XXX [PRUNED] Node #154 killed by upper bounds or load constraints
+[GENERATE] Node #155 | f=23 (bc=22) | Loaded: Orchid pink
+>>> [ACTIVE] Node #155 picked for processing (State: load)
+[GENERATE] Node #156 | f=23 (bc=22) | Loaded: RG light pink
+XXX [PRUNED] Node #156 killed by upper bounds or load constraints
+[GENERATE] Node #157 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #157 picked for processing (State: deliver)
+[GENERATE] Node #158 | f=28 (bc=22) | Routed to P3
+XXX [PRUNED] Node #158 killed by upper bounds or load constraints
+[GENERATE] Node #159 | f=23 (bc=22) | Loaded: RG gold
+XXX [PRUNED] Node #159 killed by upper bounds or load constraints
+[GENERATE] Node #160 | f=23 (bc=22) | Loaded: Orchid purple
+>>> [ACTIVE] Node #160 picked for processing (State: load)
+[GENERATE] Node #161 | f=23 (bc=22) | Loaded: RG light pink
+XXX [PRUNED] Node #161 killed by upper bounds or load constraints
+[GENERATE] Node #162 | f=23 (bc=22) | Loaded: Orchid pink
+>>> [ACTIVE] Node #162 picked for processing (State: load)
+[GENERATE] Node #163 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #163 killed by upper bounds or load constraints
+[GENERATE] Node #164 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #164 picked for processing (State: deliver)
+[GENERATE] Node #165 | f=28 (bc=22) | Routed to P3
+XXX [PRUNED] Node #165 killed by upper bounds or load constraints
+[GENERATE] Node #166 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node #166 killed by upper bounds or load constraints
+[GENERATE] Node #167 | f=23 (bc=22) | Loaded: Orchid purple
+>>> [ACTIVE] Node #167 picked for processing (State: load)
+[GENERATE] Node #168 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #168 killed by upper bounds or load constraints
+[GENERATE] Node #169 | f=17 (bc=16) | Loaded: Orchid pink
+>>> [ACTIVE] Node #169 picked for processing (State: load)
+[GENERATE] Node #170 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #170 killed by upper bounds or load constraints
+[GENERATE] Node #171 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #171 picked for processing (State: deliver)
+[GENERATE] Node #172 | f=22 (bc=16) | Routed to P3
+>>> [ACTIVE] Node #172 picked for processing (State: unload)
+[GENERATE] Node #173 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node #173 killed by upper bounds or load constraints
+[GENERATE] Node #174 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #174 picked for processing (State: deliver)
+[GENERATE] Node #175 | f=28 (bc=22) | Routed to P3
+XXX [PRUNED] Node #175 killed by upper bounds or load constraints
+[GENERATE] Node #176 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node #176 killed by upper bounds or load constraints
+[GENERATE] Node #177 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #177 picked for processing (State: deliver)
+[GENERATE] Node #178 | f=28 (bc=22) | Routed to P3
+XXX [PRUNED] Node #178 killed by upper bounds or load constraints
+[GENERATE] Node #179 | f=23 (bc=22) | Loaded: RG gold
+XXX [PRUNED] Node #179 killed by upper bounds or load constraints
+[GENERATE] Node #180 | f=23 (bc=22) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #180 picked for processing (State: load)
+[GENERATE] Node #181 | f=23 (bc=22) | Loaded: RG light pink
+XXX [PRUNED] Node #181 killed by upper bounds or load constraints
+[GENERATE] Node #182 | f=23 (bc=22) | Loaded: Orchid pink
+XXX [PRUNED] Node #182 killed by upper bounds or load constraints
+[GENERATE] Node #183 | f=23 (bc=22) | Loaded: Orchid purple
+XXX [PRUNED] Node #183 killed by upper bounds or load constraints
+[GENERATE] Node #184 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #184 picked for processing (State: deliver)
+[GENERATE] Node #185 | f=26 (bc=22) | Routed to P2
+>>> [ACTIVE] Node #185 picked for processing (State: unload)
+[GENERATE] Node #186 | f=23 (bc=22) | Loaded: RG gold
+XXX [PRUNED] Node #186 killed by upper bounds or load constraints
+[GENERATE] Node #187 | f=23 (bc=22) | Loaded: Rose pink
+>>> [ACTIVE] Node #187 picked for processing (State: load)
+[GENERATE] Node #188 | f=23 (bc=22) | Loaded: Tulip red
+XXX [PRUNED] Node #188 killed by upper bounds or load constraints
+[GENERATE] Node #189 | f=23 (bc=22) | Loaded: Rose white
+>>> [ACTIVE] Node #189 picked for processing (State: load)
+[GENERATE] Node #190 | f=17 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node #190 killed by upper bounds or load constraints
+[GENERATE] Node #191 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #191 killed by upper bounds or load constraints
+[GENERATE] Node #192 | f=17 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #192 killed by upper bounds or load constraints
+[GENERATE] Node #193 | f=17 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #193 killed by upper bounds or load constraints
+[GENERATE] Node #194 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #194 picked for processing (State: deliver)
+[GENERATE] Node #195 | f=27 (bc=22) | Routed to P1
+>>> [ACTIVE] Node #195 picked for processing (State: unload)
+[GENERATE] Node #196 | f=17 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #196 killed by upper bounds or load constraints
+[GENERATE] Node #197 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node #197 killed by upper bounds or load constraints
+[GENERATE] Node #198 | f=23 (bc=22) | Loaded: RG light pink
+XXX [PRUNED] Node #198 killed by upper bounds or load constraints
+[GENERATE] Node #199 | f=23 (bc=22) | Loaded: Orchid pink
+>>> [ACTIVE] Node #199 picked for processing (State: load)
+[GENERATE] Node #200 | f=17 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #200 killed by upper bounds or load constraints
+[GENERATE] Node #201 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #201 picked for processing (State: deliver)
+[GENERATE] Node #202 | f=27 (bc=22) | Routed to P1
+>>> [ACTIVE] Node #202 picked for processing (State: unload)
+[GENERATE] Node #203 | f=28 (bc=22) | Routed to P3
+XXX [PRUNED] Node #203 killed by upper bounds or load constraints
+[GENERATE] Node #204 | f=17 (bc=16) | Loaded: RG gold
+XXX [PRUNED] Node #204 killed by upper bounds or load constraints
+[GENERATE] Node #205 | f=23 (bc=22) | Loaded: Orchid purple
+XXX [PRUNED] Node #205 killed by upper bounds or load constraints
+[GENERATE] Node #206 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #206 picked for processing (State: deliver)
+[GENERATE] Node #207 | f=27 (bc=22) | Routed to P1
+>>> [ACTIVE] Node #207 picked for processing (State: unload)
+[GENERATE] Node #208 | f=23 (bc=22) | Loaded: Tulip yellow
+XXX [PRUNED] Node #208 killed by upper bounds or load constraints
+[GENERATE] Node #209 | f=23 (bc=22) | Loaded: RG gold
+XXX [PRUNED] Node #209 killed by upper bounds or load constraints
+[GENERATE] Node #210 | f=23 (bc=22) | Loaded: RG gold
+>>> [ACTIVE] Node #210 picked for processing (State: load)
+[GENERATE] Node #211 | f=23 (bc=22) | Loaded: RG light pink
+>>> [ACTIVE] Node #211 picked for processing (State: load)
+[GENERATE] Node #212 | f=17 (bc=16) | Loaded: RG light pink
+>>> [ACTIVE] Node #212 picked for processing (State: load)
+[GENERATE] Node #213 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #213 picked for processing (State: deliver)
+[GENERATE] Node #214 | f=20 (bc=16) | Routed to P4
+>>> [ACTIVE] Node #214 picked for processing (State: unload)
+[GENERATE] Node #215 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #215 picked for processing (State: deliver)
+[GENERATE] Node #216 | f=26 (bc=22) | Routed to P4
+>>> [ACTIVE] Node #216 picked for processing (State: unload)
+[GENERATE] Node #217 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #217 picked for processing (State: deliver)
+[GENERATE] Node #218 | f=26 (bc=22) | Routed to P4
+>>> [ACTIVE] Node #218 picked for processing (State: unload)
+[GENERATE] Node #219 | f=23 (bc=22) | Loaded: RG gold
+>>> [ACTIVE] Node #219 picked for processing (State: load)
+[GENERATE] Node #220 | f=17 (bc=16) | Loaded: RG light pink
+>>> [ACTIVE] Node #220 picked for processing (State: load)
+[GENERATE] Node #221 | f=17 (bc=16) | Loaded: RG light pink
+>>> [ACTIVE] Node #221 picked for processing (State: load)
+[GENERATE] Node #222 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #222 picked for processing (State: deliver)
+[GENERATE] Node #223 | f=20 (bc=16) | Routed to P4
+>>> [ACTIVE] Node #223 picked for processing (State: unload)
+[GENERATE] Node #224 | f=18 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #224 picked for processing (State: deliver)
+[GENERATE] Node #225 | f=20 (bc=16) | Routed to P4
+>>> [ACTIVE] Node #225 picked for processing (State: unload)
+[GENERATE] Node #226 | f=24 (bc=22) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #226 picked for processing (State: deliver)
+[GENERATE] Node #227 | f=26 (bc=22) | Routed to P4
+>>> [ACTIVE] Node #227 picked for processing (State: unload)
+[GENERATE] Node #228 | f=27 (bc=22) | Unloaded matching cargo
+>>> [ACTIVE] Node #228 picked for processing (State: collect)
+[GENERATE] Node #229 | f=29 (bc=22) | Traveled to warehouse
+XXX [PRUNED] Node #229 killed by upper bounds or load constraints
+[GENERATE] Node #230 | f=21 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #230 picked for processing (State: collect)
+[GENERATE] Node #231 | f=23 (bc=16) | Traveled to warehouse
+>>> [ACTIVE] Node #231 picked for processing (State: load)
+[GENERATE] Node #232 | f=23 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node #232 picked for processing (State: load)
+[GENERATE] Node #233 | f=23 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node #233 picked for processing (State: load)
+[GENERATE] Node #234 | f=23 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node #234 picked for processing (State: load)
+[GENERATE] Node #235 | f=17 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #235 killed by upper bounds or load constraints
+[GENERATE] Node #236 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #236 killed by upper bounds or load constraints
+[GENERATE] Node #237 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #237 killed by upper bounds or load constraints
+[GENERATE] Node #238 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #238 picked for processing (State: deliver)
+[GENERATE] Node #239 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #239 picked for processing (State: unload)
+[GENERATE] Node #240 | f=17 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #240 picked for processing (State: load)
+[GENERATE] Node #241 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #241 picked for processing (State: deliver)
+[GENERATE] Node #242 | f=20 (bc=10) | Routed to P2
+>>> [ACTIVE] Node #242 picked for processing (State: unload)
+[GENERATE] Node #243 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #243 killed by upper bounds or load constraints
+[GENERATE] Node #244 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #244 killed by upper bounds or load constraints
+[GENERATE] Node #245 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #245 killed by upper bounds or load constraints
+[GENERATE] Node #246 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #246 picked for processing (State: deliver)
+[GENERATE] Node #247 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #247 picked for processing (State: unload)
+[GENERATE] Node #248 | f=23 (bc=16) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #248 picked for processing (State: load)
+[GENERATE] Node #249 | f=17 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #249 killed by upper bounds or load constraints
+[GENERATE] Node #250 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #250 killed by upper bounds or load constraints
+[GENERATE] Node #251 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #251 killed by upper bounds or load constraints
+[GENERATE] Node #252 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #252 picked for processing (State: deliver)
+[GENERATE] Node #253 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #253 picked for processing (State: unload)
+[GENERATE] Node #254 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #254 killed by upper bounds or load constraints
+[GENERATE] Node #255 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #255 killed by upper bounds or load constraints
+[GENERATE] Node #256 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #256 killed by upper bounds or load constraints
+[GENERATE] Node #257 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #257 picked for processing (State: deliver)
+[GENERATE] Node #258 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #258 picked for processing (State: unload)
+[GENERATE] Node #259 | f=23 (bc=16) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #259 picked for processing (State: load)
+[GENERATE] Node #260 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #260 killed by upper bounds or load constraints
+[GENERATE] Node #261 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #261 killed by upper bounds or load constraints
+[GENERATE] Node #262 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #262 killed by upper bounds or load constraints
+[GENERATE] Node #263 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #263 picked for processing (State: deliver)
+[GENERATE] Node #264 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #264 picked for processing (State: unload)
+[GENERATE] Node #265 | f=23 (bc=16) | Loaded: Rose white
+>>> [ACTIVE] Node #265 picked for processing (State: load)
+[GENERATE] Node #266 | f=23 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node #266 killed by upper bounds or load constraints
+[GENERATE] Node #267 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #267 killed by upper bounds or load constraints
+[GENERATE] Node #268 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #268 killed by upper bounds or load constraints
+[GENERATE] Node #269 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #269 killed by upper bounds or load constraints
+[GENERATE] Node #270 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #270 picked for processing (State: deliver)
+[GENERATE] Node #271 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #271 picked for processing (State: unload)
+[GENERATE] Node #272 | f=23 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #272 killed by upper bounds or load constraints
+[GENERATE] Node #273 | f=23 (bc=16) | Loaded: RG light pink
+>>> [ACTIVE] Node #273 picked for processing (State: load)
+[GENERATE] Node #274 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #274 picked for processing (State: deliver)
+[GENERATE] Node #275 | f=26 (bc=16) | Routed to P4
+>>> [ACTIVE] Node #275 picked for processing (State: unload)
+[GENERATE] Node #276 | f=23 (bc=16) | Loaded: Rose red
+>>> [ACTIVE] Node #276 picked for processing (State: load)
+[GENERATE] Node #277 | f=23 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node #277 picked for processing (State: load)
+[GENERATE] Node #278 | f=23 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node #278 picked for processing (State: load)
+[GENERATE] Node #279 | f=17 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #279 picked for processing (State: load)
+[GENERATE] Node #280 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #280 picked for processing (State: deliver)
+[GENERATE] Node #281 | f=21 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #281 picked for processing (State: unload)
+[GENERATE] Node #282 | f=20 (bc=10) | Routed to P2
+>>> [ACTIVE] Node #282 picked for processing (State: unload)
+[GENERATE] Node #283 | f=17 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #283 killed by upper bounds or load constraints
+[GENERATE] Node #284 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #284 killed by upper bounds or load constraints
+[GENERATE] Node #285 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #285 killed by upper bounds or load constraints
+[GENERATE] Node #286 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #286 picked for processing (State: deliver)
+[GENERATE] Node #287 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #287 picked for processing (State: unload)
+[GENERATE] Node #288 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #288 picked for processing (State: unload)
+[GENERATE] Node #289 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #289 killed by upper bounds or load constraints
+[GENERATE] Node #290 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #290 killed by upper bounds or load constraints
+[GENERATE] Node #291 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #291 killed by upper bounds or load constraints
+[GENERATE] Node #292 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #292 killed by upper bounds or load constraints
+[GENERATE] Node #293 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #293 picked for processing (State: deliver)
+[GENERATE] Node #294 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #294 picked for processing (State: unload)
+[GENERATE] Node #295 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #295 picked for processing (State: unload)
+[GENERATE] Node #296 | f=23 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #296 killed by upper bounds or load constraints
+[GENERATE] Node #297 | f=23 (bc=16) | Loaded: Rose white
+>>> [ACTIVE] Node #297 picked for processing (State: load)
+[GENERATE] Node #298 | f=23 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node #298 killed by upper bounds or load constraints
+[GENERATE] Node #299 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #299 killed by upper bounds or load constraints
+[GENERATE] Node #300 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #300 killed by upper bounds or load constraints
+[GENERATE] Node #301 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #301 killed by upper bounds or load constraints
+[GENERATE] Node #302 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #302 picked for processing (State: deliver)
+[GENERATE] Node #303 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #303 picked for processing (State: unload)
+[GENERATE] Node #304 | f=23 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #304 killed by upper bounds or load constraints
+[GENERATE] Node #305 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #305 killed by upper bounds or load constraints
+[GENERATE] Node #306 | f=23 (bc=16) | Loaded: Rose red
+>>> [ACTIVE] Node #306 picked for processing (State: load)
+[GENERATE] Node #307 | f=23 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node #307 picked for processing (State: load)
+[GENERATE] Node #308 | f=17 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #308 picked for processing (State: load)
+[GENERATE] Node #309 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #309 picked for processing (State: deliver)
+[GENERATE] Node #310 | f=21 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #310 picked for processing (State: unload)
+[GENERATE] Node #311 | f=20 (bc=10) | Routed to P2
+>>> [ACTIVE] Node #311 picked for processing (State: unload)
+[GENERATE] Node #312 | f=17 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #312 killed by upper bounds or load constraints
+[GENERATE] Node #313 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #313 killed by upper bounds or load constraints
+[GENERATE] Node #314 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #314 killed by upper bounds or load constraints
+[GENERATE] Node #315 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #315 picked for processing (State: deliver)
+[GENERATE] Node #316 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #316 picked for processing (State: unload)
+[GENERATE] Node #317 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #317 picked for processing (State: unload)
+[GENERATE] Node #318 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #318 killed by upper bounds or load constraints
+[GENERATE] Node #319 | f=23 (bc=16) | Loaded: Rose white
+>>> [ACTIVE] Node #319 picked for processing (State: load)
+[GENERATE] Node #320 | f=17 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #320 killed by upper bounds or load constraints
+[GENERATE] Node #321 | f=17 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #321 killed by upper bounds or load constraints
+[GENERATE] Node #322 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #322 killed by upper bounds or load constraints
+[GENERATE] Node #323 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #323 killed by upper bounds or load constraints
+[GENERATE] Node #324 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #324 picked for processing (State: deliver)
+[GENERATE] Node #325 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #325 picked for processing (State: unload)
+[GENERATE] Node #326 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #326 killed by upper bounds or load constraints
+[GENERATE] Node #327 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #327 killed by upper bounds or load constraints
+[GENERATE] Node #328 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #328 killed by upper bounds or load constraints
+[GENERATE] Node #329 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #329 killed by upper bounds or load constraints
+[GENERATE] Node #330 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #330 picked for processing (State: deliver)
+[GENERATE] Node #331 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #331 picked for processing (State: unload)
+[GENERATE] Node #332 | f=23 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #332 killed by upper bounds or load constraints
+[GENERATE] Node #333 | f=23 (bc=16) | Loaded: Rose pink
+>>> [ACTIVE] Node #333 picked for processing (State: load)
+[GENERATE] Node #334 | f=17 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #334 killed by upper bounds or load constraints
+[GENERATE] Node #335 | f=17 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #335 picked for processing (State: load)
+[GENERATE] Node #336 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #336 picked for processing (State: deliver)
+[GENERATE] Node #337 | f=21 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #337 picked for processing (State: unload)
+[GENERATE] Node #338 | f=17 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #338 killed by upper bounds or load constraints
+[GENERATE] Node #339 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #339 killed by upper bounds or load constraints
+[GENERATE] Node #340 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #340 killed by upper bounds or load constraints
+[GENERATE] Node #341 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #341 picked for processing (State: deliver)
+[GENERATE] Node #342 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #342 picked for processing (State: unload)
+[GENERATE] Node #343 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #343 killed by upper bounds or load constraints
+[GENERATE] Node #344 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #344 killed by upper bounds or load constraints
+[GENERATE] Node #345 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #345 killed by upper bounds or load constraints
+[GENERATE] Node #346 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #346 picked for processing (State: deliver)
+[GENERATE] Node #347 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #347 picked for processing (State: unload)
+[GENERATE] Node #348 | f=23 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #348 killed by upper bounds or load constraints
+[GENERATE] Node #349 | f=23 (bc=16) | Loaded: Rose pink
+>>> [ACTIVE] Node #349 picked for processing (State: load)
+[GENERATE] Node #350 | f=23 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node #350 killed by upper bounds or load constraints
+[GENERATE] Node #351 | f=23 (bc=16) | Loaded: Rose white
+>>> [ACTIVE] Node #351 picked for processing (State: load)
+[GENERATE] Node #352 | f=17 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #352 killed by upper bounds or load constraints
+[GENERATE] Node #353 | f=17 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #353 killed by upper bounds or load constraints
+[GENERATE] Node #354 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #354 killed by upper bounds or load constraints
+[GENERATE] Node #355 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #355 killed by upper bounds or load constraints
+[GENERATE] Node #356 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #356 picked for processing (State: deliver)
+[GENERATE] Node #357 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #357 picked for processing (State: unload)
+[GENERATE] Node #358 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #358 killed by upper bounds or load constraints
+[GENERATE] Node #359 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #359 killed by upper bounds or load constraints
+[GENERATE] Node #360 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #360 killed by upper bounds or load constraints
+[GENERATE] Node #361 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #361 killed by upper bounds or load constraints
+[GENERATE] Node #362 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #362 picked for processing (State: deliver)
+[GENERATE] Node #363 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #363 picked for processing (State: unload)
+[GENERATE] Node #364 | f=23 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #364 killed by upper bounds or load constraints
+[GENERATE] Node #365 | f=23 (bc=16) | Loaded: Orchid pink
+>>> [ACTIVE] Node #365 picked for processing (State: load)
+[GENERATE] Node #366 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #366 killed by upper bounds or load constraints
+[GENERATE] Node #367 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #367 picked for processing (State: deliver)
+[GENERATE] Node #368 | f=28 (bc=16) | Routed to P3
+XXX [PRUNED] Node #368 killed by upper bounds or load constraints
+[GENERATE] Node #369 | f=23 (bc=16) | Loaded: Orchid purple
+>>> [ACTIVE] Node #369 picked for processing (State: load)
+[GENERATE] Node #370 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #370 killed by upper bounds or load constraints
+[GENERATE] Node #371 | f=23 (bc=16) | Loaded: Orchid pink
+>>> [ACTIVE] Node #371 picked for processing (State: load)
+[GENERATE] Node #372 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #372 killed by upper bounds or load constraints
+[GENERATE] Node #373 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #373 picked for processing (State: deliver)
+[GENERATE] Node #374 | f=28 (bc=16) | Routed to P3
+XXX [PRUNED] Node #374 killed by upper bounds or load constraints
+[GENERATE] Node #375 | f=23 (bc=16) | Loaded: Orchid purple
+>>> [ACTIVE] Node #375 picked for processing (State: load)
+[GENERATE] Node #376 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #376 killed by upper bounds or load constraints
+[GENERATE] Node #377 | f=23 (bc=16) | Loaded: Orchid pink
+>>> [ACTIVE] Node #377 picked for processing (State: load)
+[GENERATE] Node #378 | f=17 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #378 killed by upper bounds or load constraints
+[GENERATE] Node #379 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #379 picked for processing (State: deliver)
+[GENERATE] Node #380 | f=28 (bc=16) | Routed to P3
+XXX [PRUNED] Node #380 killed by upper bounds or load constraints
+[GENERATE] Node #381 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #381 picked for processing (State: deliver)
+[GENERATE] Node #382 | f=28 (bc=16) | Routed to P3
+XXX [PRUNED] Node #382 killed by upper bounds or load constraints
+[GENERATE] Node #383 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #383 picked for processing (State: deliver)
+[GENERATE] Node #384 | f=28 (bc=16) | Routed to P3
+XXX [PRUNED] Node #384 killed by upper bounds or load constraints
+[GENERATE] Node #385 | f=23 (bc=16) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #385 picked for processing (State: load)
+[GENERATE] Node #386 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #386 killed by upper bounds or load constraints
+[GENERATE] Node #387 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #387 killed by upper bounds or load constraints
+[GENERATE] Node #388 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #388 killed by upper bounds or load constraints
+[GENERATE] Node #389 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #389 picked for processing (State: deliver)
+[GENERATE] Node #390 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #390 picked for processing (State: unload)
+[GENERATE] Node #391 | f=23 (bc=16) | Loaded: Rose pink
+>>> [ACTIVE] Node #391 picked for processing (State: load)
+[GENERATE] Node #392 | f=23 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node #392 killed by upper bounds or load constraints
+[GENERATE] Node #393 | f=23 (bc=16) | Loaded: Rose white
+>>> [ACTIVE] Node #393 picked for processing (State: load)
+[GENERATE] Node #394 | f=23 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node #394 killed by upper bounds or load constraints
+[GENERATE] Node #395 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #395 killed by upper bounds or load constraints
+[GENERATE] Node #396 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #396 killed by upper bounds or load constraints
+[GENERATE] Node #397 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #397 killed by upper bounds or load constraints
+[GENERATE] Node #398 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #398 picked for processing (State: deliver)
+[GENERATE] Node #399 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #399 picked for processing (State: unload)
+[GENERATE] Node #400 | f=23 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #400 killed by upper bounds or load constraints
+[GENERATE] Node #401 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #401 killed by upper bounds or load constraints
+[GENERATE] Node #402 | f=23 (bc=16) | Loaded: Orchid pink
+>>> [ACTIVE] Node #402 picked for processing (State: load)
+[GENERATE] Node #403 | f=23 (bc=16) | Loaded: RG light pink
+XXX [PRUNED] Node #403 killed by upper bounds or load constraints
+[GENERATE] Node #404 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #404 picked for processing (State: deliver)
+[GENERATE] Node #405 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #405 picked for processing (State: unload)
+[GENERATE] Node #406 | f=28 (bc=16) | Routed to P3
+XXX [PRUNED] Node #406 killed by upper bounds or load constraints
+[GENERATE] Node #407 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #407 killed by upper bounds or load constraints
+[GENERATE] Node #408 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #408 picked for processing (State: deliver)
+[GENERATE] Node #409 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #409 picked for processing (State: unload)
+[GENERATE] Node #410 | f=23 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #410 killed by upper bounds or load constraints
+[GENERATE] Node #411 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #411 killed by upper bounds or load constraints
+[GENERATE] Node #412 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #412 killed by upper bounds or load constraints
+[GENERATE] Node #413 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #413 killed by upper bounds or load constraints
+[GENERATE] Node #414 | f=27 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #414 picked for processing (State: collect)
+[GENERATE] Node #415 | f=29 (bc=16) | Traveled to warehouse
+XXX [PRUNED] Node #415 killed by upper bounds or load constraints
+[GENERATE] Node #416 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #416 killed by upper bounds or load constraints
+[GENERATE] Node #417 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #417 killed by upper bounds or load constraints
+[GENERATE] Node #418 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #418 killed by upper bounds or load constraints
+[GENERATE] Node #419 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #419 killed by upper bounds or load constraints
+[GENERATE] Node #420 | f=22 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #420 picked for processing (State: collect)
+[GENERATE] Node #421 | f=25 (bc=10) | Traveled to warehouse
+>>> [ACTIVE] Node #421 picked for processing (State: load)
+[GENERATE] Node #422 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #422 picked for processing (State: load)
+[GENERATE] Node #423 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #423 picked for processing (State: load)
+[GENERATE] Node #424 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #424 picked for processing (State: load)
+[GENERATE] Node #425 | f=19 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #425 killed by upper bounds or load constraints
+[GENERATE] Node #426 | f=19 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #426 killed by upper bounds or load constraints
+[GENERATE] Node #427 | f=19 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #427 killed by upper bounds or load constraints
+[GENERATE] Node #428 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #428 picked for processing (State: deliver)
+[GENERATE] Node #429 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #429 killed by upper bounds or load constraints
+[GENERATE] Node #430 | f=19 (bc= 4) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #430 picked for processing (State: load)
+[GENERATE] Node #431 | f=20 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #431 picked for processing (State: deliver)
+[GENERATE] Node #432 | f=22 (bc= 4) | Routed to P2
+>>> [ACTIVE] Node #432 picked for processing (State: unload)
+[GENERATE] Node #433 | f=25 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #433 killed by upper bounds or load constraints
+[GENERATE] Node #434 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #434 killed by upper bounds or load constraints
+[GENERATE] Node #435 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #435 killed by upper bounds or load constraints
+[GENERATE] Node #436 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #436 picked for processing (State: deliver)
+[GENERATE] Node #437 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #437 killed by upper bounds or load constraints
+[GENERATE] Node #438 | f=25 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #438 picked for processing (State: load)
+[GENERATE] Node #439 | f=19 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #439 killed by upper bounds or load constraints
+[GENERATE] Node #440 | f=19 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #440 killed by upper bounds or load constraints
+[GENERATE] Node #441 | f=19 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #441 killed by upper bounds or load constraints
+[GENERATE] Node #442 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #442 picked for processing (State: deliver)
+[GENERATE] Node #443 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #443 killed by upper bounds or load constraints
+[GENERATE] Node #444 | f=25 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #444 killed by upper bounds or load constraints
+[GENERATE] Node #445 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #445 killed by upper bounds or load constraints
+[GENERATE] Node #446 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #446 killed by upper bounds or load constraints
+[GENERATE] Node #447 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #447 picked for processing (State: deliver)
+[GENERATE] Node #448 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #448 killed by upper bounds or load constraints
+[GENERATE] Node #449 | f=25 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #449 picked for processing (State: load)
+[GENERATE] Node #450 | f=25 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #450 killed by upper bounds or load constraints
+[GENERATE] Node #451 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #451 killed by upper bounds or load constraints
+[GENERATE] Node #452 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #452 killed by upper bounds or load constraints
+[GENERATE] Node #453 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #453 picked for processing (State: deliver)
+[GENERATE] Node #454 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #454 killed by upper bounds or load constraints
+[GENERATE] Node #455 | f=25 (bc=10) | Loaded: RG light pink
+>>> [ACTIVE] Node #455 picked for processing (State: load)
+[GENERATE] Node #456 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #456 picked for processing (State: deliver)
+[GENERATE] Node #457 | f=28 (bc=10) | Routed to P4
+XXX [PRUNED] Node #457 killed by upper bounds or load constraints
+[GENERATE] Node #458 | f=25 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #458 picked for processing (State: load)
+[GENERATE] Node #459 | f=25 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #459 killed by upper bounds or load constraints
+[GENERATE] Node #460 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #460 picked for processing (State: deliver)
+[GENERATE] Node #461 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #461 killed by upper bounds or load constraints
+[GENERATE] Node #462 | f=25 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #462 picked for processing (State: load)
+[GENERATE] Node #463 | f=25 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #463 killed by upper bounds or load constraints
+[GENERATE] Node #464 | f=25 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #464 picked for processing (State: load)
+[GENERATE] Node #465 | f=25 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #465 killed by upper bounds or load constraints
+[GENERATE] Node #466 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #466 picked for processing (State: deliver)
+[GENERATE] Node #467 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #467 killed by upper bounds or load constraints
+[GENERATE] Node #468 | f=25 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #468 picked for processing (State: load)
+[GENERATE] Node #469 | f=25 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #469 killed by upper bounds or load constraints
+[GENERATE] Node #470 | f=25 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #470 picked for processing (State: load)
+[GENERATE] Node #471 | f=19 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #471 killed by upper bounds or load constraints
+[GENERATE] Node #472 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #472 picked for processing (State: deliver)
+[GENERATE] Node #473 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #473 killed by upper bounds or load constraints
+[GENERATE] Node #474 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #474 picked for processing (State: deliver)
+[GENERATE] Node #475 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #475 killed by upper bounds or load constraints
+[GENERATE] Node #476 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #476 picked for processing (State: deliver)
+[GENERATE] Node #477 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #477 killed by upper bounds or load constraints
+[GENERATE] Node #478 | f=25 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #478 picked for processing (State: load)
+[GENERATE] Node #479 | f=25 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #479 killed by upper bounds or load constraints
+[GENERATE] Node #480 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #480 killed by upper bounds or load constraints
+[GENERATE] Node #481 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #481 killed by upper bounds or load constraints
+[GENERATE] Node #482 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #482 picked for processing (State: deliver)
+[GENERATE] Node #483 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #483 killed by upper bounds or load constraints
+[GENERATE] Node #484 | f=23 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #484 picked for processing (State: collect)
+[GENERATE] Node #485 | f=25 (bc= 4) | Traveled to warehouse
+>>> [ACTIVE] Node #485 picked for processing (State: load)
+[GENERATE] Node #486 | f=25 (bc= 4) | Loaded: RG light pink
+>>> [ACTIVE] Node #486 picked for processing (State: load)
+[GENERATE] Node #487 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #487 picked for processing (State: deliver)
+[GENERATE] Node #488 | f=28 (bc= 4) | Routed to P4
+XXX [PRUNED] Node #488 killed by upper bounds or load constraints
+[GENERATE] Node #489 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #489 picked for processing (State: load)
+[GENERATE] Node #490 | f=25 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #490 killed by upper bounds or load constraints
+[GENERATE] Node #491 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #491 picked for processing (State: deliver)
+[GENERATE] Node #492 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #492 killed by upper bounds or load constraints
+[GENERATE] Node #493 | f=25 (bc= 4) | Loaded: Orchid purple
+>>> [ACTIVE] Node #493 picked for processing (State: load)
+[GENERATE] Node #494 | f=25 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #494 killed by upper bounds or load constraints
+[GENERATE] Node #495 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #495 picked for processing (State: load)
+[GENERATE] Node #496 | f=25 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #496 killed by upper bounds or load constraints
+[GENERATE] Node #497 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #497 picked for processing (State: deliver)
+[GENERATE] Node #498 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #498 killed by upper bounds or load constraints
+[GENERATE] Node #499 | f=25 (bc= 4) | Loaded: Orchid purple
+>>> [ACTIVE] Node #499 picked for processing (State: load)
+[GENERATE] Node #500 | f=25 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #500 killed by upper bounds or load constraints
+[GENERATE] Node #501 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #501 picked for processing (State: load)
+[GENERATE] Node #502 | f=23 (bc= 0) | Loaded: RG light pink
+XXX [PRUNED] Node #502 killed by upper bounds or load constraints
+[GENERATE] Node #503 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #503 picked for processing (State: deliver)
+[GENERATE] Node #504 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #504 killed by upper bounds or load constraints
+[GENERATE] Node #505 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #505 picked for processing (State: deliver)
+[GENERATE] Node #506 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #506 killed by upper bounds or load constraints
+[GENERATE] Node #507 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #507 picked for processing (State: deliver)
+[GENERATE] Node #508 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #508 killed by upper bounds or load constraints
+[GENERATE] Node #509 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #509 killed by upper bounds or load constraints
+[GENERATE] Node #510 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #510 killed by upper bounds or load constraints
+[GENERATE] Node #511 | f=27 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #511 picked for processing (State: deliver)
+[GENERATE] Node #512 | f=30 (bc=16) | Routed to P1
+XXX [PRUNED] Node #512 killed by upper bounds or load constraints
+[GENERATE] Node #513 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #513 killed by upper bounds or load constraints
+[GENERATE] Node #514 | f=21 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #514 picked for processing (State: deliver)
+[GENERATE] Node #515 | f=24 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #515 picked for processing (State: unload)
+[GENERATE] Node #516 | f=25 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #516 picked for processing (State: collect)
+[GENERATE] Node #517 | f=28 (bc=10) | Traveled to warehouse
+XXX [PRUNED] Node #517 killed by upper bounds or load constraints
+[GENERATE] Node #518 | f=22 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #518 picked for processing (State: deliver)
+[GENERATE] Node #519 | f=24 (bc=10) | Routed to P2
+>>> [ACTIVE] Node #519 picked for processing (State: unload)
+[GENERATE] Node #520 | f=25 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #520 picked for processing (State: collect)
+[GENERATE] Node #521 | f=27 (bc=10) | Traveled to warehouse
+>>> [ACTIVE] Node #521 picked for processing (State: load)
+[GENERATE] Node #522 | f=27 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #522 picked for processing (State: load)
+[GENERATE] Node #523 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #523 killed by upper bounds or load constraints
+[GENERATE] Node #524 | f=27 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #524 killed by upper bounds or load constraints
+[GENERATE] Node #525 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #525 killed by upper bounds or load constraints
+[GENERATE] Node #526 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #526 killed by upper bounds or load constraints
+[GENERATE] Node #527 | f=27 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #527 picked for processing (State: load)
+[GENERATE] Node #528 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #528 killed by upper bounds or load constraints
+[GENERATE] Node #529 | f=27 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #529 killed by upper bounds or load constraints
+[GENERATE] Node #530 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #530 killed by upper bounds or load constraints
+[GENERATE] Node #531 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #531 killed by upper bounds or load constraints
+[GENERATE] Node #532 | f=27 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #532 picked for processing (State: load)
+[GENERATE] Node #533 | f=27 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #533 killed by upper bounds or load constraints
+[GENERATE] Node #534 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #534 killed by upper bounds or load constraints
+[GENERATE] Node #535 | f=27 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #535 killed by upper bounds or load constraints
+[GENERATE] Node #536 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #536 killed by upper bounds or load constraints
+[GENERATE] Node #537 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #537 killed by upper bounds or load constraints
+[GENERATE] Node #538 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #538 killed by upper bounds or load constraints
+[GENERATE] Node #539 | f=27 (bc=10) | Loaded: RG light pink
+>>> [ACTIVE] Node #539 picked for processing (State: load)
+[GENERATE] Node #540 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #540 killed by upper bounds or load constraints
+[GENERATE] Node #541 | f=27 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #541 picked for processing (State: load)
+[GENERATE] Node #542 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #542 killed by upper bounds or load constraints
+[GENERATE] Node #543 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #543 killed by upper bounds or load constraints
+[GENERATE] Node #544 | f=27 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #544 picked for processing (State: load)
+[GENERATE] Node #545 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #545 killed by upper bounds or load constraints
+[GENERATE] Node #546 | f=27 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #546 picked for processing (State: load)
+[GENERATE] Node #547 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #547 killed by upper bounds or load constraints
+[GENERATE] Node #548 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #548 killed by upper bounds or load constraints
+[GENERATE] Node #549 | f=27 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #549 picked for processing (State: load)
+[GENERATE] Node #550 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #550 killed by upper bounds or load constraints
+[GENERATE] Node #551 | f=27 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #551 picked for processing (State: load)
+[GENERATE] Node #552 | f=21 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #552 killed by upper bounds or load constraints
+[GENERATE] Node #553 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #553 killed by upper bounds or load constraints
+[GENERATE] Node #554 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #554 killed by upper bounds or load constraints
+[GENERATE] Node #555 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #555 killed by upper bounds or load constraints
+[GENERATE] Node #556 | f=27 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #556 picked for processing (State: load)
+[GENERATE] Node #557 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #557 killed by upper bounds or load constraints
+[GENERATE] Node #558 | f=27 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #558 killed by upper bounds or load constraints
+[GENERATE] Node #559 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #559 killed by upper bounds or load constraints
+[GENERATE] Node #560 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #560 killed by upper bounds or load constraints
+[GENERATE] Node #561 | f=27 (bc=10) | Loaded: Rose pink
+>>> [ACTIVE] Node #561 picked for processing (State: load)
+[GENERATE] Node #562 | f=27 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #562 killed by upper bounds or load constraints
+[GENERATE] Node #563 | f=27 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #563 picked for processing (State: load)
+[GENERATE] Node #564 | f=27 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #564 killed by upper bounds or load constraints
+[GENERATE] Node #565 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #565 killed by upper bounds or load constraints
+[GENERATE] Node #566 | f=27 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #566 killed by upper bounds or load constraints
+[GENERATE] Node #567 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #567 killed by upper bounds or load constraints
+[GENERATE] Node #568 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #568 killed by upper bounds or load constraints
+[GENERATE] Node #569 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #569 killed by upper bounds or load constraints
+[GENERATE] Node #570 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #570 killed by upper bounds or load constraints
+[GENERATE] Node #571 | f=27 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #571 picked for processing (State: load)
+[GENERATE] Node #572 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #572 killed by upper bounds or load constraints
+[GENERATE] Node #573 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #573 killed by upper bounds or load constraints
+[GENERATE] Node #574 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #574 killed by upper bounds or load constraints
+[GENERATE] Node #575 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #575 killed by upper bounds or load constraints
+[GENERATE] Node #576 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #576 killed by upper bounds or load constraints
+[GENERATE] Node #577 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #577 killed by upper bounds or load constraints
+[GENERATE] Node #578 | f=27 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #578 picked for processing (State: deliver)
+[GENERATE] Node #579 | f=30 (bc=16) | Routed to P1
+XXX [PRUNED] Node #579 killed by upper bounds or load constraints
+[GENERATE] Node #580 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #580 killed by upper bounds or load constraints
+[GENERATE] Node #581 | f=27 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #581 picked for processing (State: deliver)
+[GENERATE] Node #582 | f=30 (bc=16) | Routed to P1
+XXX [PRUNED] Node #582 killed by upper bounds or load constraints
+[GENERATE] Node #583 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #583 killed by upper bounds or load constraints
+[GENERATE] Node #584 | f=21 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #584 picked for processing (State: deliver)
+[GENERATE] Node #585 | f=24 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #585 picked for processing (State: unload)
+[GENERATE] Node #586 | f=25 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #586 picked for processing (State: collect)
+[GENERATE] Node #587 | f=28 (bc=10) | Traveled to warehouse
+XXX [PRUNED] Node #587 killed by upper bounds or load constraints
+[GENERATE] Node #588 | f=22 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #588 picked for processing (State: deliver)
+[GENERATE] Node #589 | f=24 (bc=10) | Routed to P2
+>>> [ACTIVE] Node #589 picked for processing (State: unload)
+[GENERATE] Node #590 | f=25 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #590 picked for processing (State: collect)
+[GENERATE] Node #591 | f=27 (bc=10) | Traveled to warehouse
+>>> [ACTIVE] Node #591 picked for processing (State: load)
+[GENERATE] Node #592 | f=27 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #592 picked for processing (State: load)
+[GENERATE] Node #593 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #593 killed by upper bounds or load constraints
+[GENERATE] Node #594 | f=27 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #594 killed by upper bounds or load constraints
+[GENERATE] Node #595 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #595 killed by upper bounds or load constraints
+[GENERATE] Node #596 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #596 killed by upper bounds or load constraints
+[GENERATE] Node #597 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #597 killed by upper bounds or load constraints
+[GENERATE] Node #598 | f=27 (bc=10) | Loaded: RG light pink
+>>> [ACTIVE] Node #598 picked for processing (State: load)
+[GENERATE] Node #599 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #599 killed by upper bounds or load constraints
+[GENERATE] Node #600 | f=27 (bc=10) | Loaded: Rose red
+>>> [ACTIVE] Node #600 picked for processing (State: load)
+[GENERATE] Node #601 | f=27 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #601 picked for processing (State: load)
+[GENERATE] Node #602 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #602 killed by upper bounds or load constraints
+[GENERATE] Node #603 | f=27 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #603 killed by upper bounds or load constraints
+[GENERATE] Node #604 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #604 killed by upper bounds or load constraints
+[GENERATE] Node #605 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #605 killed by upper bounds or load constraints
+[GENERATE] Node #606 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #606 killed by upper bounds or load constraints
+[GENERATE] Node #607 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #607 killed by upper bounds or load constraints
+[GENERATE] Node #608 | f=27 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #608 killed by upper bounds or load constraints
+[GENERATE] Node #609 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #609 killed by upper bounds or load constraints
+[GENERATE] Node #610 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #610 killed by upper bounds or load constraints
+[GENERATE] Node #611 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #611 killed by upper bounds or load constraints
+[GENERATE] Node #612 | f=27 (bc=10) | Loaded: Rose pink
+>>> [ACTIVE] Node #612 picked for processing (State: load)
+[GENERATE] Node #613 | f=27 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #613 picked for processing (State: load)
+[GENERATE] Node #614 | f=21 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #614 killed by upper bounds or load constraints
+[GENERATE] Node #615 | f=21 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #615 killed by upper bounds or load constraints
+[GENERATE] Node #616 | f=21 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #616 killed by upper bounds or load constraints
+[GENERATE] Node #617 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #617 killed by upper bounds or load constraints
+[GENERATE] Node #618 | f=21 (bc= 4) | Loaded: Tulip yellow
+XXX [PRUNED] Node #618 killed by upper bounds or load constraints
+[GENERATE] Node #619 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #619 killed by upper bounds or load constraints
+[GENERATE] Node #620 | f=27 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #620 killed by upper bounds or load constraints
+[GENERATE] Node #621 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #621 killed by upper bounds or load constraints
+[GENERATE] Node #622 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #622 killed by upper bounds or load constraints
+[GENERATE] Node #623 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #623 killed by upper bounds or load constraints
+[GENERATE] Node #624 | f=27 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #624 picked for processing (State: load)
+[GENERATE] Node #625 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #625 killed by upper bounds or load constraints
+[GENERATE] Node #626 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #626 killed by upper bounds or load constraints
+[GENERATE] Node #627 | f=27 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #627 picked for processing (State: load)
+[GENERATE] Node #628 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #628 killed by upper bounds or load constraints
+[GENERATE] Node #629 | f=27 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #629 picked for processing (State: load)
+[GENERATE] Node #630 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #630 killed by upper bounds or load constraints
+[GENERATE] Node #631 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #631 killed by upper bounds or load constraints
+[GENERATE] Node #632 | f=27 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #632 picked for processing (State: load)
+[GENERATE] Node #633 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #633 killed by upper bounds or load constraints
+[GENERATE] Node #634 | f=27 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #634 picked for processing (State: load)
+[GENERATE] Node #635 | f=21 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #635 killed by upper bounds or load constraints
+[GENERATE] Node #636 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #636 killed by upper bounds or load constraints
+[GENERATE] Node #637 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #637 killed by upper bounds or load constraints
+[GENERATE] Node #638 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #638 killed by upper bounds or load constraints
+[GENERATE] Node #639 | f=27 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #639 picked for processing (State: load)
+[GENERATE] Node #640 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #640 killed by upper bounds or load constraints
+[GENERATE] Node #641 | f=27 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #641 killed by upper bounds or load constraints
+[GENERATE] Node #642 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #642 killed by upper bounds or load constraints
+[GENERATE] Node #643 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #643 killed by upper bounds or load constraints
+[GENERATE] Node #644 | f=27 (bc=10) | Loaded: Rose pink
+>>> [ACTIVE] Node #644 picked for processing (State: load)
+[GENERATE] Node #645 | f=27 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #645 picked for processing (State: load)
+[GENERATE] Node #646 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #646 killed by upper bounds or load constraints
+[GENERATE] Node #647 | f=27 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #647 killed by upper bounds or load constraints
+[GENERATE] Node #648 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #648 killed by upper bounds or load constraints
+[GENERATE] Node #649 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #649 killed by upper bounds or load constraints
+[GENERATE] Node #650 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #650 killed by upper bounds or load constraints
+[GENERATE] Node #651 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #651 killed by upper bounds or load constraints
+[GENERATE] Node #652 | f=27 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #652 picked for processing (State: load)
+[GENERATE] Node #653 | f=27 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #653 killed by upper bounds or load constraints
+[GENERATE] Node #654 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #654 killed by upper bounds or load constraints
+[GENERATE] Node #655 | f=27 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #655 killed by upper bounds or load constraints
+[GENERATE] Node #656 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #656 killed by upper bounds or load constraints
+[GENERATE] Node #657 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #657 killed by upper bounds or load constraints
+[GENERATE] Node #658 | f=27 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #658 picked for processing (State: collect)
+[GENERATE] Node #659 | f=29 (bc=16) | Traveled to warehouse
+XXX [PRUNED] Node #659 killed by upper bounds or load constraints
+[GENERATE] Node #660 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #660 killed by upper bounds or load constraints
+[GENERATE] Node #661 | f=27 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #661 picked for processing (State: collect)
+[GENERATE] Node #662 | f=29 (bc=16) | Traveled to warehouse
+XXX [PRUNED] Node #662 killed by upper bounds or load constraints
+[GENERATE] Node #663 | f=27 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #663 picked for processing (State: collect)
+[GENERATE] Node #664 | f=29 (bc=16) | Traveled to warehouse
+XXX [PRUNED] Node #664 killed by upper bounds or load constraints
+[GENERATE] Node #665 | f=27 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #665 picked for processing (State: collect)
+[GENERATE] Node #666 | f=29 (bc=16) | Traveled to warehouse
+XXX [PRUNED] Node #666 killed by upper bounds or load constraints
+[GENERATE] Node #667 | f=27 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #667 picked for processing (State: collect)
+[GENERATE] Node #668 | f=29 (bc=16) | Traveled to warehouse
+XXX [PRUNED] Node #668 killed by upper bounds or load constraints
+[GENERATE] Node #669 | f=21 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #669 picked for processing (State: collect)
+[GENERATE] Node #670 | f=23 (bc=10) | Traveled to warehouse
+>>> [ACTIVE] Node #670 picked for processing (State: load)
+[GENERATE] Node #671 | f=23 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #671 picked for processing (State: load)
+[GENERATE] Node #672 | f=23 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #672 killed by upper bounds or load constraints
+[GENERATE] Node #673 | f=23 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #673 killed by upper bounds or load constraints
+[GENERATE] Node #674 | f=23 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #674 killed by upper bounds or load constraints
+[GENERATE] Node #675 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #675 picked for processing (State: deliver)
+[GENERATE] Node #676 | f=27 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #676 picked for processing (State: unload)
+[GENERATE] Node #677 | f=23 (bc=10) | Loaded: RG light pink
+>>> [ACTIVE] Node #677 picked for processing (State: load)
+[GENERATE] Node #678 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #678 picked for processing (State: deliver)
+[GENERATE] Node #679 | f=26 (bc=10) | Routed to P4
+>>> [ACTIVE] Node #679 picked for processing (State: unload)
+[GENERATE] Node #680 | f=23 (bc=10) | Loaded: Rose red
+>>> [ACTIVE] Node #680 picked for processing (State: load)
+[GENERATE] Node #681 | f=23 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #681 picked for processing (State: load)
+[GENERATE] Node #682 | f=23 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #682 killed by upper bounds or load constraints
+[GENERATE] Node #683 | f=23 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #683 killed by upper bounds or load constraints
+[GENERATE] Node #684 | f=23 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #684 killed by upper bounds or load constraints
+[GENERATE] Node #685 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #685 picked for processing (State: deliver)
+[GENERATE] Node #686 | f=27 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #686 picked for processing (State: unload)
+[GENERATE] Node #687 | f=23 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #687 killed by upper bounds or load constraints
+[GENERATE] Node #688 | f=23 (bc=10) | Loaded: Rose red
+>>> [ACTIVE] Node #688 picked for processing (State: load)
+[GENERATE] Node #689 | f=23 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #689 picked for processing (State: load)
+[GENERATE] Node #690 | f=17 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #690 killed by upper bounds or load constraints
+[GENERATE] Node #691 | f=17 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #691 killed by upper bounds or load constraints
+[GENERATE] Node #692 | f=17 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #692 killed by upper bounds or load constraints
+[GENERATE] Node #693 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #693 picked for processing (State: deliver)
+[GENERATE] Node #694 | f=27 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #694 picked for processing (State: unload)
+[GENERATE] Node #695 | f=23 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #695 killed by upper bounds or load constraints
+[GENERATE] Node #696 | f=23 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #696 killed by upper bounds or load constraints
+[GENERATE] Node #697 | f=23 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #697 killed by upper bounds or load constraints
+[GENERATE] Node #698 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #698 picked for processing (State: deliver)
+[GENERATE] Node #699 | f=27 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #699 picked for processing (State: unload)
+[GENERATE] Node #700 | f=23 (bc=10) | Loaded: Rose pink
+>>> [ACTIVE] Node #700 picked for processing (State: load)
+[GENERATE] Node #701 | f=17 (bc= 4) | Loaded: Rose white
+>>> [ACTIVE] Node #701 picked for processing (State: load)
+[GENERATE] Node #702 | f=18 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #702 picked for processing (State: deliver)
+[GENERATE] Node #703 | f=21 (bc= 4) | Routed to P1
+>>> [ACTIVE] Node #703 picked for processing (State: unload)
+[GENERATE] Node #704 | f=17 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #704 killed by upper bounds or load constraints
+[GENERATE] Node #705 | f=17 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #705 killed by upper bounds or load constraints
+[GENERATE] Node #706 | f=17 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #706 killed by upper bounds or load constraints
+[GENERATE] Node #707 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #707 picked for processing (State: deliver)
+[GENERATE] Node #708 | f=27 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #708 picked for processing (State: unload)
+[GENERATE] Node #709 | f=23 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #709 killed by upper bounds or load constraints
+[GENERATE] Node #710 | f=23 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #710 killed by upper bounds or load constraints
+[GENERATE] Node #711 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #711 picked for processing (State: deliver)
+[GENERATE] Node #712 | f=27 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #712 picked for processing (State: unload)
+[GENERATE] Node #713 | f=23 (bc=10) | Loaded: Rose pink
+>>> [ACTIVE] Node #713 picked for processing (State: load)
+[GENERATE] Node #714 | f=23 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #714 picked for processing (State: load)
+[GENERATE] Node #715 | f=17 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #715 killed by upper bounds or load constraints
+[GENERATE] Node #716 | f=17 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #716 killed by upper bounds or load constraints
+[GENERATE] Node #717 | f=17 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #717 killed by upper bounds or load constraints
+[GENERATE] Node #718 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #718 picked for processing (State: deliver)
+[GENERATE] Node #719 | f=27 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #719 picked for processing (State: unload)
+[GENERATE] Node #720 | f=23 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #720 killed by upper bounds or load constraints
+[GENERATE] Node #721 | f=23 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #721 killed by upper bounds or load constraints
+[GENERATE] Node #722 | f=23 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #722 killed by upper bounds or load constraints
+[GENERATE] Node #723 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #723 picked for processing (State: deliver)
+[GENERATE] Node #724 | f=27 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #724 picked for processing (State: unload)
+[GENERATE] Node #725 | f=23 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #725 picked for processing (State: load)
+[GENERATE] Node #726 | f=23 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #726 killed by upper bounds or load constraints
+[GENERATE] Node #727 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #727 picked for processing (State: deliver)
+[GENERATE] Node #728 | f=28 (bc=10) | Routed to P3
+XXX [PRUNED] Node #728 killed by upper bounds or load constraints
+[GENERATE] Node #729 | f=23 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #729 picked for processing (State: load)
+[GENERATE] Node #730 | f=23 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #730 killed by upper bounds or load constraints
+[GENERATE] Node #731 | f=23 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #731 picked for processing (State: load)
+[GENERATE] Node #732 | f=23 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #732 killed by upper bounds or load constraints
+[GENERATE] Node #733 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #733 picked for processing (State: deliver)
+[GENERATE] Node #734 | f=28 (bc=10) | Routed to P3
+XXX [PRUNED] Node #734 killed by upper bounds or load constraints
+[GENERATE] Node #735 | f=23 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #735 picked for processing (State: load)
+[GENERATE] Node #736 | f=23 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #736 killed by upper bounds or load constraints
+[GENERATE] Node #737 | f=23 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #737 picked for processing (State: load)
+[GENERATE] Node #738 | f=17 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #738 killed by upper bounds or load constraints
+[GENERATE] Node #739 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #739 picked for processing (State: deliver)
+[GENERATE] Node #740 | f=28 (bc=10) | Routed to P3
+XXX [PRUNED] Node #740 killed by upper bounds or load constraints
+[GENERATE] Node #741 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #741 picked for processing (State: deliver)
+[GENERATE] Node #742 | f=28 (bc=10) | Routed to P3
+XXX [PRUNED] Node #742 killed by upper bounds or load constraints
+[GENERATE] Node #743 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #743 picked for processing (State: deliver)
+[GENERATE] Node #744 | f=28 (bc=10) | Routed to P3
+XXX [PRUNED] Node #744 killed by upper bounds or load constraints
+[GENERATE] Node #745 | f=23 (bc=10) | Loaded: Rose pink
+>>> [ACTIVE] Node #745 picked for processing (State: load)
+[GENERATE] Node #746 | f=23 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #746 picked for processing (State: load)
+[GENERATE] Node #747 | f=23 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #747 killed by upper bounds or load constraints
+[GENERATE] Node #748 | f=23 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #748 killed by upper bounds or load constraints
+[GENERATE] Node #749 | f=23 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #749 killed by upper bounds or load constraints
+[GENERATE] Node #750 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #750 picked for processing (State: deliver)
+[GENERATE] Node #751 | f=27 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #751 picked for processing (State: unload)
+[GENERATE] Node #752 | f=23 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #752 killed by upper bounds or load constraints
+[GENERATE] Node #753 | f=23 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #753 picked for processing (State: load)
+[GENERATE] Node #754 | f=23 (bc=10) | Loaded: RG light pink
+XXX [PRUNED] Node #754 killed by upper bounds or load constraints
+[GENERATE] Node #755 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #755 picked for processing (State: deliver)
+[GENERATE] Node #756 | f=27 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #756 picked for processing (State: unload)
+[GENERATE] Node #757 | f=28 (bc=10) | Routed to P3
+XXX [PRUNED] Node #757 killed by upper bounds or load constraints
+[GENERATE] Node #758 | f=23 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #758 killed by upper bounds or load constraints
+[GENERATE] Node #759 | f=24 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #759 picked for processing (State: deliver)
+[GENERATE] Node #760 | f=27 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #760 picked for processing (State: unload)
+[GENERATE] Node #761 | f=28 (bc=10) | Unloaded matching cargo
+XXX [PRUNED] Node #761 killed by upper bounds or load constraints
+[GENERATE] Node #762 | f=28 (bc=10) | Unloaded matching cargo
+XXX [PRUNED] Node #762 killed by upper bounds or load constraints
+[GENERATE] Node #763 | f=28 (bc=10) | Unloaded matching cargo
+XXX [PRUNED] Node #763 killed by upper bounds or load constraints
+[GENERATE] Node #764 | f=28 (bc=10) | Unloaded matching cargo
+XXX [PRUNED] Node #764 killed by upper bounds or load constraints
+[GENERATE] Node #765 | f=28 (bc=10) | Unloaded matching cargo
+XXX [PRUNED] Node #765 killed by upper bounds or load constraints
+[GENERATE] Node #766 | f=28 (bc=10) | Unloaded matching cargo
+XXX [PRUNED] Node #766 killed by upper bounds or load constraints
+[GENERATE] Node #767 | f=28 (bc=10) | Unloaded matching cargo
+XXX [PRUNED] Node #767 killed by upper bounds or load constraints
+[GENERATE] Node #768 | f=22 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #768 picked for processing (State: collect)
+[GENERATE] Node #769 | f=25 (bc= 4) | Traveled to warehouse
+>>> [ACTIVE] Node #769 picked for processing (State: load)
+[GENERATE] Node #770 | f=25 (bc= 4) | Loaded: RG light pink
+>>> [ACTIVE] Node #770 picked for processing (State: load)
+[GENERATE] Node #771 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #771 picked for processing (State: deliver)
+[GENERATE] Node #772 | f=28 (bc= 4) | Routed to P4
+XXX [PRUNED] Node #772 killed by upper bounds or load constraints
+[GENERATE] Node #773 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #773 picked for processing (State: load)
+[GENERATE] Node #774 | f=25 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #774 killed by upper bounds or load constraints
+[GENERATE] Node #775 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #775 picked for processing (State: deliver)
+[GENERATE] Node #776 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #776 killed by upper bounds or load constraints
+[GENERATE] Node #777 | f=25 (bc= 4) | Loaded: Orchid purple
+>>> [ACTIVE] Node #777 picked for processing (State: load)
+[GENERATE] Node #778 | f=25 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #778 killed by upper bounds or load constraints
+[GENERATE] Node #779 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #779 picked for processing (State: load)
+[GENERATE] Node #780 | f=25 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #780 killed by upper bounds or load constraints
+[GENERATE] Node #781 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #781 picked for processing (State: deliver)
+[GENERATE] Node #782 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #782 killed by upper bounds or load constraints
+[GENERATE] Node #783 | f=25 (bc= 4) | Loaded: Orchid purple
+>>> [ACTIVE] Node #783 picked for processing (State: load)
+[GENERATE] Node #784 | f=25 (bc= 4) | Loaded: RG light pink
+XXX [PRUNED] Node #784 killed by upper bounds or load constraints
+[GENERATE] Node #785 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #785 picked for processing (State: load)
+[GENERATE] Node #786 | f=23 (bc= 0) | Loaded: RG light pink
+XXX [PRUNED] Node #786 killed by upper bounds or load constraints
+[GENERATE] Node #787 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #787 picked for processing (State: deliver)
+[GENERATE] Node #788 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #788 killed by upper bounds or load constraints
+[GENERATE] Node #789 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #789 picked for processing (State: deliver)
+[GENERATE] Node #790 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #790 killed by upper bounds or load constraints
+[GENERATE] Node #791 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #791 picked for processing (State: deliver)
+[GENERATE] Node #792 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #792 killed by upper bounds or load constraints
+[GENERATE] Node #793 | f=28 (bc=10) | Unloaded matching cargo
+XXX [PRUNED] Node #793 killed by upper bounds or load constraints
+[GENERATE] Node #794 | f=28 (bc=10) | Unloaded matching cargo
+XXX [PRUNED] Node #794 killed by upper bounds or load constraints
+[GENERATE] Node #795 | f=28 (bc=10) | Unloaded matching cargo
+XXX [PRUNED] Node #795 killed by upper bounds or load constraints
+[GENERATE] Node #796 | f=27 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #796 picked for processing (State: collect)
+[GENERATE] Node #797 | f=29 (bc=10) | Traveled to warehouse
+XXX [PRUNED] Node #797 killed by upper bounds or load constraints
+[GENERATE] Node #798 | f=28 (bc=10) | Unloaded matching cargo
+XXX [PRUNED] Node #798 killed by upper bounds or load constraints
+[GENERATE] Node #799 | f=27 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #799 picked for processing (State: collect)
+[GENERATE] Node #800 | f=29 (bc=16) | Traveled to warehouse
+XXX [PRUNED] Node #800 killed by upper bounds or load constraints
+[GENERATE] Node #801 | f=21 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #801 picked for processing (State: collect)
+[GENERATE] Node #802 | f=23 (bc=16) | Traveled to warehouse
+>>> [ACTIVE] Node #802 picked for processing (State: load)
+[GENERATE] Node #803 | f=23 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node #803 picked for processing (State: load)
+[GENERATE] Node #804 | f=23 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node #804 picked for processing (State: load)
+[GENERATE] Node #805 | f=17 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #805 picked for processing (State: load)
+[GENERATE] Node #806 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #806 killed by upper bounds or load constraints
+[GENERATE] Node #807 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #807 killed by upper bounds or load constraints
+[GENERATE] Node #808 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #808 picked for processing (State: deliver)
+[GENERATE] Node #809 | f=20 (bc=10) | Routed to P2
+>>> [ACTIVE] Node #809 picked for processing (State: unload)
+[GENERATE] Node #810 | f=17 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #810 picked for processing (State: load)
+[GENERATE] Node #811 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #811 picked for processing (State: deliver)
+[GENERATE] Node #812 | f=20 (bc=10) | Routed to P2
+>>> [ACTIVE] Node #812 picked for processing (State: unload)
+[GENERATE] Node #813 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #813 killed by upper bounds or load constraints
+[GENERATE] Node #814 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #814 killed by upper bounds or load constraints
+[GENERATE] Node #815 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #815 picked for processing (State: deliver)
+[GENERATE] Node #816 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #816 picked for processing (State: unload)
+[GENERATE] Node #817 | f=17 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #817 picked for processing (State: load)
+[GENERATE] Node #818 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #818 killed by upper bounds or load constraints
+[GENERATE] Node #819 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #819 killed by upper bounds or load constraints
+[GENERATE] Node #820 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #820 picked for processing (State: deliver)
+[GENERATE] Node #821 | f=20 (bc=10) | Routed to P2
+>>> [ACTIVE] Node #821 picked for processing (State: unload)
+[GENERATE] Node #822 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #822 killed by upper bounds or load constraints
+[GENERATE] Node #823 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #823 killed by upper bounds or load constraints
+[GENERATE] Node #824 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #824 picked for processing (State: deliver)
+[GENERATE] Node #825 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #825 picked for processing (State: unload)
+[GENERATE] Node #826 | f=23 (bc=16) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #826 picked for processing (State: load)
+[GENERATE] Node #827 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #827 killed by upper bounds or load constraints
+[GENERATE] Node #828 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #828 killed by upper bounds or load constraints
+[GENERATE] Node #829 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #829 picked for processing (State: deliver)
+[GENERATE] Node #830 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #830 picked for processing (State: unload)
+[GENERATE] Node #831 | f=23 (bc=16) | Loaded: Rose white
+>>> [ACTIVE] Node #831 picked for processing (State: load)
+[GENERATE] Node #832 | f=23 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node #832 killed by upper bounds or load constraints
+[GENERATE] Node #833 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #833 killed by upper bounds or load constraints
+[GENERATE] Node #834 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #834 killed by upper bounds or load constraints
+[GENERATE] Node #835 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #835 picked for processing (State: deliver)
+[GENERATE] Node #836 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #836 picked for processing (State: unload)
+[GENERATE] Node #837 | f=23 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #837 killed by upper bounds or load constraints
+[GENERATE] Node #838 | f=23 (bc=16) | Loaded: Rose red
+>>> [ACTIVE] Node #838 picked for processing (State: load)
+[GENERATE] Node #839 | f=23 (bc=16) | Loaded: Tulip red
+>>> [ACTIVE] Node #839 picked for processing (State: load)
+[GENERATE] Node #840 | f=17 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #840 picked for processing (State: load)
+[GENERATE] Node #841 | f=17 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #841 picked for processing (State: load)
+[GENERATE] Node #842 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #842 picked for processing (State: deliver)
+[GENERATE] Node #843 | f=21 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #843 picked for processing (State: unload)
+[GENERATE] Node #844 | f=20 (bc=10) | Routed to P2
+>>> [ACTIVE] Node #844 picked for processing (State: unload)
+[GENERATE] Node #845 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #845 killed by upper bounds or load constraints
+[GENERATE] Node #846 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #846 killed by upper bounds or load constraints
+[GENERATE] Node #847 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #847 picked for processing (State: deliver)
+[GENERATE] Node #848 | f=21 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #848 picked for processing (State: unload)
+[GENERATE] Node #849 | f=20 (bc=10) | Routed to P2
+>>> [ACTIVE] Node #849 picked for processing (State: unload)
+[GENERATE] Node #850 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #850 killed by upper bounds or load constraints
+[GENERATE] Node #851 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #851 killed by upper bounds or load constraints
+[GENERATE] Node #852 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #852 killed by upper bounds or load constraints
+[GENERATE] Node #853 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #853 picked for processing (State: deliver)
+[GENERATE] Node #854 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #854 picked for processing (State: unload)
+[GENERATE] Node #855 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #855 picked for processing (State: unload)
+[GENERATE] Node #856 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #856 killed by upper bounds or load constraints
+[GENERATE] Node #857 | f=23 (bc=16) | Loaded: Rose white
+>>> [ACTIVE] Node #857 picked for processing (State: load)
+[GENERATE] Node #858 | f=17 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #858 killed by upper bounds or load constraints
+[GENERATE] Node #859 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #859 killed by upper bounds or load constraints
+[GENERATE] Node #860 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #860 killed by upper bounds or load constraints
+[GENERATE] Node #861 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #861 picked for processing (State: deliver)
+[GENERATE] Node #862 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #862 picked for processing (State: unload)
+[GENERATE] Node #863 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #863 killed by upper bounds or load constraints
+[GENERATE] Node #864 | f=23 (bc=16) | Loaded: Rose red
+>>> [ACTIVE] Node #864 picked for processing (State: load)
+[GENERATE] Node #865 | f=17 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #865 picked for processing (State: load)
+[GENERATE] Node #866 | f=17 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #866 picked for processing (State: load)
+[GENERATE] Node #867 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #867 picked for processing (State: deliver)
+[GENERATE] Node #868 | f=21 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #868 picked for processing (State: unload)
+[GENERATE] Node #869 | f=20 (bc=10) | Routed to P2
+>>> [ACTIVE] Node #869 picked for processing (State: unload)
+[GENERATE] Node #870 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #870 killed by upper bounds or load constraints
+[GENERATE] Node #871 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #871 killed by upper bounds or load constraints
+[GENERATE] Node #872 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #872 picked for processing (State: deliver)
+[GENERATE] Node #873 | f=21 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #873 picked for processing (State: unload)
+[GENERATE] Node #874 | f=20 (bc=10) | Routed to P2
+>>> [ACTIVE] Node #874 picked for processing (State: unload)
+[GENERATE] Node #875 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #875 killed by upper bounds or load constraints
+[GENERATE] Node #876 | f=17 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #876 picked for processing (State: load)
+[GENERATE] Node #877 | f=17 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #877 killed by upper bounds or load constraints
+[GENERATE] Node #878 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #878 killed by upper bounds or load constraints
+[GENERATE] Node #879 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #879 killed by upper bounds or load constraints
+[GENERATE] Node #880 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #880 picked for processing (State: deliver)
+[GENERATE] Node #881 | f=21 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #881 picked for processing (State: unload)
+[GENERATE] Node #882 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #882 killed by upper bounds or load constraints
+[GENERATE] Node #883 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #883 killed by upper bounds or load constraints
+[GENERATE] Node #884 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #884 killed by upper bounds or load constraints
+[GENERATE] Node #885 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #885 picked for processing (State: deliver)
+[GENERATE] Node #886 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #886 picked for processing (State: unload)
+[GENERATE] Node #887 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #887 killed by upper bounds or load constraints
+[GENERATE] Node #888 | f=17 (bc=10) | Loaded: Rose pink
+>>> [ACTIVE] Node #888 picked for processing (State: load)
+[GENERATE] Node #889 | f=17 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #889 killed by upper bounds or load constraints
+[GENERATE] Node #890 | f=17 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #890 picked for processing (State: load)
+[GENERATE] Node #891 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #891 picked for processing (State: deliver)
+[GENERATE] Node #892 | f=21 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #892 picked for processing (State: unload)
+[GENERATE] Node #893 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #893 killed by upper bounds or load constraints
+[GENERATE] Node #894 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #894 killed by upper bounds or load constraints
+[GENERATE] Node #895 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #895 picked for processing (State: deliver)
+[GENERATE] Node #896 | f=21 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #896 picked for processing (State: unload)
+[GENERATE] Node #897 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #897 killed by upper bounds or load constraints
+[GENERATE] Node #898 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #898 killed by upper bounds or load constraints
+[GENERATE] Node #899 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #899 killed by upper bounds or load constraints
+[GENERATE] Node #900 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #900 picked for processing (State: deliver)
+[GENERATE] Node #901 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #901 picked for processing (State: unload)
+[GENERATE] Node #902 | f=23 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #902 killed by upper bounds or load constraints
+[GENERATE] Node #903 | f=23 (bc=16) | Loaded: Rose pink
+>>> [ACTIVE] Node #903 picked for processing (State: load)
+[GENERATE] Node #904 | f=17 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #904 killed by upper bounds or load constraints
+[GENERATE] Node #905 | f=17 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #905 picked for processing (State: load)
+[GENERATE] Node #906 | f=17 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #906 killed by upper bounds or load constraints
+[GENERATE] Node #907 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #907 killed by upper bounds or load constraints
+[GENERATE] Node #908 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #908 killed by upper bounds or load constraints
+[GENERATE] Node #909 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #909 picked for processing (State: deliver)
+[GENERATE] Node #910 | f=21 (bc=10) | Routed to P1
+>>> [ACTIVE] Node #910 picked for processing (State: unload)
+[GENERATE] Node #911 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #911 killed by upper bounds or load constraints
+[GENERATE] Node #912 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #912 killed by upper bounds or load constraints
+[GENERATE] Node #913 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #913 killed by upper bounds or load constraints
+[GENERATE] Node #914 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #914 picked for processing (State: deliver)
+[GENERATE] Node #915 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #915 picked for processing (State: unload)
+[GENERATE] Node #916 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #916 killed by upper bounds or load constraints
+[GENERATE] Node #917 | f=23 (bc=16) | Loaded: Orchid pink
+>>> [ACTIVE] Node #917 picked for processing (State: load)
+[GENERATE] Node #918 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #918 picked for processing (State: deliver)
+[GENERATE] Node #919 | f=28 (bc=16) | Routed to P3
+XXX [PRUNED] Node #919 killed by upper bounds or load constraints
+[GENERATE] Node #920 | f=23 (bc=16) | Loaded: Orchid purple
+>>> [ACTIVE] Node #920 picked for processing (State: load)
+[GENERATE] Node #921 | f=23 (bc=16) | Loaded: Orchid pink
+>>> [ACTIVE] Node #921 picked for processing (State: load)
+[GENERATE] Node #922 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #922 picked for processing (State: deliver)
+[GENERATE] Node #923 | f=28 (bc=16) | Routed to P3
+XXX [PRUNED] Node #923 killed by upper bounds or load constraints
+[GENERATE] Node #924 | f=23 (bc=16) | Loaded: Orchid purple
+>>> [ACTIVE] Node #924 picked for processing (State: load)
+[GENERATE] Node #925 | f=17 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #925 picked for processing (State: load)
+[GENERATE] Node #926 | f=18 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #926 picked for processing (State: deliver)
+[GENERATE] Node #927 | f=22 (bc=10) | Routed to P3
+>>> [ACTIVE] Node #927 picked for processing (State: unload)
+[GENERATE] Node #928 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #928 picked for processing (State: deliver)
+[GENERATE] Node #929 | f=28 (bc=16) | Routed to P3
+XXX [PRUNED] Node #929 killed by upper bounds or load constraints
+[GENERATE] Node #930 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #930 picked for processing (State: deliver)
+[GENERATE] Node #931 | f=28 (bc=16) | Routed to P3
+XXX [PRUNED] Node #931 killed by upper bounds or load constraints
+[GENERATE] Node #932 | f=23 (bc=16) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #932 picked for processing (State: load)
+[GENERATE] Node #933 | f=23 (bc=16) | Loaded: Orchid pink
+XXX [PRUNED] Node #933 killed by upper bounds or load constraints
+[GENERATE] Node #934 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #934 killed by upper bounds or load constraints
+[GENERATE] Node #935 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #935 picked for processing (State: deliver)
+[GENERATE] Node #936 | f=26 (bc=16) | Routed to P2
+>>> [ACTIVE] Node #936 picked for processing (State: unload)
+[GENERATE] Node #937 | f=23 (bc=16) | Loaded: Rose pink
+>>> [ACTIVE] Node #937 picked for processing (State: load)
+[GENERATE] Node #938 | f=23 (bc=16) | Loaded: Tulip red
+XXX [PRUNED] Node #938 killed by upper bounds or load constraints
+[GENERATE] Node #939 | f=23 (bc=16) | Loaded: Rose white
+>>> [ACTIVE] Node #939 picked for processing (State: load)
+[GENERATE] Node #940 | f=17 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #940 killed by upper bounds or load constraints
+[GENERATE] Node #941 | f=17 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #941 killed by upper bounds or load constraints
+[GENERATE] Node #942 | f=17 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #942 killed by upper bounds or load constraints
+[GENERATE] Node #943 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #943 picked for processing (State: deliver)
+[GENERATE] Node #944 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #944 picked for processing (State: unload)
+[GENERATE] Node #945 | f=17 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #945 killed by upper bounds or load constraints
+[GENERATE] Node #946 | f=23 (bc=16) | Loaded: Orchid pink
+>>> [ACTIVE] Node #946 picked for processing (State: load)
+[GENERATE] Node #947 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #947 picked for processing (State: deliver)
+[GENERATE] Node #948 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #948 picked for processing (State: unload)
+[GENERATE] Node #949 | f=28 (bc=16) | Routed to P3
+XXX [PRUNED] Node #949 killed by upper bounds or load constraints
+[GENERATE] Node #950 | f=23 (bc=16) | Loaded: Orchid purple
+XXX [PRUNED] Node #950 killed by upper bounds or load constraints
+[GENERATE] Node #951 | f=24 (bc=16) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #951 picked for processing (State: deliver)
+[GENERATE] Node #952 | f=27 (bc=16) | Routed to P1
+>>> [ACTIVE] Node #952 picked for processing (State: unload)
+[GENERATE] Node #953 | f=23 (bc=16) | Loaded: Tulip yellow
+XXX [PRUNED] Node #953 killed by upper bounds or load constraints
+[GENERATE] Node #954 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #954 killed by upper bounds or load constraints
+[GENERATE] Node #955 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #955 killed by upper bounds or load constraints
+[GENERATE] Node #956 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #956 killed by upper bounds or load constraints
+[GENERATE] Node #957 | f=27 (bc=16) | Unloaded matching cargo
+>>> [ACTIVE] Node #957 picked for processing (State: collect)
+[GENERATE] Node #958 | f=29 (bc=16) | Traveled to warehouse
+XXX [PRUNED] Node #958 killed by upper bounds or load constraints
+[GENERATE] Node #959 | f=23 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #959 picked for processing (State: collect)
+[GENERATE] Node #960 | f=27 (bc=10) | Traveled to warehouse
+>>> [ACTIVE] Node #960 picked for processing (State: load)
+[GENERATE] Node #961 | f=27 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #961 picked for processing (State: load)
+[GENERATE] Node #962 | f=27 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #962 picked for processing (State: load)
+[GENERATE] Node #963 | f=27 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #963 picked for processing (State: load)
+[GENERATE] Node #964 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #964 killed by upper bounds or load constraints
+[GENERATE] Node #965 | f=21 (bc= 4) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #965 picked for processing (State: load)
+[GENERATE] Node #966 | f=22 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #966 picked for processing (State: deliver)
+[GENERATE] Node #967 | f=24 (bc= 4) | Routed to P2
+>>> [ACTIVE] Node #967 picked for processing (State: unload)
+[GENERATE] Node #968 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #968 killed by upper bounds or load constraints
+[GENERATE] Node #969 | f=27 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #969 picked for processing (State: load)
+[GENERATE] Node #970 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #970 killed by upper bounds or load constraints
+[GENERATE] Node #971 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #971 killed by upper bounds or load constraints
+[GENERATE] Node #972 | f=27 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #972 picked for processing (State: load)
+[GENERATE] Node #973 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #973 killed by upper bounds or load constraints
+[GENERATE] Node #974 | f=27 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #974 picked for processing (State: load)
+[GENERATE] Node #975 | f=27 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #975 killed by upper bounds or load constraints
+[GENERATE] Node #976 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #976 killed by upper bounds or load constraints
+[GENERATE] Node #977 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #977 killed by upper bounds or load constraints
+[GENERATE] Node #978 | f=27 (bc=10) | Loaded: Rose red
+>>> [ACTIVE] Node #978 picked for processing (State: load)
+[GENERATE] Node #979 | f=27 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #979 picked for processing (State: load)
+[GENERATE] Node #980 | f=27 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #980 picked for processing (State: load)
+[GENERATE] Node #981 | f=21 (bc= 4) | Loaded: Tulip red
+>>> [ACTIVE] Node #981 picked for processing (State: load)
+[GENERATE] Node #982 | f=22 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #982 picked for processing (State: deliver)
+[GENERATE] Node #983 | f=25 (bc= 4) | Routed to P1
+>>> [ACTIVE] Node #983 picked for processing (State: unload)
+[GENERATE] Node #984 | f=24 (bc= 4) | Routed to P2
+>>> [ACTIVE] Node #984 picked for processing (State: unload)
+[GENERATE] Node #985 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #985 killed by upper bounds or load constraints
+[GENERATE] Node #986 | f=21 (bc= 4) | Loaded: Tulip yellow
+XXX [PRUNED] Node #986 killed by upper bounds or load constraints
+[GENERATE] Node #987 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #987 killed by upper bounds or load constraints
+[GENERATE] Node #988 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #988 killed by upper bounds or load constraints
+[GENERATE] Node #989 | f=27 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #989 picked for processing (State: load)
+[GENERATE] Node #990 | f=27 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #990 killed by upper bounds or load constraints
+[GENERATE] Node #991 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #991 killed by upper bounds or load constraints
+[GENERATE] Node #992 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #992 killed by upper bounds or load constraints
+[GENERATE] Node #993 | f=27 (bc=10) | Loaded: Rose red
+>>> [ACTIVE] Node #993 picked for processing (State: load)
+[GENERATE] Node #994 | f=27 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #994 picked for processing (State: load)
+[GENERATE] Node #995 | f=21 (bc= 4) | Loaded: Tulip red
+>>> [ACTIVE] Node #995 picked for processing (State: load)
+[GENERATE] Node #996 | f=22 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #996 picked for processing (State: deliver)
+[GENERATE] Node #997 | f=25 (bc= 4) | Routed to P1
+>>> [ACTIVE] Node #997 picked for processing (State: unload)
+[GENERATE] Node #998 | f=24 (bc= 4) | Routed to P2
+>>> [ACTIVE] Node #998 picked for processing (State: unload)
+[GENERATE] Node #999 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #999 killed by upper bounds or load constraints
+[GENERATE] Node #1000 | f=21 (bc= 4) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1000 killed by upper bounds or load constraints
+[GENERATE] Node #1001 | f=27 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #1001 picked for processing (State: load)
+[GENERATE] Node #1002 | f=21 (bc= 4) | Loaded: Tulip red
+XXX [PRUNED] Node #1002 killed by upper bounds or load constraints
+[GENERATE] Node #1003 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1003 killed by upper bounds or load constraints
+[GENERATE] Node #1004 | f=21 (bc= 4) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1004 killed by upper bounds or load constraints
+[GENERATE] Node #1005 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1005 killed by upper bounds or load constraints
+[GENERATE] Node #1006 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1006 killed by upper bounds or load constraints
+[GENERATE] Node #1007 | f=27 (bc=10) | Loaded: Rose pink
+>>> [ACTIVE] Node #1007 picked for processing (State: load)
+[GENERATE] Node #1008 | f=21 (bc= 4) | Loaded: Tulip red
+XXX [PRUNED] Node #1008 killed by upper bounds or load constraints
+[GENERATE] Node #1009 | f=21 (bc= 4) | Loaded: Rose white
+>>> [ACTIVE] Node #1009 picked for processing (State: load)
+[GENERATE] Node #1010 | f=22 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1010 picked for processing (State: deliver)
+[GENERATE] Node #1011 | f=25 (bc= 4) | Routed to P1
+>>> [ACTIVE] Node #1011 picked for processing (State: unload)
+[GENERATE] Node #1012 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1012 killed by upper bounds or load constraints
+[GENERATE] Node #1013 | f=21 (bc= 4) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1013 killed by upper bounds or load constraints
+[GENERATE] Node #1014 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1014 killed by upper bounds or load constraints
+[GENERATE] Node #1015 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1015 killed by upper bounds or load constraints
+[GENERATE] Node #1016 | f=27 (bc=10) | Loaded: Rose pink
+>>> [ACTIVE] Node #1016 picked for processing (State: load)
+[GENERATE] Node #1017 | f=27 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #1017 killed by upper bounds or load constraints
+[GENERATE] Node #1018 | f=27 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #1018 picked for processing (State: load)
+[GENERATE] Node #1019 | f=21 (bc= 4) | Loaded: Tulip red
+XXX [PRUNED] Node #1019 killed by upper bounds or load constraints
+[GENERATE] Node #1020 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1020 killed by upper bounds or load constraints
+[GENERATE] Node #1021 | f=21 (bc= 4) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1021 killed by upper bounds or load constraints
+[GENERATE] Node #1022 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1022 killed by upper bounds or load constraints
+[GENERATE] Node #1023 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1023 killed by upper bounds or load constraints
+[GENERATE] Node #1024 | f=27 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1024 picked for processing (State: load)
+[GENERATE] Node #1025 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1025 killed by upper bounds or load constraints
+[GENERATE] Node #1026 | f=27 (bc=10) | Loaded: Rose pink
+>>> [ACTIVE] Node #1026 picked for processing (State: load)
+[GENERATE] Node #1027 | f=27 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #1027 killed by upper bounds or load constraints
+[GENERATE] Node #1028 | f=27 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #1028 picked for processing (State: load)
+[GENERATE] Node #1029 | f=27 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #1029 killed by upper bounds or load constraints
+[GENERATE] Node #1030 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1030 killed by upper bounds or load constraints
+[GENERATE] Node #1031 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1031 killed by upper bounds or load constraints
+[GENERATE] Node #1032 | f=28 (bc=10) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1032 killed by upper bounds or load constraints
+[GENERATE] Node #1033 | f=27 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1033 killed by upper bounds or load constraints
+[GENERATE] Node #1034 | f=26 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1034 picked for processing (State: collect)
+[GENERATE] Node #1035 | f=29 (bc= 4) | Traveled to warehouse
+XXX [PRUNED] Node #1035 killed by upper bounds or load constraints
+[GENERATE] Node #1036 | f=25 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1036 picked for processing (State: deliver)
+[GENERATE] Node #1037 | f=28 (bc= 4) | Routed to P1
+XXX [PRUNED] Node #1037 killed by upper bounds or load constraints
+[GENERATE] Node #1038 | f=26 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1038 picked for processing (State: deliver)
+[GENERATE] Node #1039 | f=28 (bc= 4) | Routed to P2
+XXX [PRUNED] Node #1039 killed by upper bounds or load constraints
+[GENERATE] Node #1040 | f=25 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1040 picked for processing (State: deliver)
+[GENERATE] Node #1041 | f=28 (bc= 4) | Routed to P1
+XXX [PRUNED] Node #1041 killed by upper bounds or load constraints
+[GENERATE] Node #1042 | f=26 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1042 picked for processing (State: deliver)
+[GENERATE] Node #1043 | f=28 (bc= 4) | Routed to P2
+XXX [PRUNED] Node #1043 killed by upper bounds or load constraints
+[GENERATE] Node #1044 | f=25 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1044 picked for processing (State: collect)
+[GENERATE] Node #1045 | f=27 (bc= 4) | Traveled to warehouse
+>>> [ACTIVE] Node #1045 picked for processing (State: load)
+[GENERATE] Node #1046 | f=27 (bc= 4) | Loaded: Rose white
+>>> [ACTIVE] Node #1046 picked for processing (State: load)
+[GENERATE] Node #1047 | f=28 (bc= 4) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1047 killed by upper bounds or load constraints
+[GENERATE] Node #1048 | f=27 (bc= 4) | Loaded: Rose red
+>>> [ACTIVE] Node #1048 picked for processing (State: load)
+[GENERATE] Node #1049 | f=27 (bc= 4) | Loaded: Rose white
+>>> [ACTIVE] Node #1049 picked for processing (State: load)
+[GENERATE] Node #1050 | f=28 (bc= 4) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1050 killed by upper bounds or load constraints
+[GENERATE] Node #1051 | f=27 (bc= 4) | Loaded: Rose red
+>>> [ACTIVE] Node #1051 picked for processing (State: load)
+[GENERATE] Node #1052 | f=27 (bc= 4) | Loaded: Rose white
+>>> [ACTIVE] Node #1052 picked for processing (State: load)
+[GENERATE] Node #1053 | f=28 (bc= 4) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1053 killed by upper bounds or load constraints
+[GENERATE] Node #1054 | f=28 (bc= 4) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1054 killed by upper bounds or load constraints
+[GENERATE] Node #1055 | f=27 (bc= 4) | Loaded: Rose pink
+>>> [ACTIVE] Node #1055 picked for processing (State: load)
+[GENERATE] Node #1056 | f=26 (bc= 0) | Loaded: Rose white
+>>> [ACTIVE] Node #1056 picked for processing (State: load)
+[GENERATE] Node #1057 | f=27 (bc= 0) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1057 picked for processing (State: deliver)
+[GENERATE] Node #1058 | f=27 (bc= 0) | Routed to P1
+>>> [ACTIVE] Node #1058 picked for processing (State: unload)
+[GENERATE] Node #1059 | f=28 (bc= 4) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1059 killed by upper bounds or load constraints
+[GENERATE] Node #1060 | f=28 (bc= 4) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1060 killed by upper bounds or load constraints
+[GENERATE] Node #1061 | f=27 (bc= 4) | Loaded: Rose pink
+>>> [ACTIVE] Node #1061 picked for processing (State: load)
+[GENERATE] Node #1062 | f=27 (bc= 4) | Loaded: Rose white
+>>> [ACTIVE] Node #1062 picked for processing (State: load)
+[GENERATE] Node #1063 | f=28 (bc= 4) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1063 killed by upper bounds or load constraints
+[GENERATE] Node #1064 | f=28 (bc= 4) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1064 killed by upper bounds or load constraints
+[GENERATE] Node #1065 | f=27 (bc= 4) | Loaded: Rose pink
+>>> [ACTIVE] Node #1065 picked for processing (State: load)
+[GENERATE] Node #1066 | f=27 (bc= 4) | Loaded: Rose white
+>>> [ACTIVE] Node #1066 picked for processing (State: load)
+[GENERATE] Node #1067 | f=28 (bc= 4) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1067 killed by upper bounds or load constraints
+[GENERATE] Node #1068 | f=28 (bc= 4) | Finished loading. Dispatched.
+XXX [PRUNED] Node #1068 killed by upper bounds or load constraints
+[GENERATE] Node #1069 | f=28 (bc= 0) | Unloaded matching cargo
+XXX [PRUNED] Node #1069 killed by upper bounds or load constraints
+[GENERATE] Node #1070 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #1070 killed by upper bounds or load constraints
+[GENERATE] Node #1071 | f=22 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #1071 picked for processing (State: collect)
+[GENERATE] Node #1072 | f=25 (bc=10) | Traveled to warehouse
+>>> [ACTIVE] Node #1072 picked for processing (State: load)
+[GENERATE] Node #1073 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #1073 picked for processing (State: load)
+[GENERATE] Node #1074 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #1074 picked for processing (State: load)
+[GENERATE] Node #1075 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #1075 picked for processing (State: load)
+[GENERATE] Node #1076 | f=19 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #1076 killed by upper bounds or load constraints
+[GENERATE] Node #1077 | f=19 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #1077 killed by upper bounds or load constraints
+[GENERATE] Node #1078 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1078 picked for processing (State: deliver)
+[GENERATE] Node #1079 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1079 killed by upper bounds or load constraints
+[GENERATE] Node #1080 | f=19 (bc= 4) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1080 picked for processing (State: load)
+[GENERATE] Node #1081 | f=20 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1081 picked for processing (State: deliver)
+[GENERATE] Node #1082 | f=22 (bc= 4) | Routed to P2
+>>> [ACTIVE] Node #1082 picked for processing (State: unload)
+[GENERATE] Node #1083 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1083 killed by upper bounds or load constraints
+[GENERATE] Node #1084 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1084 killed by upper bounds or load constraints
+[GENERATE] Node #1085 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1085 picked for processing (State: deliver)
+[GENERATE] Node #1086 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1086 killed by upper bounds or load constraints
+[GENERATE] Node #1087 | f=25 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1087 picked for processing (State: load)
+[GENERATE] Node #1088 | f=19 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #1088 killed by upper bounds or load constraints
+[GENERATE] Node #1089 | f=19 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #1089 killed by upper bounds or load constraints
+[GENERATE] Node #1090 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1090 picked for processing (State: deliver)
+[GENERATE] Node #1091 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1091 killed by upper bounds or load constraints
+[GENERATE] Node #1092 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1092 killed by upper bounds or load constraints
+[GENERATE] Node #1093 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1093 killed by upper bounds or load constraints
+[GENERATE] Node #1094 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1094 picked for processing (State: deliver)
+[GENERATE] Node #1095 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1095 killed by upper bounds or load constraints
+[GENERATE] Node #1096 | f=25 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1096 picked for processing (State: load)
+[GENERATE] Node #1097 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1097 killed by upper bounds or load constraints
+[GENERATE] Node #1098 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1098 killed by upper bounds or load constraints
+[GENERATE] Node #1099 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1099 picked for processing (State: deliver)
+[GENERATE] Node #1100 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1100 killed by upper bounds or load constraints
+[GENERATE] Node #1101 | f=25 (bc=10) | Loaded: Rose red
+>>> [ACTIVE] Node #1101 picked for processing (State: load)
+[GENERATE] Node #1102 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #1102 picked for processing (State: load)
+[GENERATE] Node #1103 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #1103 picked for processing (State: load)
+[GENERATE] Node #1104 | f=19 (bc= 4) | Loaded: Tulip red
+>>> [ACTIVE] Node #1104 picked for processing (State: load)
+[GENERATE] Node #1105 | f=20 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1105 picked for processing (State: deliver)
+[GENERATE] Node #1106 | f=23 (bc= 4) | Routed to P1
+>>> [ACTIVE] Node #1106 picked for processing (State: unload)
+[GENERATE] Node #1107 | f=22 (bc= 4) | Routed to P2
+>>> [ACTIVE] Node #1107 picked for processing (State: unload)
+[GENERATE] Node #1108 | f=19 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #1108 killed by upper bounds or load constraints
+[GENERATE] Node #1109 | f=19 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #1109 killed by upper bounds or load constraints
+[GENERATE] Node #1110 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1110 picked for processing (State: deliver)
+[GENERATE] Node #1111 | f=29 (bc=10) | Routed to P1
+XXX [PRUNED] Node #1111 killed by upper bounds or load constraints
+[GENERATE] Node #1112 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1112 killed by upper bounds or load constraints
+[GENERATE] Node #1113 | f=19 (bc= 4) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1113 killed by upper bounds or load constraints
+[GENERATE] Node #1114 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1114 killed by upper bounds or load constraints
+[GENERATE] Node #1115 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1115 killed by upper bounds or load constraints
+[GENERATE] Node #1116 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1116 picked for processing (State: deliver)
+[GENERATE] Node #1117 | f=29 (bc=10) | Routed to P1
+XXX [PRUNED] Node #1117 killed by upper bounds or load constraints
+[GENERATE] Node #1118 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1118 killed by upper bounds or load constraints
+[GENERATE] Node #1119 | f=25 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1119 killed by upper bounds or load constraints
+[GENERATE] Node #1120 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1120 killed by upper bounds or load constraints
+[GENERATE] Node #1121 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1121 killed by upper bounds or load constraints
+[GENERATE] Node #1122 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1122 picked for processing (State: deliver)
+[GENERATE] Node #1123 | f=29 (bc=10) | Routed to P1
+XXX [PRUNED] Node #1123 killed by upper bounds or load constraints
+[GENERATE] Node #1124 | f=25 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1124 killed by upper bounds or load constraints
+[GENERATE] Node #1125 | f=25 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1125 picked for processing (State: load)
+[GENERATE] Node #1126 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1126 picked for processing (State: deliver)
+[GENERATE] Node #1127 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1127 killed by upper bounds or load constraints
+[GENERATE] Node #1128 | f=25 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1128 picked for processing (State: load)
+[GENERATE] Node #1129 | f=25 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1129 picked for processing (State: load)
+[GENERATE] Node #1130 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1130 picked for processing (State: deliver)
+[GENERATE] Node #1131 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1131 killed by upper bounds or load constraints
+[GENERATE] Node #1132 | f=25 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1132 picked for processing (State: load)
+[GENERATE] Node #1133 | f=25 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1133 picked for processing (State: load)
+[GENERATE] Node #1134 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1134 picked for processing (State: deliver)
+[GENERATE] Node #1135 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1135 killed by upper bounds or load constraints
+[GENERATE] Node #1136 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1136 picked for processing (State: deliver)
+[GENERATE] Node #1137 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1137 killed by upper bounds or load constraints
+[GENERATE] Node #1138 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1138 picked for processing (State: deliver)
+[GENERATE] Node #1139 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1139 killed by upper bounds or load constraints
+[GENERATE] Node #1140 | f=25 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1140 picked for processing (State: load)
+[GENERATE] Node #1141 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1141 killed by upper bounds or load constraints
+[GENERATE] Node #1142 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1142 killed by upper bounds or load constraints
+[GENERATE] Node #1143 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1143 picked for processing (State: deliver)
+[GENERATE] Node #1144 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1144 killed by upper bounds or load constraints
+[GENERATE] Node #1145 | f=23 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1145 picked for processing (State: deliver)
+[GENERATE] Node #1146 | f=26 (bc= 4) | Routed to P1
+>>> [ACTIVE] Node #1146 picked for processing (State: unload)
+[GENERATE] Node #1147 | f=27 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1147 picked for processing (State: collect)
+[GENERATE] Node #1148 | f=30 (bc= 4) | Traveled to warehouse
+XXX [PRUNED] Node #1148 killed by upper bounds or load constraints
+[GENERATE] Node #1149 | f=24 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1149 picked for processing (State: deliver)
+[GENERATE] Node #1150 | f=26 (bc= 4) | Routed to P2
+>>> [ACTIVE] Node #1150 picked for processing (State: unload)
+[GENERATE] Node #1151 | f=27 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1151 picked for processing (State: collect)
+[GENERATE] Node #1152 | f=29 (bc= 4) | Traveled to warehouse
+XXX [PRUNED] Node #1152 killed by upper bounds or load constraints
+[GENERATE] Node #1153 | f=23 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1153 picked for processing (State: collect)
+[GENERATE] Node #1154 | f=25 (bc= 4) | Traveled to warehouse
+>>> [ACTIVE] Node #1154 picked for processing (State: load)
+[GENERATE] Node #1155 | f=25 (bc= 4) | Loaded: Rose red
+>>> [ACTIVE] Node #1155 picked for processing (State: load)
+[GENERATE] Node #1156 | f=25 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #1156 killed by upper bounds or load constraints
+[GENERATE] Node #1157 | f=25 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #1157 killed by upper bounds or load constraints
+[GENERATE] Node #1158 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1158 picked for processing (State: deliver)
+[GENERATE] Node #1159 | f=29 (bc= 4) | Routed to P1
+XXX [PRUNED] Node #1159 killed by upper bounds or load constraints
+[GENERATE] Node #1160 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1160 picked for processing (State: load)
+[GENERATE] Node #1161 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1161 picked for processing (State: deliver)
+[GENERATE] Node #1162 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1162 killed by upper bounds or load constraints
+[GENERATE] Node #1163 | f=25 (bc= 4) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1163 picked for processing (State: load)
+[GENERATE] Node #1164 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1164 picked for processing (State: load)
+[GENERATE] Node #1165 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1165 picked for processing (State: deliver)
+[GENERATE] Node #1166 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1166 killed by upper bounds or load constraints
+[GENERATE] Node #1167 | f=25 (bc= 4) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1167 picked for processing (State: load)
+[GENERATE] Node #1168 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1168 picked for processing (State: load)
+[GENERATE] Node #1169 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1169 picked for processing (State: deliver)
+[GENERATE] Node #1170 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1170 killed by upper bounds or load constraints
+[GENERATE] Node #1171 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1171 picked for processing (State: deliver)
+[GENERATE] Node #1172 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1172 killed by upper bounds or load constraints
+[GENERATE] Node #1173 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1173 picked for processing (State: deliver)
+[GENERATE] Node #1174 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1174 killed by upper bounds or load constraints
+[GENERATE] Node #1175 | f=28 (bc=16) | Unloaded matching cargo
+XXX [PRUNED] Node #1175 killed by upper bounds or load constraints
+[GENERATE] Node #1176 | f=22 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #1176 picked for processing (State: collect)
+[GENERATE] Node #1177 | f=25 (bc=10) | Traveled to warehouse
+>>> [ACTIVE] Node #1177 picked for processing (State: load)
+[GENERATE] Node #1178 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #1178 picked for processing (State: load)
+[GENERATE] Node #1179 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #1179 picked for processing (State: load)
+[GENERATE] Node #1180 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #1180 picked for processing (State: load)
+[GENERATE] Node #1181 | f=19 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #1181 killed by upper bounds or load constraints
+[GENERATE] Node #1182 | f=19 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #1182 killed by upper bounds or load constraints
+[GENERATE] Node #1183 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1183 picked for processing (State: deliver)
+[GENERATE] Node #1184 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1184 killed by upper bounds or load constraints
+[GENERATE] Node #1185 | f=19 (bc= 4) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1185 picked for processing (State: load)
+[GENERATE] Node #1186 | f=20 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1186 picked for processing (State: deliver)
+[GENERATE] Node #1187 | f=22 (bc= 4) | Routed to P2
+>>> [ACTIVE] Node #1187 picked for processing (State: unload)
+[GENERATE] Node #1188 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1188 killed by upper bounds or load constraints
+[GENERATE] Node #1189 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1189 killed by upper bounds or load constraints
+[GENERATE] Node #1190 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1190 picked for processing (State: deliver)
+[GENERATE] Node #1191 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1191 killed by upper bounds or load constraints
+[GENERATE] Node #1192 | f=25 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1192 picked for processing (State: load)
+[GENERATE] Node #1193 | f=19 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #1193 killed by upper bounds or load constraints
+[GENERATE] Node #1194 | f=19 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #1194 killed by upper bounds or load constraints
+[GENERATE] Node #1195 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1195 picked for processing (State: deliver)
+[GENERATE] Node #1196 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1196 killed by upper bounds or load constraints
+[GENERATE] Node #1197 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1197 killed by upper bounds or load constraints
+[GENERATE] Node #1198 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1198 killed by upper bounds or load constraints
+[GENERATE] Node #1199 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1199 picked for processing (State: deliver)
+[GENERATE] Node #1200 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1200 killed by upper bounds or load constraints
+[GENERATE] Node #1201 | f=25 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1201 picked for processing (State: load)
+[GENERATE] Node #1202 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1202 killed by upper bounds or load constraints
+[GENERATE] Node #1203 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1203 killed by upper bounds or load constraints
+[GENERATE] Node #1204 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1204 picked for processing (State: deliver)
+[GENERATE] Node #1205 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1205 killed by upper bounds or load constraints
+[GENERATE] Node #1206 | f=25 (bc=10) | Loaded: Rose white
+>>> [ACTIVE] Node #1206 picked for processing (State: load)
+[GENERATE] Node #1207 | f=25 (bc=10) | Loaded: Tulip red
+XXX [PRUNED] Node #1207 killed by upper bounds or load constraints
+[GENERATE] Node #1208 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1208 killed by upper bounds or load constraints
+[GENERATE] Node #1209 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1209 killed by upper bounds or load constraints
+[GENERATE] Node #1210 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1210 picked for processing (State: deliver)
+[GENERATE] Node #1211 | f=29 (bc=10) | Routed to P1
+XXX [PRUNED] Node #1211 killed by upper bounds or load constraints
+[GENERATE] Node #1212 | f=25 (bc=10) | Loaded: Tulip yellow
+XXX [PRUNED] Node #1212 killed by upper bounds or load constraints
+[GENERATE] Node #1213 | f=25 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1213 picked for processing (State: load)
+[GENERATE] Node #1214 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1214 picked for processing (State: deliver)
+[GENERATE] Node #1215 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1215 killed by upper bounds or load constraints
+[GENERATE] Node #1216 | f=25 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1216 picked for processing (State: load)
+[GENERATE] Node #1217 | f=25 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1217 picked for processing (State: load)
+[GENERATE] Node #1218 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1218 picked for processing (State: deliver)
+[GENERATE] Node #1219 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1219 killed by upper bounds or load constraints
+[GENERATE] Node #1220 | f=25 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1220 picked for processing (State: load)
+[GENERATE] Node #1221 | f=25 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1221 picked for processing (State: load)
+[GENERATE] Node #1222 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1222 picked for processing (State: deliver)
+[GENERATE] Node #1223 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1223 killed by upper bounds or load constraints
+[GENERATE] Node #1224 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1224 picked for processing (State: deliver)
+[GENERATE] Node #1225 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1225 killed by upper bounds or load constraints
+[GENERATE] Node #1226 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1226 picked for processing (State: deliver)
+[GENERATE] Node #1227 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1227 killed by upper bounds or load constraints
+[GENERATE] Node #1228 | f=25 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1228 picked for processing (State: load)
+[GENERATE] Node #1229 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1229 killed by upper bounds or load constraints
+[GENERATE] Node #1230 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1230 killed by upper bounds or load constraints
+[GENERATE] Node #1231 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1231 picked for processing (State: deliver)
+[GENERATE] Node #1232 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1232 killed by upper bounds or load constraints
+[GENERATE] Node #1233 | f=23 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1233 picked for processing (State: collect)
+[GENERATE] Node #1234 | f=25 (bc= 4) | Traveled to warehouse
+>>> [ACTIVE] Node #1234 picked for processing (State: load)
+[GENERATE] Node #1235 | f=25 (bc= 4) | Loaded: Rose white
+>>> [ACTIVE] Node #1235 picked for processing (State: load)
+[GENERATE] Node #1236 | f=25 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #1236 killed by upper bounds or load constraints
+[GENERATE] Node #1237 | f=25 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #1237 killed by upper bounds or load constraints
+[GENERATE] Node #1238 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1238 picked for processing (State: deliver)
+[GENERATE] Node #1239 | f=29 (bc= 4) | Routed to P1
+XXX [PRUNED] Node #1239 killed by upper bounds or load constraints
+[GENERATE] Node #1240 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1240 picked for processing (State: load)
+[GENERATE] Node #1241 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1241 picked for processing (State: deliver)
+[GENERATE] Node #1242 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1242 killed by upper bounds or load constraints
+[GENERATE] Node #1243 | f=25 (bc= 4) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1243 picked for processing (State: load)
+[GENERATE] Node #1244 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1244 picked for processing (State: load)
+[GENERATE] Node #1245 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1245 picked for processing (State: deliver)
+[GENERATE] Node #1246 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1246 killed by upper bounds or load constraints
+[GENERATE] Node #1247 | f=25 (bc= 4) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1247 picked for processing (State: load)
+[GENERATE] Node #1248 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1248 picked for processing (State: load)
+[GENERATE] Node #1249 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1249 picked for processing (State: deliver)
+[GENERATE] Node #1250 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1250 killed by upper bounds or load constraints
+[GENERATE] Node #1251 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1251 picked for processing (State: deliver)
+[GENERATE] Node #1252 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1252 killed by upper bounds or load constraints
+[GENERATE] Node #1253 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1253 picked for processing (State: deliver)
+[GENERATE] Node #1254 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1254 killed by upper bounds or load constraints
+[GENERATE] Node #1255 | f=22 (bc=10) | Unloaded matching cargo
+>>> [ACTIVE] Node #1255 picked for processing (State: collect)
+[GENERATE] Node #1256 | f=25 (bc=10) | Traveled to warehouse
+>>> [ACTIVE] Node #1256 picked for processing (State: load)
+[GENERATE] Node #1257 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #1257 picked for processing (State: load)
+[GENERATE] Node #1258 | f=25 (bc=10) | Loaded: Tulip red
+>>> [ACTIVE] Node #1258 picked for processing (State: load)
+[GENERATE] Node #1259 | f=19 (bc= 4) | Loaded: Tulip red
+>>> [ACTIVE] Node #1259 picked for processing (State: load)
+[GENERATE] Node #1260 | f=19 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #1260 killed by upper bounds or load constraints
+[GENERATE] Node #1261 | f=19 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #1261 killed by upper bounds or load constraints
+[GENERATE] Node #1262 | f=20 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1262 picked for processing (State: deliver)
+[GENERATE] Node #1263 | f=22 (bc= 4) | Routed to P2
+>>> [ACTIVE] Node #1263 picked for processing (State: unload)
+[GENERATE] Node #1264 | f=19 (bc= 4) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1264 picked for processing (State: load)
+[GENERATE] Node #1265 | f=20 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1265 picked for processing (State: deliver)
+[GENERATE] Node #1266 | f=22 (bc= 4) | Routed to P2
+>>> [ACTIVE] Node #1266 picked for processing (State: unload)
+[GENERATE] Node #1267 | f=19 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #1267 killed by upper bounds or load constraints
+[GENERATE] Node #1268 | f=19 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #1268 killed by upper bounds or load constraints
+[GENERATE] Node #1269 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1269 picked for processing (State: deliver)
+[GENERATE] Node #1270 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1270 killed by upper bounds or load constraints
+[GENERATE] Node #1271 | f=19 (bc= 4) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1271 picked for processing (State: load)
+[GENERATE] Node #1272 | f=19 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #1272 killed by upper bounds or load constraints
+[GENERATE] Node #1273 | f=19 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #1273 killed by upper bounds or load constraints
+[GENERATE] Node #1274 | f=20 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1274 picked for processing (State: deliver)
+[GENERATE] Node #1275 | f=22 (bc= 4) | Routed to P2
+>>> [ACTIVE] Node #1275 picked for processing (State: unload)
+[GENERATE] Node #1276 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1276 killed by upper bounds or load constraints
+[GENERATE] Node #1277 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1277 killed by upper bounds or load constraints
+[GENERATE] Node #1278 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1278 picked for processing (State: deliver)
+[GENERATE] Node #1279 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1279 killed by upper bounds or load constraints
+[GENERATE] Node #1280 | f=25 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1280 picked for processing (State: load)
+[GENERATE] Node #1281 | f=19 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #1281 killed by upper bounds or load constraints
+[GENERATE] Node #1282 | f=19 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #1282 killed by upper bounds or load constraints
+[GENERATE] Node #1283 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1283 picked for processing (State: deliver)
+[GENERATE] Node #1284 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1284 killed by upper bounds or load constraints
+[GENERATE] Node #1285 | f=25 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1285 picked for processing (State: load)
+[GENERATE] Node #1286 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1286 picked for processing (State: deliver)
+[GENERATE] Node #1287 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1287 killed by upper bounds or load constraints
+[GENERATE] Node #1288 | f=25 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1288 picked for processing (State: load)
+[GENERATE] Node #1289 | f=25 (bc=10) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1289 picked for processing (State: load)
+[GENERATE] Node #1290 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1290 picked for processing (State: deliver)
+[GENERATE] Node #1291 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1291 killed by upper bounds or load constraints
+[GENERATE] Node #1292 | f=25 (bc=10) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1292 picked for processing (State: load)
+[GENERATE] Node #1293 | f=19 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1293 picked for processing (State: load)
+[GENERATE] Node #1294 | f=20 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1294 picked for processing (State: deliver)
+[GENERATE] Node #1295 | f=24 (bc= 4) | Routed to P3
+>>> [ACTIVE] Node #1295 picked for processing (State: unload)
+[GENERATE] Node #1296 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1296 picked for processing (State: deliver)
+[GENERATE] Node #1297 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1297 killed by upper bounds or load constraints
+[GENERATE] Node #1298 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1298 picked for processing (State: deliver)
+[GENERATE] Node #1299 | f=30 (bc=10) | Routed to P3
+XXX [PRUNED] Node #1299 killed by upper bounds or load constraints
+[GENERATE] Node #1300 | f=25 (bc=10) | Loaded: Tulip yellow
+>>> [ACTIVE] Node #1300 picked for processing (State: load)
+[GENERATE] Node #1301 | f=25 (bc=10) | Loaded: Orchid pink
+XXX [PRUNED] Node #1301 killed by upper bounds or load constraints
+[GENERATE] Node #1302 | f=25 (bc=10) | Loaded: Orchid purple
+XXX [PRUNED] Node #1302 killed by upper bounds or load constraints
+[GENERATE] Node #1303 | f=26 (bc=10) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1303 picked for processing (State: deliver)
+[GENERATE] Node #1304 | f=28 (bc=10) | Routed to P2
+XXX [PRUNED] Node #1304 killed by upper bounds or load constraints
+[GENERATE] Node #1305 | f=25 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1305 picked for processing (State: collect)
+[GENERATE] Node #1306 | f=29 (bc= 4) | Traveled to warehouse
+XXX [PRUNED] Node #1306 killed by upper bounds or load constraints
+[GENERATE] Node #1307 | f=23 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1307 picked for processing (State: collect)
+[GENERATE] Node #1308 | f=25 (bc= 4) | Traveled to warehouse
+>>> [ACTIVE] Node #1308 picked for processing (State: load)
+[GENERATE] Node #1309 | f=25 (bc= 4) | Loaded: Tulip red
+>>> [ACTIVE] Node #1309 picked for processing (State: load)
+[GENERATE] Node #1310 | f=25 (bc= 4) | Loaded: Orchid pink
+XXX [PRUNED] Node #1310 killed by upper bounds or load constraints
+[GENERATE] Node #1311 | f=25 (bc= 4) | Loaded: Orchid purple
+XXX [PRUNED] Node #1311 killed by upper bounds or load constraints
+[GENERATE] Node #1312 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1312 picked for processing (State: deliver)
+[GENERATE] Node #1313 | f=28 (bc= 4) | Routed to P2
+XXX [PRUNED] Node #1313 killed by upper bounds or load constraints
+[GENERATE] Node #1314 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1314 picked for processing (State: load)
+[GENERATE] Node #1315 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1315 picked for processing (State: deliver)
+[GENERATE] Node #1316 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1316 killed by upper bounds or load constraints
+[GENERATE] Node #1317 | f=25 (bc= 4) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1317 picked for processing (State: load)
+[GENERATE] Node #1318 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1318 picked for processing (State: load)
+[GENERATE] Node #1319 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1319 picked for processing (State: deliver)
+[GENERATE] Node #1320 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1320 killed by upper bounds or load constraints
+[GENERATE] Node #1321 | f=25 (bc= 4) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1321 picked for processing (State: load)
+[GENERATE] Node #1322 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1322 picked for processing (State: load)
+[GENERATE] Node #1323 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1323 picked for processing (State: deliver)
+[GENERATE] Node #1324 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1324 killed by upper bounds or load constraints
+[GENERATE] Node #1325 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1325 picked for processing (State: deliver)
+[GENERATE] Node #1326 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1326 killed by upper bounds or load constraints
+[GENERATE] Node #1327 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1327 picked for processing (State: deliver)
+[GENERATE] Node #1328 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1328 killed by upper bounds or load constraints
+[GENERATE] Node #1329 | f=23 (bc= 4) | Unloaded matching cargo
+>>> [ACTIVE] Node #1329 picked for processing (State: collect)
+[GENERATE] Node #1330 | f=25 (bc= 4) | Traveled to warehouse
+>>> [ACTIVE] Node #1330 picked for processing (State: load)
+[GENERATE] Node #1331 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1331 picked for processing (State: load)
+[GENERATE] Node #1332 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1332 picked for processing (State: deliver)
+[GENERATE] Node #1333 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1333 killed by upper bounds or load constraints
+[GENERATE] Node #1334 | f=25 (bc= 4) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1334 picked for processing (State: load)
+[GENERATE] Node #1335 | f=25 (bc= 4) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1335 picked for processing (State: load)
+[GENERATE] Node #1336 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1336 picked for processing (State: deliver)
+[GENERATE] Node #1337 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1337 killed by upper bounds or load constraints
+[GENERATE] Node #1338 | f=25 (bc= 4) | Loaded: Orchid purple
+>>> [ACTIVE] Node #1338 picked for processing (State: load)
+[GENERATE] Node #1339 | f=25 (bc= 0) | Loaded: Orchid pink
+>>> [ACTIVE] Node #1339 picked for processing (State: load)
+[GENERATE] Node #1340 | f=26 (bc= 0) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1340 picked for processing (State: deliver)
+[GENERATE] Node #1341 | f=26 (bc= 0) | Routed to P3
+>>> [ACTIVE] Node #1341 picked for processing (State: unload)
+[GENERATE] Node #1342 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1342 picked for processing (State: deliver)
+[GENERATE] Node #1343 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1343 killed by upper bounds or load constraints
+[GENERATE] Node #1344 | f=26 (bc= 4) | Finished loading. Dispatched.
+>>> [ACTIVE] Node #1344 picked for processing (State: deliver)
+[GENERATE] Node #1345 | f=30 (bc= 4) | Routed to P3
+XXX [PRUNED] Node #1345 killed by upper bounds or load constraints
+[GENERATE] Node #1346 | f=27 (bc= 0) | Unloaded matching cargo
+>>> [ACTIVE] Node #1346 picked for processing (State: done)
+
+[GOAL] OPTIMAL SOLUTION ACQUIRED BY NODE #1346
+
+--- TIMELINE MAP OF RUNTIME SUCCESS OPERATIONS ---
+Step  0: [Node #  1] -> System Frame Initialization | Pos: (3,1)
+Step  1: [Node #  2] -> Traveled to warehouse | Pos: (3,2)
+Step  2: [Node #210] -> Loaded: RG gold | Pos: (3,2)
+Step  3: [Node #219] -> Loaded: RG gold | Pos: (3,2)
+Step  4: [Node #220] -> Loaded: RG light pink | Pos: (3,2)
+Step  5: [Node #221] -> Loaded: RG light pink | Pos: (3,2)
+Step  6: [Node #222] -> Finished loading. Dispatched. | Pos: (3,2)
+Step  7: [Node #223] -> Routed to P4 | Pos: (5,2)
+Step  8: [Node #801] -> Unloaded matching cargo | Pos: (5,2)
+Step  9: [Node #802] -> Traveled to warehouse | Pos: (3,2)
+Step 10: [Node #838] -> Loaded: Rose red | Pos: (3,2)
+Step 11: [Node #864] -> Loaded: Rose red | Pos: (3,2)
+Step 12: [Node #888] -> Loaded: Rose pink | Pos: (3,2)
+Step 13: [Node #890] -> Loaded: Rose white | Pos: (3,2)
+Step 14: [Node #891] -> Finished loading. Dispatched. | Pos: (3,2)
+Step 15: [Node #892] -> Routed to P1 | Pos: (2,4)
+Step 16: [Node #1255] -> Unloaded matching cargo | Pos: (2,4)
+Step 17: [Node #1256] -> Traveled to warehouse | Pos: (3,2)
+Step 18: [Node #1257] -> Loaded: Tulip red | Pos: (3,2)
+Step 19: [Node #1258] -> Loaded: Tulip red | Pos: (3,2)
+Step 20: [Node #1259] -> Loaded: Tulip red | Pos: (3,2)
+Step 21: [Node #1264] -> Loaded: Tulip yellow | Pos: (3,2)
+Step 22: [Node #1265] -> Finished loading. Dispatched. | Pos: (3,2)
+Step 23: [Node #1266] -> Routed to P2 | Pos: (4,3)
+Step 24: [Node #1329] -> Unloaded matching cargo | Pos: (4,3)
+Step 25: [Node #1330] -> Traveled to warehouse | Pos: (3,2)
+Step 26: [Node #1334] -> Loaded: Orchid purple | Pos: (3,2)
+Step 27: [Node #1338] -> Loaded: Orchid purple | Pos: (3,2)
+Step 28: [Node #1339] -> Loaded: Orchid pink | Pos: (3,2)
+Step 29: [Node #1340] -> Finished loading. Dispatched. | Pos: (3,2)
+Step 30: [Node #1341] -> Routed to P3 | Pos: (4,5)
+Step 31: [Node #1346] -> Unloaded matching cargo | Pos: (4,5)
