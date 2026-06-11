@@ -103,8 +103,9 @@ def calc_manhattan(x1, y1, x2, y2):
     return abs(x1 - x2) + abs(y1 - y2)
 
 
-def calc_heuristic_hn(pavilions, cx, cy):
-    unfulfilled = list(filter(lambda p: p[5] > p[6], pavilions))
+def calc_heuristic_hn(pavilions, cx, cy, ignore_x=None, ignore_y=None):
+    # Filter unfulfilled, optionally ignoring the one we are currently delivering to
+    unfulfilled = list(filter(lambda p: p[5] > p[6] and not (p[1] == ignore_x and p[2] == ignore_y), pavilions))
     distances = list(map(lambda p: calc_manhattan(cx, cy, p[1], p[2]), unfulfilled))
     return {True: 0, False: min(distances or [0])}[len(distances) == 0]
 
@@ -172,6 +173,7 @@ class FlowerDeliveryEngine(KnowledgeEngine):
 
     @Rule(
         SystemControl(phase="search"),
+        NOT(SearchNode(status="active")), # <-- THE MUTEX LOCK
         AS.candidate << SearchNode(status="open", f_n=MATCH.f1),
         NOT(SearchNode(status="open", f_n=TEST(lambda f: f < MATCH.f1))),
         salience=1000,
@@ -295,7 +297,6 @@ class FlowerDeliveryEngine(KnowledgeEngine):
     def action_deliver(self, node, cb, p, g, rx, ry, ml, wx, wy):
         matching = filter(lambda pav: any(map(lambda i: i[0] == pav[3], cb)) and pav[5] > pav[6], p)
         targets = dict(map(lambda pav: (pav[0], (pav[1], pav[2])), matching))
-        bc = calc_bestcase(p, ml, wx, wy)
 
         list(
             map(
@@ -310,9 +311,9 @@ class FlowerDeliveryEngine(KnowledgeEngine):
                         carried_bouquets=cb,
                         pavilions=p,
                         g_n=g + calc_manhattan(rx, ry, t[1][0], t[1][1]),
-                        h_n=calc_heuristic_hn(p, t[1][0], t[1][1]),
-                        f_n=(g + calc_manhattan(rx, ry, t[1][0], t[1][1])) + calc_heuristic_hn(p, t[1][0], t[1][1]),
-                        bestcase_n=bc,
+                        # THE FIX: Tell the heuristic to ignore the pavilion at t[1][0], t[1][1]
+                        h_n=calc_heuristic_hn(p, t[1][0], t[1][1], t[1][0], t[1][1]),
+                        f_n=(g + calc_manhattan(rx, ry, t[1][0], t[1][1])) + calc_heuristic_hn(p, t[1][0], t[1][1], t[1][0], t[1][1]),
                         last_action=f"Routed directly to Pavilion {t[0]}",
                     )
                 ),
