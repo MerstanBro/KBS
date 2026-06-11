@@ -4,7 +4,7 @@ from typing import Any, Optional
 
 from experta import *
 
-TOGGLE_BESTCASE = 1
+TOGGLE_BESTCASE = 0
 
 DEFAULT_PRETEST = {
     "meta": {
@@ -92,8 +92,12 @@ def calc_bestcase(pavilions, max_load, wx, wy):
     for i in range(min(n, len(distances))):
         bestcase_cost += (distances[i] * 2 + 2)
 
-    return bestcase_cost * TOGGLE_BESTCASE
+    # THE FIX: Apply the 'no-return' discount to the heuristic
+    # so it never overestimates the cost of the final one-way trip!
+    if distances:
+        bestcase_cost -= max(distances)
 
+    return bestcase_cost * TOGGLE_BESTCASE
 
 def calc_manhattan(x1, y1, x2, y2):
     return abs(x1 - x2) + abs(y1 - y2)
