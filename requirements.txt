@@ -1,0 +1,4 @@
+experta>=1.9.4
+frozendict>=2.4.6
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0

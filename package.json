@@ -1,0 +1,16 @@
+{
+  "name": "kbs-final",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/free-ports.js 8010 5173",
+    "dev": "concurrently -k -n backend,frontend -c blue,green \"python -m uvicorn server:app --reload --host 127.0.0.1 --port 8010\" \"npm run dev --prefix frontend\"",
+    "dev:backend": "python -m uvicorn server:app --reload --host 127.0.0.1 --port 8010",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "test": "npm test --prefix frontend",
+    "build": "npm run build --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
