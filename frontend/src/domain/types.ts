@@ -67,6 +67,84 @@ export interface BoardMetaPatch {
   grid_size?: number;
 }
 
+export interface SearchTreeNode {
+  node_id: number;
+  parent_id: number;
+  robot_x: number;
+  robot_y: number;
+  robot_state: string;
+  status: string;
+  g_n: number;
+  f_n: number;
+  h_n?: number;
+  last_action: string;
+}
+
+export interface PathCommand {
+  step: number;
+  line: string;
+  command: string;
+  detail: string;
+  state: string;
+  pos: { x: number; y: number };
+  stepCost: number;
+  g: number;
+}
+
+export interface GoalInfo {
+  node_id: number;
+  g_n: number;
+  f_n: number;
+  message?: string;
+}
+
+export interface TreeGenerationLevel {
+  offset: number;
+  label: string;
+  nodes: SearchTreeNode[];
+}
+
+export interface SimulationResult {
+  goal: GoalInfo | null;
+  searchTree: SearchTreeNode[];
+  pathCommands: PathCommand[];
+  totalCost: number;
+  logs: string[];
+}
+
+export interface PavilionSiteState {
+  pid: number;
+  x: number;
+  y: number;
+  orders: PavilionOrder[];
+  totalNeeded: number;
+  totalDelivered: number;
+  complete: boolean;
+}
+
+export interface PlaybackState {
+  x: number;
+  y: number;
+  action: string;
+  highlightNodeId?: number;
+  pavilionOrders?: PavilionOrder[];
+  robotInventory?: RobotInventoryItem[];
+}
+
+export interface RobotInventoryItem {
+  type: string;
+  color: string;
+  label: string;
+  count: number;
+}
+
+export interface PlaybackSimulationState {
+  pavilionOrders: PavilionOrder[];
+  robotInventory: RobotInventoryItem[];
+  totalLoaded: number;
+  maxLoad: number;
+}
+
 export interface RobotMoveEvent {
   to_x: number;
   to_y: number;
@@ -90,6 +168,10 @@ export interface SimulationHandlers {
   onStatus?: (status: string) => void;
   onBoard?: (board: Board) => void;
   onMove?: (data: RobotMoveEvent) => void;
+  onGoal?: (goal: GoalInfo) => void;
+  onSearchTree?: (nodes: SearchTreeNode[]) => void;
+  onPathCommand?: (command: PathCommand) => void;
+  onPathTrace?: (lines: string[], totalCost: number) => void;
   onDone?: () => void;
   onError?: () => void;
   onClose?: () => void;

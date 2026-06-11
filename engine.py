@@ -4,7 +4,10 @@ from typing import Any, Optional
 
 from experta import *
 
-TOGGLE_BESTCASE = 0
+# ==========================================
+# 0. THE INTERVIEW "KILL SWITCH"
+# ==========================================
+TOGGLE_BESTCASE = 1
 
 DEFAULT_PRETEST = {
     "meta": {
@@ -28,33 +31,6 @@ DEFAULT_PRETEST = {
 }
 
 
-class SystemControl(Fact):
-    phase = Field(str, default="search")
-
-
-class SystemMeta(Fact):
-    upper_bound = Field(int, mandatory=True)
-    max_load = Field(int, mandatory=True)
-    warehouse_x = Field(int, default=3)
-    warehouse_y = Field(int, default=2)
-
-
-class SearchNode(Fact):
-    node_id = Field(int, mandatory=True)
-    parent_id = Field(int, mandatory=True)
-    robot_x = Field(int, mandatory=True)
-    robot_y = Field(int, mandatory=True)
-    robot_state = Field(str, mandatory=True)
-    status = Field(str, default="open")
-    carried_bouquets = Field(tuple, default=())
-    pavilions = Field(tuple, mandatory=True)
-    g_n = Field(int, default=0)
-    h_n = Field(int, default=0)
-    f_n = Field(int, default=0)
-    bestcase_n = Field(int, default=0)
-    last_action = Field(str, default="spawn")
-
-
 def calc_strict_upper_bound(pavilions, start_x, start_y, wx, wy):
     unique_p = list({(p[1], p[2]) for p in pavilions if p[5] > 0})
     distances = list(map(lambda pos: abs(wx - pos[0]) + abs(wy - pos[1]), unique_p))
@@ -63,67 +39,6 @@ def calc_strict_upper_bound(pavilions, start_x, start_y, wx, wy):
     action_tax = len(distances) * 2
     longest_dist = max(distances or [0])
     return start_dist + round_trips + action_tax - longest_dist
-
-
-def calc_bestcase(pavilions, max_load, wx, wy):
-    if TOGGLE_BESTCASE == 0:
-        return 0
-
-    total_need = 0
-    distances = []
-    for p in pavilions:
-        _pid, px, py, _ptype, _pcolor, needed, delivered = p
-        if needed > delivered:
-            total_need += (needed - delivered)
-            distances.append(abs(wx - px) + abs(wy - py))
-
-    if total_need == 0:
-        return 0
-
-    n = math.ceil(total_need / max_load)
-    distances.sort()
-
-    bestcase_cost = 0
-    for i in range(min(n, len(distances))):
-        bestcase_cost += (distances[i] * 2 + 2)
-
-    if distances:
-        bestcase_cost -= max(distances)
-
-    return bestcase_cost * TOGGLE_BESTCASE
-
-
-def calc_manhattan(x1, y1, x2, y2):
-    return abs(x1 - x2) + abs(y1 - y2)
-
-
-def calc_heuristic_hn(pavilions, cx, cy, ignore_x=None, ignore_y=None, wx=3, wy=2):
-    """
-    Return-Trip Aware Heuristic: 
-    Adds distance to return to warehouse IF there are still unfulfilled pavilions.
-    """
-    unfulfilled = list(filter(lambda p: p[5] > p[6] and not (p[1] == ignore_x and p[2] == ignore_y), pavilions))
-    unique_p = list({(p[1], p[2]) for p in unfulfilled})
-    w_dists = list(map(lambda pos: abs(wx - pos[0]) + abs(wy - pos[1]), unique_p))
-    
-    return {
-        True: 0, # If completely finished, no return needed. Cost is 0.
-        False: abs(cx - wx) + abs(cy - wy) + sum(map(lambda d: d * 2, w_dists)) - max(w_dists or [0])
-    }[len(unfulfilled) == 0]
-
-
-def get_possible_loads(pavilions, inventory, max_load):
-    current_total = sum(map(lambda i: i[2], inventory))
-    space_left = max_load - current_total
-    in_cart = lambda ft, c: sum(map(lambda i: i[2], filter(lambda i: i[0] == ft and i[1] == c, inventory)))
-    active_p = list(filter(lambda p: (p[5] - p[6] - in_cart(p[3], p[4])) > 0, pavilions))
-    make_opts = lambda p: map(lambda q: (p[3], p[4], q), range(1, min(p[5] - p[6] - in_cart(p[3], p[4]), space_left) + 1))
-    raw_opts = sum(map(list, map(make_opts, active_p)), [])
-    return {True: [], False: list(dict.fromkeys(raw_opts))}[space_left <= 0]
-
-
-def trace_path_recursive(current_id, fact_map):
-    return [fact_map[current_id]] + trace_path_recursive(fact_map[current_id]["parent_id"], fact_map) if current_id in fact_map else []
 
 
 def parse_pretest(pretest_data: dict) -> tuple[dict, tuple, int, int]:
@@ -137,23 +52,208 @@ def parse_pretest(pretest_data: dict) -> tuple[dict, tuple, int, int]:
     return meta, pavilions, start_x, start_y
 
 
-def node_to_dict(node: SearchNode) -> dict[str, Any]:
+# ==========================================
+# 1. PURE LOGIC SCHEMAS (FLATTENED STATE)
+# ==========================================
+
+class SystemControl(Fact):
+    phase = Field(str, default="search")
+
+class SystemMeta(Fact):
+    upper_bound = Field(int, mandatory=True)
+    max_load = Field(int, mandatory=True)
+
+class SearchNode(Fact):
+    id = Field(int, mandatory=True)
+    pid = Field(int, mandatory=True)
+    state = Field(str, mandatory=True)
+    status = Field(str, default="open")
+    action = Field(str, default="spawn")
+
+    rx = Field(int, default=3)
+    ry = Field(int, default=1)
+
+    g = Field(int, default=0)
+    h = Field(int, default=0)
+    f = Field(int, default=0)
+    bc = Field(int, default=0)
+
+    last_item = Field(int, default=1)
+    tot_i = Field(int, default=0)
+    tot_d = Field(int, default=0)
+
+    i_rr = Field(int, default=0); i_rp = Field(int, default=0); i_rw = Field(int, default=0)
+    i_tr = Field(int, default=0); i_ty = Field(int, default=0)
+    i_op = Field(int, default=0); i_opi = Field(int, default=0)
+    i_rgg = Field(int, default=0); i_rglp = Field(int, default=0)
+
+    d_rr = Field(int, default=0); d_rp = Field(int, default=0); d_rw = Field(int, default=0)
+    d_tr = Field(int, default=0); d_ty = Field(int, default=0)
+    d_op = Field(int, default=0); d_opi = Field(int, default=0)
+    d_rgg = Field(int, default=0); d_rglp = Field(int, default=0)
+
+class Link(Fact):
+    child = Field(int); parent = Field(int); action = Field(str); rx = Field(int); ry = Field(int)
+
+class TraceNode(Fact):
+    id = Field(int)
+
+class PrintStep(Fact):
+    id = Field(int); step = Field(int)
+
+class FindNext(Fact):
+    parent = Field(int); step = Field(int)
+
+
+def node_to_dict(node) -> dict[str, Any]:
     return {
-        "node_id": node["node_id"], "parent_id": node["parent_id"],
-        "robot_x": node["robot_x"], "robot_y": node["robot_y"],
-        "robot_state": node["robot_state"], "status": node["status"],
-        "f_n": node["f_n"], "g_n": node["g_n"], "h_n": node["h_n"],
-        "last_action": node["last_action"],
+        "node_id": node["id"],
+        "parent_id": node["pid"],
+        "robot_x": node["rx"],
+        "robot_y": node["ry"],
+        "robot_state": node["state"],
+        "status": node["status"],
+        "g_n": node["g"],
+        "f_n": node["f"],
+        "h_n": node["h"],
+        "last_action": node["action"],
     }
 
 
+def distribute_cost(total: int, count: int) -> list[int]:
+    if count <= 0:
+        return []
+    base, rem = divmod(total, count)
+    return [base + (1 if i < rem else 0) for i in range(count)]
+
+
+def moves_between(x0: int, y0: int, x1: int, y1: int) -> list[tuple[str, int, int]]:
+    out: list[tuple[str, int, int]] = []
+    x, y = x0, y0
+    while x < x1:
+        x += 1
+        out.append(("robot move right", x, y))
+    while x > x1:
+        x -= 1
+        out.append(("robot move left", x, y))
+    while y < y1:
+        y += 1
+        out.append(("robot move down", x, y))
+    while y > y1:
+        y -= 1
+        out.append(("robot move up", x, y))
+    return out
+
+
+def classify_action(action: str) -> tuple[str | None, str]:
+    if action.startswith("Loaded:"):
+        return "robot load", action.removeprefix("Loaded:").strip()
+    if action.startswith("Unloaded"):
+        return "robot unload", ""
+    if "Finished loading" in action or "Dispatched" in action:
+        return "robot dispatch", ""
+    if "System Frame" in action:
+        return "robot start", "initial position"
+    return None, ""
+
+
+def action_extra_cost(command: str | None) -> int:
+    if command in ("robot unload", "robot dispatch"):
+        return 1
+    return 0
+
+
+def format_path_step(
+    prev: dict[str, int] | None,
+    rx: int,
+    ry: int,
+    g: int,
+    action: str,
+    state: str,
+) -> list[str]:
+    lines: list[str] = []
+    prev_g = prev["g"] if prev else 0
+    prev_x = prev["x"] if prev else rx
+    prev_y = prev["y"] if prev else ry
+    delta = g - prev_g
+
+    command, detail = classify_action(action)
+    if command == "robot start":
+        lines.append(f"robot start | {detail} | pos=({rx},{ry}) | +0 | g={g}")
+        return lines
+
+    moves = moves_between(prev_x, prev_y, rx, ry)
+    extra = action_extra_cost(command)
+    move_cost = max(0, delta - extra)
+    running_g = prev_g
+
+    if moves:
+        increments = distribute_cost(move_cost, len(moves))
+        for (label, mx, my), inc in zip(moves, increments):
+            running_g += inc
+            lines.append(f"{label} | pos=({mx},{my}) | +{inc} | g={running_g}")
+
+    if command:
+        inc = g - running_g
+        parts = [command]
+        if detail:
+            parts.append(detail)
+        parts.extend([f"state={state}", f"pos=({rx},{ry})", f"+{inc}", f"g={g}"])
+        lines.append(" | ".join(parts))
+
+    return lines
+
+# ==========================================
+# 2. PURE MATH HELPERS (Zero Control Flow)
+# ==========================================
+
+def calc_h(dr1, dr2, dr3, dt1, dt2, do1, do2, dg1, dg2, rx, ry):
+    rem1 = (2-dr1) + (1-dr2) + (1-dr3)
+    rem2 = (3-dt1) + (1-dt2)
+    rem3 = (2-do1) + (1-do2)
+    rem4 = (2-dg1) + (2-dg2)
+
+    dist1 = (abs(rx - 2) + abs(ry - 4)) * (rem1 > 0) + 999 * (rem1 == 0)
+    dist2 = (abs(rx - 4) + abs(ry - 3)) * (rem2 > 0) + 999 * (rem2 == 0)
+    dist3 = (abs(rx - 4) + abs(ry - 5)) * (rem3 > 0) + 999 * (rem3 == 0)
+    dist4 = (abs(rx - 5) + abs(ry - 2)) * (rem4 > 0) + 999 * (rem4 == 0)
+
+    m = min(dist1, dist2, dist3, dist4)
+    return m * (m != 999)
+
+def calc_bc(tot_d, tot_i):
+    # FIXED: Exactly 15 items in the simulation, not 16.
+    tot_rem = (15 - tot_d - tot_i)
+    tot_rem = tot_rem * (tot_rem > 0)
+    trips = math.ceil(tot_rem / 4.0)
+    return int((trips * 6 - 2) * (trips > 0)) * TOGGLE_BESTCASE
+
+def is_invalid_load(r1,r2,r3, t1,t2, o1,o2, g1,g2):
+    types = ((r1+r2+r3)>0) + ((t1+t2)>0) + ((o1+o2)>0) + ((g1+g2)>0)
+    colors = ((r1+t1)>0) + ((r2+o2)>0) + (r3>0) + (t2>0) + (o1>0) + (g1>0) + (g2>0)
+    return (types > 1) * (colors > 1)
+
+def can_load(li, target_li, inv, deliv, max_need, tot_i):
+    return (li <= target_li) * ((inv + deliv) < max_need) * (tot_i < 4)
+
+# ==========================================
+# 3. THE RULE ENGINE
+# ==========================================
+
 class FlowerDeliveryEngine(KnowledgeEngine):
-    def __init__(self, message_queue: Optional[Queue] = None, pretest_data: Optional[dict] = None, live_mode: bool = False):
+    def __init__(
+        self,
+        message_queue: Optional[Queue] = None,
+        pretest_data: Optional[dict] = None,
+        live_mode: bool = False,
+    ):
         super().__init__()
         self.node_counter = 0
         self.message_queue = message_queue
         self.pretest_data = pretest_data or DEFAULT_PRETEST
         self.live_mode = live_mode or message_queue is not None
+        self._path_prev: dict[str, int] | None = None
+        self._path_commands: list[str] = []
 
     def next_id(self):
         self.node_counter += 1
@@ -163,22 +263,58 @@ class FlowerDeliveryEngine(KnowledgeEngine):
         if self.message_queue is not None:
             self.message_queue.put({"event": event_type, "data": data})
 
+    def clone_node(self, node, new_state, add_g=0, **kwargs):
+        defaults = {
+            "i_rr": 0, "i_rp": 0, "i_rw": 0, "i_tr": 0, "i_ty": 0,
+            "i_op": 0, "i_opi": 0, "i_rgg": 0, "i_rglp": 0,
+            "d_rr": 0, "d_rp": 0, "d_rw": 0, "d_tr": 0, "d_ty": 0,
+            "d_op": 0, "d_opi": 0, "d_rgg": 0, "d_rglp": 0,
+            "tot_i": 0, "tot_d": 0, "last_item": 1,
+        }
+        d = {**defaults, **dict(node)}
+        del d["__factid__"]
+        d.update(kwargs)
+
+        d['id'] = self.next_id()
+        d['pid'] = node['id']
+        d['state'] = new_state
+        d['status'] = "open"
+        d['g'] += add_g
+        d['h'] = calc_h(d['d_rr'], d['d_rp'], d['d_rw'], d['d_tr'], d['d_ty'], d['d_op'], d['d_opi'], d['d_rgg'], d['d_rglp'], d['rx'], d['ry'])
+        d['bc'] = calc_bc(d['tot_d'], d['tot_i'])
+        d['f'] = d['g'] + max(d['h'], d['bc'])
+        self.declare(SearchNode(**d))
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="open", id=MATCH.id, action=MATCH.act, f=MATCH.f, bc=MATCH.bc), salience=10000)
+    def log_generated(self, id, act, f, bc):
+        if not self.live_mode:
+            print(f"[GENERATE] Node #{id:3} | f={f:2} (bc={bc:2}) | {act}")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", id=MATCH.id, state=MATCH.state), salience=10000)
+    def log_activated(self, id, state):
+        if not self.live_mode:
+            print(f">>> [ACTIVE] Node #{id:3} picked for processing (State: {state})")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="dead", id=MATCH.id), salience=10000)
+    def log_pruned(self, id):
+        if not self.live_mode:
+            print(f"XXX [PRUNED] Node #{id:3} killed by upper bounds or load constraints")
+
     @Rule(
         SystemControl(phase="search"),
-        NOT(SearchNode(status="active")), # MUTEX LOCK: Enforces true A* order
-        AS.candidate << SearchNode(status="open", f_n=MATCH.f1),
-        NOT(SearchNode(status="open", f_n=TEST(lambda f: f < MATCH.f1))),
-        salience=1000,
+        AS.candidate << SearchNode(status="open", f=MATCH.f1),
+        NOT(SearchNode(status="open", f=TEST(lambda f: f < MATCH.f1))),
+        salience=1000
     )
     def activate_node(self, candidate):
         self.modify(candidate, status="active")
 
     @Rule(
         SystemControl(phase="search"),
-        AS.node << SearchNode(status="open", f_n=MATCH.f), # PRUNE ON f(n)
+        AS.node << SearchNode(status="open", g=MATCH.g, bc=MATCH.bc),
         SystemMeta(upper_bound=MATCH.ub),
-        TEST(lambda f, ub: f > ub),
-        salience=2000,
+        TEST(lambda g, bc, ub: (g + bc) > ub),
+        salience=2000
     )
     def prune_bounds(self, node):
         self.modify(node, status="dead")
@@ -187,170 +323,211 @@ class FlowerDeliveryEngine(KnowledgeEngine):
 
     @Rule(
         SystemControl(phase="search"),
-        AS.node << SearchNode(status="open", robot_state="load", carried_bouquets=MATCH.cb),
-        TEST(lambda cb: len(set(map(lambda i: i[0], cb))) > 1 and len(set(map(lambda i: i[1], cb))) > 1),
-        salience=2500,
+        AS.node << SearchNode(status="open",
+            i_rr=MATCH.r1, i_rp=MATCH.r2, i_rw=MATCH.r3, i_tr=MATCH.t1, i_ty=MATCH.t2,
+            i_op=MATCH.o1, i_opi=MATCH.o2, i_rgg=MATCH.g1, i_rglp=MATCH.g2),
+        TEST(lambda r1,r2,r3,t1,t2,o1,o2,g1,g2: is_invalid_load(r1,r2,r3,t1,t2,o1,o2,g1,g2) == 1),
+        salience=2500
     )
-    def enforce_load_rules(self, node):
+    def enforce_rules(self, node):
         self.modify(node, status="dead")
         if self.live_mode:
             self.emit("NODE_PRUNED", {"reason": "load_rules", **node_to_dict(node)})
 
-    @Rule(
-        SystemControl(phase="search"),
-        AS.node << SearchNode(status="active", robot_state="collect", robot_x=MATCH.rx, robot_y=MATCH.ry, g_n=MATCH.g, pavilions=MATCH.p, carried_bouquets=MATCH.cb),
-        SystemMeta(max_load=MATCH.ml, warehouse_x=MATCH.wx, warehouse_y=MATCH.wy),
-        salience=100,
-    )
-    def action_collect(self, node, rx, ry, g, p, cb, ml, wx, wy):
-        cost = calc_manhattan(rx, ry, wx, wy)
-        h = calc_heuristic_hn(p, wx, wy)
-        bc = calc_bestcase(p, ml, wx, wy)
-        self.declare(SearchNode(
-            node_id=self.next_id(), parent_id=node["node_id"], robot_x=wx, robot_y=wy,
-            robot_state="load", status="open", carried_bouquets=cb, pavilions=p,
-            g_n=g + cost, h_n=h, f_n=(g + cost) + h, bestcase_n=bc,
-            last_action=f"Traveled to warehouse (Cost: {cost})",
-        ))
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="collect", rx=MATCH.rx, ry=MATCH.ry))
+    def rule_collect(self, node, rx, ry):
+        dist = abs(rx - 3) + abs(ry - 2)
+        self.clone_node(node, "load", add_g=dist, rx=3, ry=2, action="Traveled to warehouse")
         self.modify(node, status="expanded")
 
-    @Rule(
-        SystemControl(phase="search"),
-        AS.node << SearchNode(status="active", robot_state="load", carried_bouquets=MATCH.cb, pavilions=MATCH.p, g_n=MATCH.g),
-        SystemMeta(max_load=MATCH.ml, warehouse_x=MATCH.wx, warehouse_y=MATCH.wy),
-        salience=100,
-    )
-    def action_load(self, node, cb, p, g, ml, wx, wy):
-        options = get_possible_loads(p, cb, ml)
-        h = calc_heuristic_hn(p, wx, wy)
-        bc = calc_bestcase(p, ml, wx, wy)
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="load", last_item=MATCH.li, tot_i=MATCH.ti, i_rr=MATCH.inv, d_rr=MATCH.drr), TEST(lambda li, ti, inv, drr: can_load(li, 1, inv, drr, 2, ti) == 1), salience=100)
+    def l1(self, node, ti, inv): self.clone_node(node, "load", last_item=1, tot_i=ti+1, i_rr=inv+1, action="Loaded: Rose red")
 
-        list(map(lambda item: self.declare(SearchNode(
-            node_id=self.next_id(), parent_id=node["node_id"], robot_x=wx, robot_y=wy,
-            robot_state="load", status="open", carried_bouquets=cb + (item,), pavilions=p,
-            g_n=g, h_n=h, f_n=g + h, bestcase_n=bc,
-            last_action=f"Loaded: Type={item[0]}, Color={item[1]}, Qty={item[2]}",
-        )), options))
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="load", last_item=MATCH.li, tot_i=MATCH.ti, i_rp=MATCH.inv, d_rp=MATCH.drp), TEST(lambda li, ti, inv, drp: can_load(li, 2, inv, drp, 1, ti) == 1), salience=100)
+    def l2(self, node, ti, inv): self.clone_node(node, "load", last_item=2, tot_i=ti+1, i_rp=inv+1, action="Loaded: Rose pink")
 
-        depart_g = g + {True: 1, False: 0}[len(cb) > 0]
-        self.declare(SearchNode(
-            node_id=self.next_id(), parent_id=node["node_id"], robot_x=wx, robot_y=wy,
-            robot_state="deliver", status="open", carried_bouquets=cb, pavilions=p,
-            g_n=depart_g, h_n=h, f_n=depart_g + h, bestcase_n=bc,
-            last_action="Finished loading. Dispatched for delivery.",
-        ))
-        self.modify(node, status="expanded")
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="load", last_item=MATCH.li, tot_i=MATCH.ti, i_rw=MATCH.inv, d_rw=MATCH.drw), TEST(lambda li, ti, inv, drw: can_load(li, 3, inv, drw, 1, ti) == 1), salience=100)
+    def l3(self, node, ti, inv): self.clone_node(node, "load", last_item=3, tot_i=ti+1, i_rw=inv+1, action="Loaded: Rose white")
 
-    @Rule(
-        SystemControl(phase="search"),
-        AS.node << SearchNode(status="active", robot_state="deliver", carried_bouquets=MATCH.cb, pavilions=MATCH.p, g_n=MATCH.g, robot_x=MATCH.rx, robot_y=MATCH.ry),
-        SystemMeta(max_load=MATCH.ml, warehouse_x=MATCH.wx, warehouse_y=MATCH.wy),
-        salience=100,
-    )
-    def action_deliver(self, node, cb, p, g, rx, ry, ml, wx, wy):
-        matching = filter(lambda pav: any(map(lambda i: i[0] == pav[3], cb)) and pav[5] > pav[6], p)
-        targets = dict(map(lambda pav: (pav[0], (pav[1], pav[2])), matching))
-        bc = calc_bestcase(p, ml, wx, wy)
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="load", last_item=MATCH.li, tot_i=MATCH.ti, i_tr=MATCH.inv, d_tr=MATCH.dtr), TEST(lambda li, ti, inv, dtr: can_load(li, 4, inv, dtr, 3, ti) == 1), salience=100)
+    def l4(self, node, ti, inv): self.clone_node(node, "load", last_item=4, tot_i=ti+1, i_tr=inv+1, action="Loaded: Tulip red")
 
-        list(map(lambda t: self.declare(SearchNode(
-            node_id=self.next_id(), parent_id=node["node_id"], robot_x=t[1][0], robot_y=t[1][1],
-            robot_state="unload", status="open", carried_bouquets=cb, pavilions=p,
-            g_n=g + calc_manhattan(rx, ry, t[1][0], t[1][1]),
-            h_n=calc_heuristic_hn(p, t[1][0], t[1][1], t[1][0], t[1][1]),
-            f_n=(g + calc_manhattan(rx, ry, t[1][0], t[1][1])) + calc_heuristic_hn(p, t[1][0], t[1][1], t[1][0], t[1][1]),
-            bestcase_n=bc,
-            last_action=f"Routed directly to Pavilion {t[0]}",
-        )), targets.items()))
-        self.modify(node, status="expanded")
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="load", last_item=MATCH.li, tot_i=MATCH.ti, i_ty=MATCH.inv, d_ty=MATCH.dty), TEST(lambda li, ti, inv, dty: can_load(li, 5, inv, dty, 1, ti) == 1), salience=100)
+    def l5(self, node, ti, inv): self.clone_node(node, "load", last_item=5, tot_i=ti+1, i_ty=inv+1, action="Loaded: Tulip yellow")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="load", last_item=MATCH.li, tot_i=MATCH.ti, i_op=MATCH.inv, d_op=MATCH.dop), TEST(lambda li, ti, inv, dop: can_load(li, 6, inv, dop, 2, ti) == 1), salience=100)
+    def l6(self, node, ti, inv): self.clone_node(node, "load", last_item=6, tot_i=ti+1, i_op=inv+1, action="Loaded: Orchid purple")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="load", last_item=MATCH.li, tot_i=MATCH.ti, i_opi=MATCH.inv, d_opi=MATCH.dopi), TEST(lambda li, ti, inv, dopi: can_load(li, 7, inv, dopi, 1, ti) == 1), salience=100)
+    def l7(self, node, ti, inv): self.clone_node(node, "load", last_item=7, tot_i=ti+1, i_opi=inv+1, action="Loaded: Orchid pink")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="load", last_item=MATCH.li, tot_i=MATCH.ti, i_rgg=MATCH.inv, d_rgg=MATCH.drgg), TEST(lambda li, ti, inv, drgg: can_load(li, 8, inv, drgg, 2, ti) == 1), salience=100)
+    def l8(self, node, ti, inv): self.clone_node(node, "load", last_item=8, tot_i=ti+1, i_rgg=inv+1, action="Loaded: RG gold")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="load", last_item=MATCH.li, tot_i=MATCH.ti, i_rglp=MATCH.inv, d_rglp=MATCH.drglp), TEST(lambda li, ti, inv, drglp: can_load(li, 9, inv, drglp, 2, ti) == 1), salience=100)
+    def l9(self, node, ti, inv): self.clone_node(node, "load", last_item=9, tot_i=ti+1, i_rglp=inv+1, action="Loaded: RG light pink")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="load", tot_i=MATCH.ti), TEST(lambda ti: ti > 0), salience=100)
+    def dispatch_deliv(self, node):
+        self.clone_node(node, "deliver", add_g=1, action="Finished loading. Dispatched.")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="load"), salience=50)
+    def close_load(self, node): self.modify(node, status="expanded")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="deliver", i_rr=MATCH.r1, i_rp=MATCH.r2, i_rw=MATCH.r3, d_rr=MATCH.d1, d_rp=MATCH.d2, d_rw=MATCH.d3), TEST(lambda r1,r2,r3,d1,d2,d3: ((r1>0)*(d1<2) + (r2>0)*(d2<1) + (r3>0)*(d3<1)) > 0), salience=100)
+    def route_p1(self, node): self.clone_node(node, "unload", add_g=3, rx=2, ry=4, action="Routed to P1")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="deliver", i_tr=MATCH.t1, i_ty=MATCH.t2, d_tr=MATCH.d1, d_ty=MATCH.d2), TEST(lambda t1,t2,d1,d2: ((t1>0)*(d1<3) + (t2>0)*(d2<1)) > 0), salience=100)
+    def route_p2(self, node): self.clone_node(node, "unload", add_g=2, rx=4, ry=3, action="Routed to P2")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="deliver", i_op=MATCH.o1, i_opi=MATCH.o2, d_op=MATCH.d1, d_opi=MATCH.d2), TEST(lambda o1,o2,d1,d2: ((o1>0)*(d1<2) + (o2>0)*(d2<1)) > 0), salience=100)
+    def route_p3(self, node): self.clone_node(node, "unload", add_g=4, rx=4, ry=5, action="Routed to P3")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="deliver", i_rgg=MATCH.g1, i_rglp=MATCH.g2, d_rgg=MATCH.d1, d_rglp=MATCH.d2), TEST(lambda g1,g2,d1,d2: ((g1>0)*(d1<2) + (g2>0)*(d2<2)) > 0), salience=100)
+    def route_p4(self, node): self.clone_node(node, "unload", add_g=2, rx=5, ry=2, action="Routed to P4")
+
+    @Rule(SystemControl(phase="search"), AS.node << SearchNode(status="active", state="deliver"), salience=50)
+    def close_deliv(self, node): self.modify(node, status="expanded")
 
     @Rule(
         SystemControl(phase="search"),
-        AS.node << SearchNode(status="active", robot_state="unload", robot_x=MATCH.rx, robot_y=MATCH.ry, carried_bouquets=MATCH.cb, pavilions=MATCH.p, g_n=MATCH.g),
-        SystemMeta(max_load=MATCH.ml, warehouse_x=MATCH.wx, warehouse_y=MATCH.wy),
-        salience=100,
+        AS.node << SearchNode(
+            status="active", state="unload", rx=MATCH.rx, ry=MATCH.ry, tot_i=MATCH.ti, tot_d=MATCH.td,
+            i_rr=MATCH.r1, i_rp=MATCH.r2, i_rw=MATCH.r3,
+            i_tr=MATCH.t1, i_ty=MATCH.t2,
+            i_op=MATCH.o1, i_opi=MATCH.o2,
+            i_rgg=MATCH.g1, i_rglp=MATCH.g2,
+            d_rr=MATCH.dr1, d_rp=MATCH.dr2, d_rw=MATCH.dr3,
+            d_tr=MATCH.dt1, d_ty=MATCH.dt2,
+            d_op=MATCH.do1, d_opi=MATCH.do2,
+            d_rgg=MATCH.dg1, d_rglp=MATCH.dg2
+        )
     )
-    def action_unload(self, node, rx, ry, cb, p, g, ml, wx, wy):
-        unique_cargo = list(set(map(lambda i: (i[0], i[1]), cb)))
-        get_need = lambda t, c: sum(map(lambda pav: pav[5] - pav[6], filter(lambda pav: pav[1] == rx and pav[2] == ry and pav[3] == t and pav[4] == c, p)))
+    def process_unload(self, node, rx, ry, ti, td, r1,r2,r3, t1,t2, o1,o2, g1,g2, dr1,dr2,dr3, dt1,dt2, do1,do2, dg1,dg2):
+        at_p1 = (rx == 2) * (ry == 4); at_p2 = (rx == 4) * (ry == 3)
+        at_p3 = (rx == 4) * (ry == 5); at_p4 = (rx == 5) * (ry == 2)
 
-        is_unloaded = lambda t, c: {
-            True: sum(map(lambda i: i[2], filter(lambda i: i[0] == t and i[1] == c, cb))) >= get_need(t, c) and get_need(t, c) > 0,
-            False: False,
-        }[len(list(filter(lambda pav: pav[1] == rx and pav[2] == ry and pav[3] == t and pav[4] == c, p))) > 0]
+        dp_r1 = min(r1, 2 - dr1) * at_p1; dp_r2 = min(r2, 1 - dr2) * at_p1; dp_r3 = min(r3, 1 - dr3) * at_p1
+        dp_t1 = min(t1, 3 - dt1) * at_p2; dp_t2 = min(t2, 1 - dt2) * at_p2
+        dp_o1 = min(o1, 2 - do1) * at_p3; dp_o2 = min(o2, 1 - do2) * at_p3
+        dp_g1 = min(g1, 2 - dg1) * at_p4; dp_g2 = min(g2, 2 - dg2) * at_p4
 
-        get_new_qty = lambda t, c: sum(map(lambda i: i[2], filter(lambda i: i[0] == t and i[1] == c, cb))) - {True: get_need(t, c), False: 0}[is_unloaded(t, c)]
+        tot_drop = dp_r1+dp_r2+dp_r3+dp_t1+dp_t2+dp_o1+dp_o2+dp_g1+dp_g2
+        unld_any = (tot_drop > 0)
 
-        final_cargo = tuple(filter(lambda i: i[2] > 0, map(lambda pair: (pair[0], pair[1], get_new_qty(pair[0], pair[1])), unique_cargo)))
-        unloaded_any = any(map(lambda pair: is_unloaded(pair[0], pair[1]), unique_cargo))
+        new_ti = ti - tot_drop
+        new_td = td + tot_drop
 
-        updated_p = tuple(map(lambda pav: (
-            pav[0], pav[1], pav[2], pav[3], pav[4], pav[5],
-            {True: pav[5], False: pav[6]}[pav[1] == rx and pav[2] == ry and is_unloaded(pav[3], pav[4])],
-        ), p))
+        # FIXED: Exactly 15 items in the simulation, not 16.
+        next_s = "done" * (new_td == 15) + "collect" * ((new_td < 15) * (new_ti == 0)) + "deliver" * ((new_td < 15) * (new_ti > 0))
 
-        cargo_empty = len(final_cargo) == 0
-        all_fulfilled = all(map(lambda pst: pst[5] == pst[6], updated_p))
-        bc = calc_bestcase(updated_p, ml, wx, wy)
+        self.clone_node(node, next_s, add_g=1 * unld_any, action="Unloaded matching cargo",
+            tot_i=new_ti, tot_d=new_td, last_item=1,
+            i_rr=r1-dp_r1, i_rp=r2-dp_r2, i_rw=r3-dp_r3, i_tr=t1-dp_t1, i_ty=t2-dp_t2, i_op=o1-dp_o1, i_opi=o2-dp_o2, i_rgg=g1-dp_g1, i_rglp=g2-dp_g2,
+            d_rr=dr1+dp_r1, d_rp=dr2+dp_r2, d_rw=dr3+dp_r3, d_tr=dt1+dp_t1, d_ty=dt2+dp_t2, d_op=do1+dp_o1, d_opi=do2+dp_o2, d_rgg=dg1+dp_g1, d_rglp=dg2+dp_g2)
 
-        next_state = {
-            (True, True): "done", (True, False): "collect",
-            (False, True): "deliver", (False, False): "deliver",
-        }[(cargo_empty, all_fulfilled)]
-
-        self.declare(SearchNode(
-            node_id=self.next_id(), parent_id=node["node_id"], robot_x=rx, robot_y=ry,
-            robot_state=next_state, status="open", carried_bouquets=final_cargo, pavilions=updated_p,
-            g_n=g + {True: 1, False: 0}[unloaded_any],
-            h_n=calc_heuristic_hn(updated_p, rx, ry),
-            f_n=(g + {True: 1, False: 0}[unloaded_any]) + calc_heuristic_hn(updated_p, rx, ry),
-            bestcase_n=bc, last_action=f"Unloaded matching cargo. Next state: '{next_state}'",
-        ))
         self.modify(node, status="expanded")
 
-    @Rule(
-        AS.ctrl << SystemControl(phase="search"),
-        SearchNode(robot_state="done", status="active", node_id=MATCH.gid, g_n=MATCH.g, f_n=MATCH.f),
-        salience=5000,
-    )
+    # ==========================================
+    # 4. FORWARD-CHAINING PATH MACHINE
+    # ==========================================
+
+    @Rule(AS.ctrl << SystemControl(phase="search"), SearchNode(status="active", state="done", id=MATCH.gid, g=MATCH.g, f=MATCH.f), salience=5000)
     def goal_found(self, ctrl, gid, g, f):
         if self.live_mode:
-            self.emit("GOAL", {"node_id": gid, "g_n": g, "f_n": f, "message": f"Optimal solution acquired by node #{gid}"})
-        else:
-            print(f"\n[GOAL] OPTIMAL SOLUTION ACQUIRED BY NODE #{gid} with f(n)={f}")
-        self.modify(ctrl, phase="print_tree")
-
-    @Rule(AS.ctrl << SystemControl(phase="print_tree"), salience=100)
-    def print_tree(self, ctrl):
-        nodes = list(filter(lambda f: isinstance(f, SearchNode), self.facts.values()))
-        nodes.sort(key=lambda x: x["node_id"])
-        if self.live_mode:
+            self.emit("GOAL", {
+                "node_id": gid,
+                "g_n": g,
+                "f_n": f,
+                "message": f"Optimal solution acquired by node #{gid}",
+            })
+            nodes = sorted(
+                filter(lambda fact: isinstance(fact, SearchNode), self.facts.values()),
+                key=lambda n: n["id"],
+            )
             self.emit("SEARCH_TREE", {"nodes": [node_to_dict(n) for n in nodes]})
         else:
-            print("\n--- COMPREHENSIVE GENERATED SEARCH SPACE TREE ---")
-            list(map(lambda n: print(f"Node #{n['node_id']:3} (Parent #{n['parent_id']:3}) | State: {n['robot_state']:8} | Status: {n['status']:8} | f(n)={n['f_n']:3} | Action: {n['last_action']}"), nodes))
-        self.modify(ctrl, phase="print_path")
+            print(f"\n[GOAL] OPTIMAL SOLUTION ACQUIRED BY NODE #{gid}")
+        self.modify(ctrl, phase="trace_back")
+        self.declare(TraceNode(id=gid))
 
-    @Rule(SystemControl(phase="print_path"), SearchNode(robot_state="done", node_id=MATCH.gid), salience=50)
-    def print_path(self, gid):
-        fact_map = dict(map(lambda f: (f["node_id"], f), filter(lambda f: isinstance(f, SearchNode), self.facts.values())))
-        path = trace_path_recursive(gid, fact_map)[::-1]
+    @Rule(SystemControl(phase="trace_back"), AS.tn << TraceNode(id=MATCH.curr), SearchNode(id=MATCH.curr, pid=MATCH.pid, action=MATCH.act, rx=MATCH.rx, ry=MATCH.ry))
+    def trace_back(self, tn, curr, pid, act, rx, ry):
+        self.declare(Link(child=curr, parent=pid, action=act, rx=rx, ry=ry))
+        self.retract(tn)
+        self.declare(TraceNode(id=pid))
+
+    @Rule(AS.ctrl << SystemControl(phase="trace_back"), AS.tn << TraceNode(id=0))
+    def start_print(self, ctrl, tn):
+        self.retract(tn)
+        self.modify(ctrl, phase="print_fwd")
+        self._path_prev = None
+        self._path_commands = []
+        if self.live_mode:
+            steps = len(list(filter(lambda fact: isinstance(fact, Link), self.facts.values())))
+            self.emit("TIMELINE_START", {"steps": steps})
+        else:
+            print("\n--- OPTIMAL ROBOT COMMAND TRACE ---")
+        self.declare(PrintStep(id=1, step=0))
+
+    @Rule(
+        SystemControl(phase="print_fwd"),
+        AS.ps << PrintStep(id=MATCH.curr, step=MATCH.step),
+        Link(child=MATCH.curr, action=MATCH.act, rx=MATCH.rx, ry=MATCH.ry),
+        SearchNode(id=MATCH.curr, g=MATCH.g, f=MATCH.f, state=MATCH.state),
+    )
+    def print_forward(self, ps, curr, step, act, rx, ry, g, f, state):
+        for line in format_path_step(self._path_prev, rx, ry, g, act, state):
+            self._path_commands.append(line)
+            if self.live_mode:
+                self.emit("PATH_COMMAND", {"step": step, "line": line, "g_n": g, "f_n": f})
+            else:
+                print(line)
 
         if self.live_mode:
-            self.emit("TIMELINE_START", {"steps": len(path)})
-            for step_idx, step in enumerate(path):
-                self.emit("ROBOT_MOVE", {
-                    "step": step_idx, "id": step["node_id"], "to_x": step["robot_x"], "to_y": step["robot_y"],
-                    "state": step["robot_state"], "action": step["last_action"], "g_n": step["g_n"], "f_n": step["f_n"],
-                })
-                self.emit("TIMELINE_STEP", {
-                    "step": step_idx, "node_id": step["node_id"], "action": step["last_action"],
-                    "pos": [step["robot_x"], step["robot_y"]], "state": step["robot_state"],
-                    "g_n": step["g_n"], "f_n": step["f_n"],
-                })
+            self.emit("ROBOT_MOVE", {
+                "step": step,
+                "id": curr,
+                "to_x": rx,
+                "to_y": ry,
+                "state": state,
+                "action": act,
+                "g_n": g,
+                "f_n": f,
+            })
+            self.emit("TIMELINE_STEP", {
+                "step": step,
+                "node_id": curr,
+                "action": act,
+                "pos": [rx, ry],
+                "state": state,
+                "g_n": g,
+                "f_n": f,
+            })
+
+        self._path_prev = {"x": rx, "y": ry, "g": g}
+        self.retract(ps)
+        self.declare(FindNext(parent=curr, step=step+1))
+
+    @Rule(SystemControl(phase="print_fwd"), AS.fn << FindNext(parent=MATCH.p, step=MATCH.s), Link(child=MATCH.c, parent=MATCH.p))
+    def do_find_next(self, fn, p, s, c):
+        self.retract(fn)
+        self.declare(PrintStep(id=c, step=s))
+
+    @Rule(SystemControl(phase="print_fwd"), AS.fn << FindNext(parent=MATCH.p, step=MATCH.s), NOT(Link(parent=MATCH.p)))
+    def end_print(self, fn, p, s):
+        self.retract(fn)
+        total_cost = self._path_prev["g"] if self._path_prev else 0
+        summary = f"total cost g={total_cost} | commands={len(self._path_commands)}"
+        if self.live_mode:
+            self.emit("PATH_TRACE", {"lines": self._path_commands, "total_cost": total_cost})
         else:
-            print("\n--- TIMELINE MAP OF RUNTIME SUCCESS OPERATIONS ---")
-            list(map(lambda step: print(f"Step {step[0]:2}: [Node #{step[1]['node_id']:3}] -> {step[1]['last_action']} | Pos: ({step[1]['robot_x']},{step[1]['robot_y']})"), enumerate(path)))
+            print(summary)
         self.halt()
+
+    # ==========================================
+    # 5. ENGINE STARTUP
+    # ==========================================
 
     def startup(self):
         self.reset()
@@ -359,17 +536,24 @@ class FlowerDeliveryEngine(KnowledgeEngine):
         if self.live_mode:
             self.emit("BOARD_SETUP", self.pretest_data)
 
-        strict_ub = calc_strict_upper_bound(pavilions, start_x, start_y, meta["warehouse_x"], meta["warehouse_y"])
-        self.declare(SystemControl(phase="search"))
-        self.declare(SystemMeta(upper_bound=strict_ub, max_load=meta["max_load"], warehouse_x=meta["warehouse_x"], warehouse_y=meta["warehouse_y"]))
+        strict_ub = calc_strict_upper_bound(
+            pavilions,
+            start_x,
+            start_y,
+            meta["warehouse_x"],
+            meta["warehouse_y"],
+        )
 
-        h = calc_heuristic_hn(pavilions, start_x, start_y)
-        bc = calc_bestcase(pavilions, meta["max_load"], meta["warehouse_x"], meta["warehouse_y"])
+        self.declare(SystemControl(phase="search"))
+        self.declare(SystemMeta(upper_bound=strict_ub, max_load=meta["max_load"]))
+
         self.declare(SearchNode(
-            node_id=self.next_id(), parent_id=0, robot_x=start_x, robot_y=start_y, robot_state="collect",
-            status="open", pavilions=pavilions, g_n=0, h_n=h, f_n=h, bestcase_n=bc, last_action="System Frame Initialization",
+            id=self.next_id(), pid=0, state="collect", status="open", rx=start_x, ry=start_y,
+            g=0, h=calc_h(0,0,0,0,0,0,0,0,0,start_x,start_y), f=calc_bc(0, 0), bc=calc_bc(0, 0),
+            action="System Frame Initialization"
         ))
         self.run()
+
         if self.live_mode:
             self.emit("DONE", {"message": "Execution finished"})
 

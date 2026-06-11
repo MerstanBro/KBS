@@ -5,6 +5,13 @@ export function formatSimulationEvent(message: EngineEvent): string {
     const nodes = message.data.nodes ?? [];
     return `${message.event}: ${nodes.length} nodes explored`;
   }
+  if (message.event === "PATH_COMMAND") {
+    return String(message.data.line ?? message.event);
+  }
+  if (message.event === "PATH_TRACE") {
+    const lines = Array.isArray(message.data.lines) ? message.data.lines : [];
+    return `${message.event}: ${lines.length} commands, total g=${message.data.total_cost}`;
+  }
   return `${message.event}: ${JSON.stringify(message.data)}`;
 }
 

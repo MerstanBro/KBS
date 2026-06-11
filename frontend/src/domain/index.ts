@@ -13,4 +13,7 @@ export * from "./solver/deriveMeta";
 export * from "./solver/apiPayload";
 
 export * from "./simulation/messages";
+export * from "./simulation/pavilionPlayback";
+export * from "./simulation/pathCommand";
+export * from "./simulation/searchTree";
 export * from "./simulation/websocketClient";
